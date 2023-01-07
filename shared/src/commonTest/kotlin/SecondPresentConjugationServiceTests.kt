@@ -6,7 +6,7 @@ import kotlin.test.assertEquals
 class SecondPresentConjugationServiceTests {
     private var sut: SecondPresentConjugationService? = null
 
-    fun prepare() {
+    private fun prepare() {
         sut = SecondPresentConjugationService()
     }
 
