@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,7 +21,6 @@
 		302449FF2969CE3A009482B1 /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302449FE2969CE3A009482B1 /* AppContext.swift */; };
 		30244A042969CF02009482B1 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30244A022969CF02009482B1 /* BaseCoordinator.swift */; };
 		30244A052969CF02009482B1 /* DeeplinkResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30244A032969CF02009482B1 /* DeeplinkResponder.swift */; };
-		30244A222969D035009482B1 /* Prism.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30244A082969D034009482B1 /* Prism.swift */; };
 		30244A232969D035009482B1 /* Lens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30244A0A2969D034009482B1 /* Lens.swift */; };
 		30244A242969D035009482B1 /* InMemoryValueStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30244A0C2969D034009482B1 /* InMemoryValueStorage.swift */; };
 		30244A262969D035009482B1 /* FileValueStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30244A0E2969D034009482B1 /* FileValueStorage.swift */; };
@@ -30,11 +29,7 @@
 		30244A2B2969D035009482B1 /* UserDefaultsValueStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30244A132969D034009482B1 /* UserDefaultsValueStorage.swift */; };
 		30244A2C2969D035009482B1 /* SELayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30244A152969D034009482B1 /* SELayoutConstraint.swift */; };
 		30244A2D2969D035009482B1 /* FibonacciIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30244A172969D034009482B1 /* FibonacciIterator.swift */; };
-		30244A2E2969D035009482B1 /* AtomicProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30244A182969D034009482B1 /* AtomicProperty.swift */; };
-		30244A2F2969D035009482B1 /* Creator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30244A1A2969D034009482B1 /* Creator.swift */; };
 		30244A302969D035009482B1 /* MemoryLeakChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30244A1C2969D035009482B1 /* MemoryLeakChecker.swift */; };
-		30244A312969D035009482B1 /* Barriered.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30244A1D2969D035009482B1 /* Barriered.swift */; };
-		30244A322969D035009482B1 /* Atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30244A1E2969D035009482B1 /* Atomic.swift */; };
 		30244A332969D035009482B1 /* NibBasedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30244A1F2969D035009482B1 /* NibBasedView.swift */; };
 		30244A342969D035009482B1 /* XFamilyLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30244A212969D035009482B1 /* XFamilyLayoutConstraint.swift */; };
 		30244A382969D05B009482B1 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30244A362969D05B009482B1 /* List.swift */; };
@@ -57,7 +52,6 @@
 		302449FE2969CE3A009482B1 /* AppContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContext.swift; sourceTree = "<group>"; };
 		30244A022969CF02009482B1 /* BaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		30244A032969CF02009482B1 /* DeeplinkResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeeplinkResponder.swift; sourceTree = "<group>"; };
-		30244A082969D034009482B1 /* Prism.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prism.swift; sourceTree = "<group>"; };
 		30244A0A2969D034009482B1 /* Lens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lens.swift; sourceTree = "<group>"; };
 		30244A0C2969D034009482B1 /* InMemoryValueStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InMemoryValueStorage.swift; sourceTree = "<group>"; };
 		30244A0D2969D034009482B1 /* FileValueStorageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileValueStorageTests.swift; sourceTree = "<group>"; };
@@ -67,11 +61,7 @@
 		30244A132969D034009482B1 /* UserDefaultsValueStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsValueStorage.swift; sourceTree = "<group>"; };
 		30244A152969D034009482B1 /* SELayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SELayoutConstraint.swift; sourceTree = "<group>"; };
 		30244A172969D034009482B1 /* FibonacciIterator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FibonacciIterator.swift; sourceTree = "<group>"; };
-		30244A182969D034009482B1 /* AtomicProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtomicProperty.swift; sourceTree = "<group>"; };
-		30244A1A2969D034009482B1 /* Creator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Creator.swift; sourceTree = "<group>"; };
 		30244A1C2969D035009482B1 /* MemoryLeakChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryLeakChecker.swift; sourceTree = "<group>"; };
-		30244A1D2969D035009482B1 /* Barriered.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Barriered.swift; sourceTree = "<group>"; };
-		30244A1E2969D035009482B1 /* Atomic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Atomic.swift; sourceTree = "<group>"; };
 		30244A1F2969D035009482B1 /* NibBasedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibBasedView.swift; sourceTree = "<group>"; };
 		30244A212969D035009482B1 /* XFamilyLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFamilyLayoutConstraint.swift; sourceTree = "<group>"; };
 		30244A362969D05B009482B1 /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
@@ -100,8 +90,8 @@
 			children = (
 				30244A3A2969F9D1009482B1 /* Composition */,
 				302449F42969CD94009482B1 /* VerbInputNamespace.swift */,
-				302449F62969CDB8009482B1 /* VerbInputViewModel.swift */,
 				302449F82969CDC2009482B1 /* VerbInputCoordinator.swift */,
+				302449F62969CDB8009482B1 /* VerbInputViewModel.swift */,
 				302449FA2969CDE5009482B1 /* VerbInputViewController.swift */,
 				302449FB2969CDE5009482B1 /* VerbInputViewController.xib */,
 			);
@@ -112,10 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				30244A352969D05B009482B1 /* LinkedList */,
-				30244A1E2969D035009482B1 /* Atomic.swift */,
-				30244A182969D034009482B1 /* AtomicProperty.swift */,
-				30244A1D2969D035009482B1 /* Barriered.swift */,
-				30244A192969D034009482B1 /* Creator */,
 				30244A162969D034009482B1 /* FibonacciIterator */,
 				30244A062969D034009482B1 /* Glass */,
 				30244A1B2969D035009482B1 /* MemoryLeakChecker */,
@@ -140,18 +126,9 @@
 		30244A062969D034009482B1 /* Glass */ = {
 			isa = PBXGroup;
 			children = (
-				30244A072969D034009482B1 /* Prism */,
 				30244A092969D034009482B1 /* Lens */,
 			);
 			path = Glass;
-			sourceTree = "<group>";
-		};
-		30244A072969D034009482B1 /* Prism */ = {
-			isa = PBXGroup;
-			children = (
-				30244A082969D034009482B1 /* Prism.swift */,
-			);
-			path = Prism;
 			sourceTree = "<group>";
 		};
 		30244A092969D034009482B1 /* Lens */ = {
@@ -189,14 +166,6 @@
 				30244A172969D034009482B1 /* FibonacciIterator.swift */,
 			);
 			path = FibonacciIterator;
-			sourceTree = "<group>";
-		};
-		30244A192969D034009482B1 /* Creator */ = {
-			isa = PBXGroup;
-			children = (
-				30244A1A2969D034009482B1 /* Creator.swift */,
-			);
-			path = Creator;
 			sourceTree = "<group>";
 		};
 		30244A1B2969D035009482B1 /* MemoryLeakChecker */ = {
@@ -294,6 +263,7 @@
 				7555FF77242A565900829871 /* Sources */,
 				7555FF79242A565900829871 /* Resources */,
 				7F96B35AC8BD2540AB499D9A /* Frameworks */,
+				C01E62DA8FC0D34F1BC167DD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -374,6 +344,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C01E62DA8FC0D34F1BC167DD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iosApp/Pods-iosApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iosApp/Pods-iosApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iosApp/Pods-iosApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -384,16 +371,13 @@
 				30244A2C2969D035009482B1 /* SELayoutConstraint.swift in Sources */,
 				30244A342969D035009482B1 /* XFamilyLayoutConstraint.swift in Sources */,
 				302449F92969CDC2009482B1 /* VerbInputCoordinator.swift in Sources */,
-				30244A312969D035009482B1 /* Barriered.swift in Sources */,
 				30244A042969CF02009482B1 /* BaseCoordinator.swift in Sources */,
 				302449FF2969CE3A009482B1 /* AppContext.swift in Sources */,
 				30244A272969D035009482B1 /* KeychainValueStorage.swift in Sources */,
 				30244A392969D05B009482B1 /* IndexedList.swift in Sources */,
-				30244A222969D035009482B1 /* Prism.swift in Sources */,
 				302449F72969CDB8009482B1 /* VerbInputViewModel.swift in Sources */,
 				30244A332969D035009482B1 /* NibBasedView.swift in Sources */,
 				30244A2A2969D035009482B1 /* ValueStorage.swift in Sources */,
-				30244A2F2969D035009482B1 /* Creator.swift in Sources */,
 				302449EB2969CB36009482B1 /* ViewController.swift in Sources */,
 				302449F52969CD94009482B1 /* VerbInputNamespace.swift in Sources */,
 				30244A2B2969D035009482B1 /* UserDefaultsValueStorage.swift in Sources */,
@@ -402,12 +386,10 @@
 				30244A052969CF02009482B1 /* DeeplinkResponder.swift in Sources */,
 				302449FC2969CDE5009482B1 /* VerbInputViewController.swift in Sources */,
 				30244A3C2969F9DF009482B1 /* VerbInputCoordinator+Composition.swift in Sources */,
-				30244A322969D035009482B1 /* Atomic.swift in Sources */,
 				30244A262969D035009482B1 /* FileValueStorage.swift in Sources */,
 				30244A382969D05B009482B1 /* List.swift in Sources */,
 				30244A302969D035009482B1 /* MemoryLeakChecker.swift in Sources */,
 				30244A232969D035009482B1 /* Lens.swift in Sources */,
-				30244A2E2969D035009482B1 /* AtomicProperty.swift in Sources */,
 				30244A2D2969D035009482B1 /* FibonacciIterator.swift in Sources */,
 				30244A242969D035009482B1 /* InMemoryValueStorage.swift in Sources */,
 			);

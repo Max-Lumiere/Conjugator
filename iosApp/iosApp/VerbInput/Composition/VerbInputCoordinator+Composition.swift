@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LumiereToolkit
 
 extension VerbInput.Coordinator {
 

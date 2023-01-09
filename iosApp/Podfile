@@ -1,5 +1,9 @@
+source 'git@github.com:Max-Lumiere/Specs.git'
+
 target 'iosApp' do
   use_frameworks!
-  platform :ios, '14.1'
+  platform :ios, '15.0'
   pod 'shared', :path => '../shared'
+
+  pod 'LumiereToolkit', :path => '/Users/maxsvetlov/Study/git/LumiereToolkit'
 end

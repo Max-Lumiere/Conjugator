@@ -1,16 +1,21 @@
 PODS:
+  - LumiereToolkit (0.1.0)
   - shared (1.0)
 
 DEPENDENCIES:
+  - LumiereToolkit (from `/Users/maxsvetlov/Study/git/LumiereToolkit`)
   - shared (from `../shared`)
 
 EXTERNAL SOURCES:
+  LumiereToolkit:
+    :path: "/Users/maxsvetlov/Study/git/LumiereToolkit"
   shared:
     :path: "../shared"
 
 SPEC CHECKSUMS:
+  LumiereToolkit: 1308892011e757b3654a65a3eed4fc7bb8018a61
   shared: 07cac7993e4f05eda6b76f3a213b070947c3b79f
 
-PODFILE CHECKSUM: f282da88f39e69507b0a255187c8a6b644477756
+PODFILE CHECKSUM: 08eefaa03e5f9eef3beb9909c6c0bd08ac37b6cc
 
 COCOAPODS: 1.11.2
