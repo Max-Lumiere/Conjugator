@@ -14,7 +14,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private var cancellables = Set<AnyCancellable>()
     private let tabController = UITabBarController()
     private let navigationController = UINavigationController()
-    private var coordinator: BaseCoordinator<Void>?
+    private var coordinator: AnyObject?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -32,7 +32,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         coordinator
             .start()
-            .sink { }
+            .sink { _ in }
             .store(in: &cancellables)
     }
 

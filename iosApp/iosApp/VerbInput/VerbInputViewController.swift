@@ -8,6 +8,7 @@
 
 import UIKit
 import Combine
+import LumiereToolkit
 
 private let scrollPadding: CGFloat = 10
 private let textFieldFailedBorderWidth: CGFloat = 2
@@ -63,16 +64,16 @@ final class VerbInputViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        infinitiveTextField.text.publisher.sink { [weak self] in
-            self?.infinitiveSubject.send($0)
+        infinitiveTextField.observe(\.text) { [weak self] textField, _ in
+            self?.infinitiveSubject.send(textField.text)
         }.store(in: &cancellables)
 
-        presentTextField.text.publisher.sink { [weak self] in
-            self?.presentSubject.send($0)
+        presentTextField.observe(\.text) { [weak self] textField, _ in
+            self?.presentSubject.send(textField.text)
         }.store(in: &cancellables)
 
-        pastTextField.text.publisher.sink { [weak self] in
-            self?.pastSubject.send($0)
+        pastTextField.observe(\.text) { [weak self] textField, _ in
+            self?.pastSubject.send(textField.text)
         }.store(in: &cancellables)
 
         NotificationCenter.default.publisher(for: UIResponder.keyboardDidShowNotification).sink { [weak self] in
