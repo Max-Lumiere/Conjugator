@@ -10,5 +10,4 @@ import shared
 
 final class AppContext {
 
-
 }

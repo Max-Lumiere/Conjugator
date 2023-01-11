@@ -89,7 +89,7 @@ final class VerbInputViewModelTests: QuickSpec {
 
                 context("when text is the duplicate") {
                     it("ignores it") {
-                        var (infinitive, present, past) = ("infinitive", "present", "past")
+                        let (infinitive, present, past) = ("infinitive", "present", "past")
                         var (infinitiveCount, presentCount, pastCount) = (0, 0, 0)
 
                         sut.infinitivePublisher.sink {

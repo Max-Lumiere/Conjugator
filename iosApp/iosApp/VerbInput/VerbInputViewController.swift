@@ -14,16 +14,16 @@ private let scrollPadding: CGFloat = 10
 private let textFieldFailedBorderWidth: CGFloat = 2
 
 final class VerbInputViewController: UIViewController {
-    @IBOutlet private weak var titleLabel: UILabel!
-    @IBOutlet private weak var infinitiveLabel: UILabel!
-    @IBOutlet private weak var presentLabel: UILabel!
-    @IBOutlet private weak var pastLabel: UILabel!
-    @IBOutlet private weak var infinitiveTextField: UITextField!
-    @IBOutlet private weak var presentTextField: UITextField!
-    @IBOutlet private weak var pastTextField: UITextField!
-    @IBOutlet private weak var scrollView: UIScrollView!
-    @IBOutlet private weak var stackView: UIStackView!
-    @IBOutlet private weak var conjureButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var infinitiveLabel: UILabel!
+    @IBOutlet weak var presentLabel: UILabel!
+    @IBOutlet weak var pastLabel: UILabel!
+    @IBOutlet weak var infinitiveTextField: UITextField!
+    @IBOutlet weak var presentTextField: UITextField!
+    @IBOutlet weak var pastTextField: UITextField!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var conjureButton: UIButton!
 
     private var cancellables = Set<AnyCancellable>()
 

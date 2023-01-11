@@ -10,7 +10,6 @@
 		058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557BA273AAA24004C7B11 /* Assets.xcassets */; };
 		144FF75ED078CDF5342536A2 /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F26B8939CDAEE1C1453C74E1 /* Pods_iosApp.framework */; };
 		302449EA2969CB36009482B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302449E72969CB35009482B1 /* AppDelegate.swift */; };
-		302449EB2969CB36009482B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302449E82969CB35009482B1 /* ViewController.swift */; };
 		302449EC2969CB36009482B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302449E92969CB36009482B1 /* SceneDelegate.swift */; };
 		302449F22969CC0F009482B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 302449F02969CC0F009482B1 /* LaunchScreen.storyboard */; };
 		302449F52969CD94009482B1 /* VerbInputNamespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302449F42969CD94009482B1 /* VerbInputNamespace.swift */; };
@@ -20,7 +19,8 @@
 		302449FD2969CDE5009482B1 /* VerbInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302449FB2969CDE5009482B1 /* VerbInputViewController.xib */; };
 		302449FF2969CE3A009482B1 /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302449FE2969CE3A009482B1 /* AppContext.swift */; };
 		30244A3C2969F9DF009482B1 /* VerbInputCoordinator+Composition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30244A3B2969F9DF009482B1 /* VerbInputCoordinator+Composition.swift */; };
-		30E3A15A296C1DC400E91149 /* iosAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E3A159296C1DC400E91149 /* iosAppTests.swift */; };
+		305E2D49296F292D0034D295 /* VerbInputViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305E2D47296F290E0034D295 /* VerbInputViewControllerTests.swift */; };
+		305E2D4C296F307D0034D295 /* UITextFieldMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305E2D4B296F307D0034D295 /* UITextFieldMock.swift */; };
 		30E3A161296C1DEE00E91149 /* VerbInputViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E3A160296C1DEE00E91149 /* VerbInputViewModelTests.swift */; };
 		30E3A164296C200A00E91149 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E3A163296C200A00E91149 /* GeneratedMocks.swift */; };
 		E88F42591A7C20B2E2582947 /* Pods_iosAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3261A92B94E240CBC7DF1AF7 /* Pods_iosAppTests.framework */; };
@@ -41,7 +41,6 @@
 		0E14EE8F74F4DECE79C87A79 /* Pods-iosAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosAppTests.debug.xcconfig"; path = "Target Support Files/Pods-iosAppTests/Pods-iosAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1A1131FCDEA38092947DBA95 /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
 		302449E72969CB35009482B1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		302449E82969CB35009482B1 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		302449E92969CB36009482B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		302449F12969CC0F009482B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		302449F42969CD94009482B1 /* VerbInputNamespace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbInputNamespace.swift; sourceTree = "<group>"; };
@@ -51,8 +50,9 @@
 		302449FB2969CDE5009482B1 /* VerbInputViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerbInputViewController.xib; sourceTree = "<group>"; };
 		302449FE2969CE3A009482B1 /* AppContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContext.swift; sourceTree = "<group>"; };
 		30244A3B2969F9DF009482B1 /* VerbInputCoordinator+Composition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VerbInputCoordinator+Composition.swift"; sourceTree = "<group>"; };
+		305E2D47296F290E0034D295 /* VerbInputViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbInputViewControllerTests.swift; sourceTree = "<group>"; };
+		305E2D4B296F307D0034D295 /* UITextFieldMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldMock.swift; sourceTree = "<group>"; };
 		30E3A157296C1DC400E91149 /* iosAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iosAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		30E3A159296C1DC400E91149 /* iosAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosAppTests.swift; sourceTree = "<group>"; };
 		30E3A160296C1DEE00E91149 /* VerbInputViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbInputViewModelTests.swift; sourceTree = "<group>"; };
 		30E3A163296C200A00E91149 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		3261A92B94E240CBC7DF1AF7 /* Pods_iosAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +92,7 @@
 				302449F62969CDB8009482B1 /* VerbInputViewModel.swift */,
 				30E3A160296C1DEE00E91149 /* VerbInputViewModelTests.swift */,
 				302449FA2969CDE5009482B1 /* VerbInputViewController.swift */,
+				305E2D47296F290E0034D295 /* VerbInputViewControllerTests.swift */,
 				302449FB2969CDE5009482B1 /* VerbInputViewController.xib */,
 			);
 			path = VerbInput;
@@ -112,10 +113,18 @@
 			path = Composition;
 			sourceTree = "<group>";
 		};
+		305E2D4A296F30680034D295 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				305E2D4B296F307D0034D295 /* UITextFieldMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		30E3A158296C1DC400E91149 /* iosAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				30E3A159296C1DC400E91149 /* iosAppTests.swift */,
+				305E2D4A296F30680034D295 /* Mocks */,
 				30E3A163296C200A00E91149 /* GeneratedMocks.swift */,
 			);
 			path = iosAppTests;
@@ -148,7 +157,6 @@
 				302449F32969CD7E009482B1 /* VerbInput */,
 				302449E72969CB35009482B1 /* AppDelegate.swift */,
 				302449E92969CB36009482B1 /* SceneDelegate.swift */,
-				302449E82969CB35009482B1 /* ViewController.swift */,
 				302449FE2969CE3A009482B1 /* AppContext.swift */,
 				302449F02969CC0F009482B1 /* LaunchScreen.storyboard */,
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
@@ -384,8 +392,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				30E3A161296C1DEE00E91149 /* VerbInputViewModelTests.swift in Sources */,
+				305E2D4C296F307D0034D295 /* UITextFieldMock.swift in Sources */,
 				30E3A164296C200A00E91149 /* GeneratedMocks.swift in Sources */,
-				30E3A15A296C1DC400E91149 /* iosAppTests.swift in Sources */,
+				305E2D49296F292D0034D295 /* VerbInputViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,7 +405,6 @@
 				302449F92969CDC2009482B1 /* VerbInputCoordinator.swift in Sources */,
 				302449FF2969CE3A009482B1 /* AppContext.swift in Sources */,
 				302449F72969CDB8009482B1 /* VerbInputViewModel.swift in Sources */,
-				302449EB2969CB36009482B1 /* ViewController.swift in Sources */,
 				302449F52969CD94009482B1 /* VerbInputNamespace.swift in Sources */,
 				302449EA2969CB36009482B1 /* AppDelegate.swift in Sources */,
 				302449EC2969CB36009482B1 /* SceneDelegate.swift in Sources */,
