@@ -1,9 +1,4 @@
 //
-//  VerbInput.swift
-//  iosApp
-//
-//  Created by Max Svetlov on 7.01.23.
-//  Copyright © 2023 orgName. All rights reserved.
-//
+//  Created by Maksim Sviatlou on 7.01.23.
 
 enum VerbInput { }

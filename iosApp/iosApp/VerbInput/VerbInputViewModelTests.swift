@@ -12,6 +12,9 @@ import Quick
 import Nimble
 import shared
 
+//
+//  Created by Maksim Sviatlou on 7.01.23.
+
 final class VerbInputViewModelTests: QuickSpec {
 
     override func spec() {

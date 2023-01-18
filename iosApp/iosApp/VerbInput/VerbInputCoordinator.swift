@@ -6,6 +6,9 @@
 //  Copyright © 2023 orgName. All rights reserved.
 //
 
+//
+//  Created by Maksim Sviatlou on 7.01.23.
+
 import Combine
 import UIKit
 import LumiereToolkit

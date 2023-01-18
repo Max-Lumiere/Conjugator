@@ -1,10 +1,5 @@
 //
-//  UITextFieldMock.swift
-//  iosAppTests
-//
-//  Created by Max Svetlov on 11.01.23.
-//  Copyright © 2023 orgName. All rights reserved.
-//
+//  Created by Maksim Sviatlou on 11.01.23.
 
 import UIKit
 

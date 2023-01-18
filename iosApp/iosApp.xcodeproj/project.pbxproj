@@ -21,6 +21,11 @@
 		30244A3C2969F9DF009482B1 /* VerbInputCoordinator+Composition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30244A3B2969F9DF009482B1 /* VerbInputCoordinator+Composition.swift */; };
 		305E2D49296F292D0034D295 /* VerbInputViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305E2D47296F290E0034D295 /* VerbInputViewControllerTests.swift */; };
 		305E2D4C296F307D0034D295 /* UITextFieldMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305E2D4B296F307D0034D295 /* UITextFieldMock.swift */; };
+		30C551BE29787A3900F0DC6F /* VerbOutputNamespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C551BD29787A3900F0DC6F /* VerbOutputNamespace.swift */; };
+		30C551C229787C4600F0DC6F /* VerbOutputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C551C129787C4600F0DC6F /* VerbOutputViewModel.swift */; };
+		30C551C429787C9400F0DC6F /* VerbOutputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C551C329787C9400F0DC6F /* VerbOutputCoordinator.swift */; };
+		30C551C729787CB300F0DC6F /* VerbOutputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C551C529787CB300F0DC6F /* VerbOutputViewController.swift */; };
+		30C551C829787CB300F0DC6F /* VerbOutputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30C551C629787CB300F0DC6F /* VerbOutputViewController.xib */; };
 		30E3A161296C1DEE00E91149 /* VerbInputViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E3A160296C1DEE00E91149 /* VerbInputViewModelTests.swift */; };
 		30E3A164296C200A00E91149 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E3A163296C200A00E91149 /* GeneratedMocks.swift */; };
 		E88F42591A7C20B2E2582947 /* Pods_iosAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3261A92B94E240CBC7DF1AF7 /* Pods_iosAppTests.framework */; };
@@ -52,6 +57,11 @@
 		30244A3B2969F9DF009482B1 /* VerbInputCoordinator+Composition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VerbInputCoordinator+Composition.swift"; sourceTree = "<group>"; };
 		305E2D47296F290E0034D295 /* VerbInputViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbInputViewControllerTests.swift; sourceTree = "<group>"; };
 		305E2D4B296F307D0034D295 /* UITextFieldMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldMock.swift; sourceTree = "<group>"; };
+		30C551BD29787A3900F0DC6F /* VerbOutputNamespace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbOutputNamespace.swift; sourceTree = "<group>"; };
+		30C551C129787C4600F0DC6F /* VerbOutputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbOutputViewModel.swift; sourceTree = "<group>"; };
+		30C551C329787C9400F0DC6F /* VerbOutputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbOutputCoordinator.swift; sourceTree = "<group>"; };
+		30C551C529787CB300F0DC6F /* VerbOutputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbOutputViewController.swift; sourceTree = "<group>"; };
+		30C551C629787CB300F0DC6F /* VerbOutputViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerbOutputViewController.xib; sourceTree = "<group>"; };
 		30E3A157296C1DC400E91149 /* iosAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iosAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30E3A160296C1DEE00E91149 /* VerbInputViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbInputViewModelTests.swift; sourceTree = "<group>"; };
 		30E3A163296C200A00E91149 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
@@ -121,6 +131,26 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		30C551BB29787A1800F0DC6F /* VerbOutput */ = {
+			isa = PBXGroup;
+			children = (
+				30C551BC29787A2700F0DC6F /* Composition */,
+				30C551BD29787A3900F0DC6F /* VerbOutputNamespace.swift */,
+				30C551C129787C4600F0DC6F /* VerbOutputViewModel.swift */,
+				30C551C329787C9400F0DC6F /* VerbOutputCoordinator.swift */,
+				30C551C529787CB300F0DC6F /* VerbOutputViewController.swift */,
+				30C551C629787CB300F0DC6F /* VerbOutputViewController.xib */,
+			);
+			path = VerbOutput;
+			sourceTree = "<group>";
+		};
+		30C551BC29787A2700F0DC6F /* Composition */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Composition;
+			sourceTree = "<group>";
+		};
 		30E3A158296C1DC400E91149 /* iosAppTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +185,7 @@
 			children = (
 				30244A002969CEDC009482B1 /* ToolkitCandidate */,
 				302449F32969CD7E009482B1 /* VerbInput */,
+				30C551BB29787A1800F0DC6F /* VerbOutput */,
 				302449E72969CB35009482B1 /* AppDelegate.swift */,
 				302449E92969CB36009482B1 /* SceneDelegate.swift */,
 				302449FE2969CE3A009482B1 /* AppContext.swift */,
@@ -279,6 +310,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30C551C829787CB300F0DC6F /* VerbOutputViewController.xib in Resources */,
 				302449F22969CC0F009482B1 /* LaunchScreen.storyboard in Resources */,
 				302449FD2969CDE5009482B1 /* VerbInputViewController.xib in Resources */,
 				058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */,
@@ -404,9 +436,13 @@
 			files = (
 				302449F92969CDC2009482B1 /* VerbInputCoordinator.swift in Sources */,
 				302449FF2969CE3A009482B1 /* AppContext.swift in Sources */,
+				30C551C229787C4600F0DC6F /* VerbOutputViewModel.swift in Sources */,
 				302449F72969CDB8009482B1 /* VerbInputViewModel.swift in Sources */,
+				30C551BE29787A3900F0DC6F /* VerbOutputNamespace.swift in Sources */,
+				30C551C429787C9400F0DC6F /* VerbOutputCoordinator.swift in Sources */,
 				302449F52969CD94009482B1 /* VerbInputNamespace.swift in Sources */,
 				302449EA2969CB36009482B1 /* AppDelegate.swift in Sources */,
+				30C551C729787CB300F0DC6F /* VerbOutputViewController.swift in Sources */,
 				302449EC2969CB36009482B1 /* SceneDelegate.swift in Sources */,
 				302449FC2969CDE5009482B1 /* VerbInputViewController.swift in Sources */,
 				30244A3C2969F9DF009482B1 /* VerbInputCoordinator+Composition.swift in Sources */,

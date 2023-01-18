@@ -12,6 +12,9 @@ import Quick
 import Nimble
 import Cuckoo
 
+//
+//  Created by Maksim Sviatlou on 7.01.23.
+
 final class VerbInputViewControllerTests: QuickSpec {
 
     private class ScrollViewMock: UIScrollView {

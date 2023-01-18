@@ -1,9 +1,5 @@
 //
-//  SceneDelegate.swift
-//  Test
-//
-//  Created by Max Svetlov on 7.01.23.
-//
+//  Created by Maksim Sviatlou on 7.01.23.
 
 import UIKit
 import Combine
