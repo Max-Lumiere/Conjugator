@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import shared
 
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?

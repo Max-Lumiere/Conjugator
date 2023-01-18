@@ -33,7 +33,7 @@ extension VerbInput {
             self.controller = controller
 
             controller.modalPresentationStyle = .fullScreen
-            parentController.present(controller, animated: true)
+            parentController.present(controller, animated: false)
 
             bind()
 
@@ -106,8 +106,6 @@ extension VerbInput {
             controller.pastReturnPublisher.sink { [weak viewModel] in
                 viewModel?.pastReturn()
             }.store(in: &cancellables)
-
-
         }
     }
 }

@@ -1,36 +1,36 @@
-import conjugationService.ConjugationService
-import conjugationService.PresentConjugationService
-import entities.Verb
-import entities.VerbConjunction
+package verbFormsServiceTests
+
+import verbFormsService.VerbFormsService
+import verbFormsService.PresentVerbFormsService
 import kotlin.test.Test
 import kotlin.test.assertTrue
 
-class ConjugationServiceTests {
-    private class ConjugationServiceMock: ConjugationService {
+class PresentVerbFormsServiceTests {
+    private class VerbFormsServiceMock: VerbFormsService {
         var getConjugationCount = 0
-        override fun getConjunctionFor(verb: Verb): VerbConjunction {
+        override fun getVerbFormsFor(form: String): Array<String> {
             getConjugationCount += 1
-            return VerbConjunction(Verb("","",""), Array(6) { "" })
+            return Array(6) { "" }
         }
     }
 
-    private var first = ConjugationServiceMock()
-    private var second = ConjugationServiceMock()
-    private var third = ConjugationServiceMock()
-    private var sut = PresentConjugationService(first, second, third)
+    private var first = VerbFormsServiceMock()
+    private var second = VerbFormsServiceMock()
+    private var third = VerbFormsServiceMock()
+    private var sut = PresentVerbFormsService(first, second, third)
 
     private fun prepare() {
-        first = ConjugationServiceMock()
-        second = ConjugationServiceMock()
-        third = ConjugationServiceMock()
-        sut = PresentConjugationService(first, second, third)
+        first = VerbFormsServiceMock()
+        second = VerbFormsServiceMock()
+        third = VerbFormsServiceMock()
+        sut = PresentVerbFormsService(first, second, third)
     }
 
     @Test
     fun testGetConjugation_first_type() {
         prepare()
 
-        sut.getConjunctionFor(Verb("verkti","verkia","verkė"))
+        sut.getVerbFormsFor("verkia")
 
         assertTrue(first.getConjugationCount == 1)
         assertTrue(second.getConjugationCount == 0)
@@ -41,7 +41,7 @@ class ConjugationServiceTests {
     fun testGetConjugation_second_type() {
         prepare()
 
-        sut.getConjunctionFor(Verb("tylėti","tyli","tylėjo"))
+        sut.getVerbFormsFor("tyli")
 
         assertTrue(first.getConjugationCount == 0)
         assertTrue(second.getConjugationCount == 1)
@@ -52,7 +52,7 @@ class ConjugationServiceTests {
     fun testGetConjugation_third_type() {
         prepare()
 
-        sut.getConjunctionFor(Verb("mokyti","moko","mokė"))
+        sut.getVerbFormsFor("moko")
 
         assertTrue(first.getConjugationCount == 0)
         assertTrue(second.getConjugationCount == 0)
@@ -65,7 +65,7 @@ class ConjugationServiceTests {
         var caughtException = false
 
         try {
-            sut.getConjunctionFor(Verb("addasdda","mokzx","dsfsdf"))
+            sut.getVerbFormsFor("mokzx")
         } catch(e: Exception) {
             caughtException = true
         }
