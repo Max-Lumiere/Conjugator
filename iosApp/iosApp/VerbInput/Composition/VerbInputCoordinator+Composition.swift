@@ -6,8 +6,11 @@ import LumiereToolkit
 
 extension VerbInput.Coordinator {
 
-    convenience init(context: AppContext, parentController: UIViewController) {
+    convenience init(context: AppContext, parentController: UINavigationController) {
         self.init(viewModelCreator: Creator { .init() },
-                  parentController: parentController)
+                  parentController: parentController,
+                  verbOutputCoordinatorCreator: Creator { args in
+//            VerbOutput.Coordinator(
+        })
     }
 }

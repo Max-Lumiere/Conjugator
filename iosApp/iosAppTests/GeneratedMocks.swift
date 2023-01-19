@@ -1,12 +1,7 @@
-// MARK: - Mocks generated from file: iosApp/VerbInput/VerbInputViewModel.swift at 2023-01-16 10:12:18 +0000
+// MARK: - Mocks generated from file: iosApp/VerbInput/VerbInputViewModel.swift at 2023-01-18 20:33:00 +0000
 
 //
-//  VerbInputViewModel.swift
-//  iosApp
-//
-//  Created by Max Svetlov on 7.01.23.
-//  Copyright © 2023 orgName. All rights reserved.
-//
+//  Created by Maksim Sviatlou on 7.01.23.
 
 import Cuckoo
 @testable import iosApp

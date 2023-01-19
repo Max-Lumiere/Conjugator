@@ -1,12 +1,4 @@
 //
-//  VerbInputCoordinator.swift
-//  iosApp
-//
-//  Created by Max Svetlov on 7.01.23.
-//  Copyright © 2023 orgName. All rights reserved.
-//
-
-//
 //  Created by Maksim Sviatlou on 7.01.23.
 
 import Combine
@@ -15,20 +7,28 @@ import LumiereToolkit
 import shared
 
 extension VerbInput {
-    final class Coordinator: BaseCoordinator<Verb> {
+    final class Coordinator: BaseCoordinator<Void> {
         private let viewModelCreator: Creator<Void, ViewModel>
-        private let parentController: UIViewController
+        private let parentController: UINavigationController
         private var controller: VerbInputViewController?
         private var viewModel: ViewModel?
         private var cancellables = Set<AnyCancellable>()
+        private var verbOutputCoordinator: BaseCoordinator<Void>?
+        private let verbOutputCoordinatorCreator: Creator<(UINavigationController, Verb), BaseCoordinator<Void>>
+        private let animated: Bool
 
-        init(viewModelCreator: Creator<Void, ViewModel>, parentController: UIViewController) {
+        init(viewModelCreator: Creator<Void, ViewModel>,
+             parentController: UINavigationController,
+             animated: Bool = false,
+             verbOutputCoordinatorCreator: Creator<(UINavigationController, Verb), BaseCoordinator<Void>>) {
             self.viewModelCreator = viewModelCreator
             self.parentController = parentController
+            self.animated = animated
+            self.verbOutputCoordinatorCreator = verbOutputCoordinatorCreator
             super.init()
         }
 
-        override func start() -> AnyPublisher<Verb, Never> {
+        override func start() -> AnyPublisher<Void, Never> {
             let viewModel = viewModelCreator.create()
             let controller = VerbInputViewController(nibName: nil, bundle: nil)
 
@@ -36,15 +36,23 @@ extension VerbInput {
             self.controller = controller
 
             controller.modalPresentationStyle = .fullScreen
-            parentController.present(controller, animated: false)
+            parentController.present(controller, animated: animated)
 
             bind()
 
-            return viewModel.verbPublisher
+            return controller.onClose
         }
 
         private func bind() {
             guard let controller, let viewModel else { return }
+
+            viewModel.verbPublisher.sink { [weak self] verb in
+                guard let self = self else { return }
+
+                let coordinator = self.verbOutputCoordinatorCreator.create(with: (self.parentController, verb))
+
+                self.coordinate(to: coordinator)
+            }.store(in: &cancellables)
 
             controller.infivitivePublisher.sink { [weak viewModel] in
                 viewModel?.set(infinitive: $0)

@@ -8,7 +8,7 @@ def available_pods
   use_frameworks!
 
   pod 'shared', :path => '../shared'
-  pod 'LumiereToolkit'
+  pod 'LumiereToolkit', :git => 'git@github.com:Max-Lumiere/LumiereToolkit.git'
 end
 
 target 'iosApp' do

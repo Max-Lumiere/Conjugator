@@ -1,19 +1,11 @@
 //
-//  VerbInputViewModelTests.swift
-//  iosAppTests
-//
-//  Created by Max Svetlov on 9.01.23.
-//  Copyright © 2023 orgName. All rights reserved.
-//
+//  Created by Maksim Sviatlou on 7.01.23.
 
 @testable import iosApp
 import Combine
 import Quick
 import Nimble
 import shared
-
-//
-//  Created by Maksim Sviatlou on 7.01.23.
 
 final class VerbInputViewModelTests: QuickSpec {
 

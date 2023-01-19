@@ -8,7 +8,7 @@ import LumiereToolkit
 private let scrollPadding: CGFloat = 10
 private let textFieldFailedBorderWidth: CGFloat = 2
 
-final class VerbInputViewController: UIViewController {
+final class VerbInputViewController: ReactiveViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var infinitiveLabel: UILabel!
     @IBOutlet weak var presentLabel: UILabel!

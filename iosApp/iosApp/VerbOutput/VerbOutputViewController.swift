@@ -2,24 +2,16 @@
 //  Created by Maksim Sviatlou on 18.01.23.
     
 import UIKit
+import LumiereToolkit
 
-final class VerbOutputViewController: UIViewController {
+final class VerbOutputViewController: ReactiveViewController {
+
+    @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        tableView.contentInset = additionalSafeAreaInsets
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -9,30 +9,35 @@ PODS:
 
 DEPENDENCIES:
   - Cuckoo
-  - LumiereToolkit
+  - "LumiereToolkit (from `git@github.com:Max-Lumiere/LumiereToolkit.git`)"
   - Nimble
   - Quick
   - shared (from `../shared`)
 
 SPEC REPOS:
-  "git@github.com:Max-Lumiere/Specs.git":
-    - LumiereToolkit
   https://github.com/CocoaPods/Specs.git:
     - Cuckoo
     - Nimble
     - Quick
 
 EXTERNAL SOURCES:
+  LumiereToolkit:
+    :git: "git@github.com:Max-Lumiere/LumiereToolkit.git"
   shared:
     :path: "../shared"
 
+CHECKOUT OPTIONS:
+  LumiereToolkit:
+    :commit: fdaaa5352409478805a97024348d4d5a4b161f86
+    :git: "git@github.com:Max-Lumiere/LumiereToolkit.git"
+
 SPEC CHECKSUMS:
   Cuckoo: 9124fe138270854903483c270370e6e7658fbc9b
-  LumiereToolkit: d20740a3e6550ad703eeb4be1db5a676acf6b3a5
+  LumiereToolkit: 7006b76b21d780f2d85a09bc74ba1694c765dc7f
   Nimble: e7e615c0335ee4bf5b0d786685451e62746117d5
   Quick: 6473349e43b9271a8d43839d9ba1c442ed1b7ac4
   shared: 595ca9fb88595314adbe6e3a495b5df24f86577b
 
-PODFILE CHECKSUM: e478c1cd9b2acc89f6caa84986adc07a67315a43
+PODFILE CHECKSUM: ce21ae1f8d3e4cd94626cc61ef5bb2069be53acc
 
 COCOAPODS: 1.11.2
