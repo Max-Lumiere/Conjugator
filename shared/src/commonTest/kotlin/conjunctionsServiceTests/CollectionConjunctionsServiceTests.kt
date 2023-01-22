@@ -17,10 +17,10 @@ class CollectionConjunctionsServiceTests {
     private var mock3 = ConjunctionsServiceMock()
 
     private class ConjunctionsServiceMock: ConjunctionsService {
-        var result: Array<VerbConjunction> = emptyArray()
+        var result: List<VerbConjunction> = emptyList()
 
         @Throws(Exception::class)
-        override suspend fun getConjunctionsFor(verb: Verb): Array<VerbConjunction> {
+        override suspend fun getConjunctionsFor(verb: Verb): List<VerbConjunction> {
             return result
         }
 
@@ -28,18 +28,18 @@ class CollectionConjunctionsServiceTests {
 
     @BeforeTest
     fun setUp() {
-        sut = CollectionConjunctionsService(arrayOf(mock1, mock2, mock3))
+        sut = CollectionConjunctionsService(listOf(mock1, mock2, mock3))
     }
 
     @Test
     fun testService_success() = runTest {
         val verb = Verb("","","")
-        val result1 = arrayOf(VerbConjunction(verb, Tense.Present, emptyArray()))
-        val result2 = arrayOf(
-            VerbConjunction(verb, Tense.Past, emptyArray()),
-            VerbConjunction(verb, Tense.PastContiniuos, emptyArray())
+        val result1 = listOf(VerbConjunction(verb, Tense.Present, emptyList()))
+        val result2 = listOf(
+            VerbConjunction(verb, Tense.Past, emptyList()),
+            VerbConjunction(verb, Tense.PastContiniuos, emptyList())
         )
-        val result3 = arrayOf(VerbConjunction(verb, Tense.Future, emptyArray()))
+        val result3 = listOf(VerbConjunction(verb, Tense.Future, emptyList()))
 
         mock1.result = result1
         mock2.result = result2

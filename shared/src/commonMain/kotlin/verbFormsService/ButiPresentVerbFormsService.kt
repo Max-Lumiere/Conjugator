@@ -3,8 +3,8 @@ package verbFormsService
 class ButiPresentVerbFormsService: VerbFormsService {
 
     @Throws(Exception::class)
-    override fun getVerbFormsFor(form: String): Array<String> {
-        val forms = Array(6) { "" }
+    override fun getVerbFormsFor(form: String): List<String> {
+        val forms = MutableList(6) { "" }
 
         forms[0] = "esu"
         forms[1] = "esi"

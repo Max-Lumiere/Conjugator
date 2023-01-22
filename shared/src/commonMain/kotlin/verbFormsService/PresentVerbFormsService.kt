@@ -8,7 +8,7 @@ class PresentVerbFormsService(
 ) : VerbFormsService {
 
     @Throws(Exception::class)
-    override fun getVerbFormsFor(form: String): Array<String> {
+    override fun getVerbFormsFor(form: String): List<String> {
 
         if (form == "yra") {
             return butiService.getVerbFormsFor(form)

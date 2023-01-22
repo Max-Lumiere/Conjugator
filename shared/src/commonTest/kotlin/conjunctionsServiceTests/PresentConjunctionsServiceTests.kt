@@ -13,9 +13,9 @@ import kotlin.test.assertTrue
 class PresentConjunctionsServiceTests {
     private class VerbFormsServiceMock: VerbFormsService {
         var getFormsCount = 0
-        override fun getVerbFormsFor(form: String): Array<String> {
+        override fun getVerbFormsFor(form: String): List<String> {
             getFormsCount += 1
-            return Array(6) { "" }
+            return List(6) { "" }
         }
     }
 

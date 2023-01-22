@@ -17,6 +17,6 @@ class ButiPresentVerbFormsServiceTests {
     fun test_buti() {
         val forms = sut!!.getVerbFormsFor("yra")
 
-        assertContentEquals(forms, arrayOf("esu", "esi", "yra", "esame", "esate", "yra"))
+        assertContentEquals(forms, listOf("esu", "esi", "yra", "esame", "esate", "yra"))
     }
 }

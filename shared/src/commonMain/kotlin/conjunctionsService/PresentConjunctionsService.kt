@@ -7,11 +7,11 @@ import verbFormsService.VerbFormsService
 
 class PresentConjunctionsService(val verbFormsService: VerbFormsService): ConjunctionsService {
 
-    override suspend fun getConjunctionsFor(verb: Verb): Array<VerbConjunction> {
+    override suspend fun getConjunctionsFor(verb: Verb): List<VerbConjunction> {
         val forms = verbFormsService.getVerbFormsFor(verb.present)
         val result =  VerbConjunction(verb, Tense.Present, forms)
 
-        return arrayOf(result)
+        return listOf(result)
     }
 
 }

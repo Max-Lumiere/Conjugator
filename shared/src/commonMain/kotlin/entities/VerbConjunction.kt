@@ -2,7 +2,7 @@ package entities
 
 data class VerbConjunction(val verb: Verb,
                            val tense: Tense,
-                           val forms: Array<String>) {
+                           val forms: List<String>) {
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
@@ -25,7 +25,7 @@ data class VerbConjunction(val verb: Verb,
     override fun hashCode(): Int {
         var result = verb.hashCode()
         result = 31 * result + tense.hashCode()
-        result = 31 * result + forms.contentHashCode()
+        result = 31 * result + forms.hashCode()
         return result
     }
 }

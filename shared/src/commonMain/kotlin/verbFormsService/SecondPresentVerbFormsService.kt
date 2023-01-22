@@ -2,8 +2,8 @@ package verbFormsService
 
 class SecondPresentVerbFormsService: VerbFormsService {
 
-    override fun getVerbFormsFor(form: String): Array<String> {
-        val forms = Array(6) { "" }
+    override fun getVerbFormsFor(form: String): List<String> {
+        val forms = MutableList(6) { "" }
 
         forms[0] = form + "u"
         forms[1] = form

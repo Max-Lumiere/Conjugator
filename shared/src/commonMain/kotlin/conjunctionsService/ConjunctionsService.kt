@@ -6,5 +6,5 @@ import entities.VerbConjunction
 interface ConjunctionsService {
 
     @Throws(Exception::class)
-    suspend fun getConjunctionsFor(verb: Verb): Array<VerbConjunction>
+    suspend fun getConjunctionsFor(verb: Verb): List<VerbConjunction>
 }
