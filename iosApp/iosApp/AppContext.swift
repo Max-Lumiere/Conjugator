@@ -8,23 +8,24 @@ final class AppContext {
     let conjunctionsService: ConjunctionsService
     let tenseLocalizationService = LithuanianTenseLocalizationService()
 
-    let aTypeService: VerbFormsService = FirstPresentVerbFormsService()
-    let iTypeService: VerbFormsService = SecondPresentVerbFormsService()
-    let oTypeService: VerbFormsService = SecondPresentVerbFormsService()
+    let aTypeService: VerbFormsService = ATypeFormsService()
+    let iTypeService: VerbFormsService = ITypeFormsService()
+    let oTypeService: VerbFormsService = OTypeFormsService()
     let reflexiveATypeService: VerbFormsService = ReflexiveATypeFormsService()
     let reflexiveITypeService: VerbFormsService = ReflexiveITypeFormsService()
     let reflexiveOTypeService: VerbFormsService = ReflexiveOTypeFormsService()
 
     init() {
         conjunctionsService = CollectionConjunctionsService(innerServices: [
-            PresentConjunctionsService(verbFormsService: PresentVerbFormsService(
-                firstTypeService: aTypeService,
-                secondTypeService: iTypeService,
-                thirdTypeService: oTypeService,
+            PresentConjunctionsService(
+                aTypeService: aTypeService,
+                iTypeService: iTypeService,
+                oTypeService: oTypeService,
                 reflexiveATypeService: reflexiveATypeService,
                 reflexiveITypeService: reflexiveITypeService,
                 reflexiveOTypeService: reflexiveOTypeService,
-                butiService: ButiPresentVerbFormsService()))
+                butiService: ButiPresentVerbFormsService()
+            )
         ])
     }
 
