@@ -11,6 +11,9 @@ final class AppContext {
     let aTypeService: VerbFormsService = FirstPresentVerbFormsService()
     let iTypeService: VerbFormsService = SecondPresentVerbFormsService()
     let oTypeService: VerbFormsService = SecondPresentVerbFormsService()
+    let reflexiveATypeService: VerbFormsService = ReflexiveATypeFormsService()
+    let reflexiveITypeService: VerbFormsService = ReflexiveITypeFormsService()
+    let reflexiveOTypeService: VerbFormsService = ReflexiveOTypeFormsService()
 
     init() {
         conjunctionsService = CollectionConjunctionsService(innerServices: [
@@ -18,6 +21,9 @@ final class AppContext {
                 firstTypeService: aTypeService,
                 secondTypeService: iTypeService,
                 thirdTypeService: oTypeService,
+                reflexiveATypeService: reflexiveATypeService,
+                reflexiveITypeService: reflexiveITypeService,
+                reflexiveOTypeService: reflexiveOTypeService,
                 butiService: ButiPresentVerbFormsService()))
         ])
     }
