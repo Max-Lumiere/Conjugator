@@ -1,16 +1,16 @@
 package verbFormsServiceTests
 
-import verbFormsService.ThirdPresentVerbFormsService
+import verbFormsService.OTypeFormsService
 import entities.Verb
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-class ThirdPresentVerbFormsServiceTests {
+class OTypeFormsServiceTests {
 
-    private var sut: ThirdPresentVerbFormsService? = null
+    private var sut: OTypeFormsService? = null
 
     private fun prepare() {
-        sut = ThirdPresentVerbFormsService()
+        sut = OTypeFormsService()
     }
 
     @Test

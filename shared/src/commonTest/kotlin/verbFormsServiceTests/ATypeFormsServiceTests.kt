@@ -1,15 +1,15 @@
 package verbFormsServiceTests
 
-import verbFormsService.FirstPresentVerbFormsService
+import verbFormsService.ATypeFormsService
 import entities.Verb
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-class FirstPresentVerbFormsServiceTests {
-    private var sut: FirstPresentVerbFormsService? = null
+class ATypeFormsServiceTests {
+    private var sut: ATypeFormsService? = null
 
     private fun prepare() {
-        sut = FirstPresentVerbFormsService()
+        sut = ATypeFormsService()
     }
 
     @Test
