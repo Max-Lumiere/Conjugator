@@ -35,7 +35,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="okm-ds-Q4b">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="586"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verb" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v1N-I7-dae">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Veiksmažodis" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v1N-I7-dae">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="aW5-qC-bgR"/>
@@ -51,7 +51,7 @@
                                         <constraint firstAttribute="height" constant="200" id="HPy-TU-l4T"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Infinitive" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yug-D0-k8A">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bendratis" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yug-D0-k8A">
                                     <rect key="frame" x="0.0" y="250" width="393" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="dBA-Vx-1wM"/>
@@ -80,7 +80,7 @@
                                         <constraint firstAttribute="bottom" secondItem="nhE-LO-N8Y" secondAttribute="bottom" constant="30" id="w3A-GJ-naW"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First form" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrJ-0c-f4K">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Esamojo forma" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrJ-0c-f4K">
                                     <rect key="frame" x="0.0" y="342" width="393" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="zRu-yP-m2Y"/>
@@ -109,7 +109,7 @@
                                         <constraint firstItem="Uip-pI-ThR" firstAttribute="top" secondItem="ZAx-Kd-0ae" secondAttribute="top" constant="8" id="j8n-Qx-I9k"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second form" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9PU-Uc-O7V">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Būtojo forma" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9PU-Uc-O7V">
                                     <rect key="frame" x="0.0" y="434" width="393" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="qs0-6h-FHU"/>

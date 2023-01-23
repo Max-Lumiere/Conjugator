@@ -6,6 +6,8 @@ import shared
 final class AppContext {
 
     let conjunctionsService: ConjunctionsService
+    let tenseLocalizationService = LithuanianTenseLocalizationService()
+
     let aTypeService: VerbFormsService = FirstPresentVerbFormsService()
     let iTypeService: VerbFormsService = SecondPresentVerbFormsService()
     let oTypeService: VerbFormsService = SecondPresentVerbFormsService()

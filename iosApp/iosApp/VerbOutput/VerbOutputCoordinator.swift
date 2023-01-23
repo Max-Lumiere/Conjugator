@@ -41,8 +41,8 @@ extension VerbOutput {
                 .sink { [weak viewModel] in viewModel?.close() }
                 .store(in: &cancellables)
 
-            viewModel.onConjunctions
-                .sink { [weak controller] in controller?.set(conjunctions: $0) }
+            viewModel.onItems
+                .sink { [weak controller] in controller?.set(items: $0) }
                 .store(in: &cancellables)
         }
     }

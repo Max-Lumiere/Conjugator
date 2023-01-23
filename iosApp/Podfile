@@ -1,18 +1,17 @@
 source 'https://github.com/CocoaPods/Specs.git'
 source 'git@github.com:Max-Lumiere/Specs.git'
 
-use_frameworks!
 platform :ios, '15.0'
 
 def available_pods
-  use_frameworks!
 
-  pod 'shared', :path => '../shared'
   pod 'LumiereToolkit', :git => 'git@github.com:Max-Lumiere/LumiereToolkit.git'
 end
 
 target 'iosApp' do
   available_pods
+
+  pod 'shared', :path => '../shared'
 end
 
 target 'iosAppTests' do
@@ -20,5 +19,4 @@ target 'iosAppTests' do
 
   pod 'Quick'
   pod 'Nimble'
-  pod "Cuckoo"
 end

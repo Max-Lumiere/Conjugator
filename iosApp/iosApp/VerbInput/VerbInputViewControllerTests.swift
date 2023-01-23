@@ -36,7 +36,7 @@ final class VerbInputViewControllerTests: QuickSpec {
             infinitiveTextField = UITextFieldMock()
             presentTextField = UITextFieldMock()
             pastTextField = UITextFieldMock()
-            sut = VerbInputViewController(nibName: nil, bundle: (Bundle(for: VerbInputViewController.self)))
+            sut = VerbInputViewController(nibName: nil, bundle: Bundle(for: VerbInputViewController.self))
             _ = sut.view
             sut.scrollView = scrollView
             sut.infinitiveTextField = infinitiveTextField

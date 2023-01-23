@@ -1,14 +1,10 @@
 PODS:
-  - Cuckoo (1.5.1):
-    - Cuckoo/Swift (= 1.5.1)
-  - Cuckoo/Swift (1.5.1)
   - LumiereToolkit (0.2.0)
   - Nimble (9.2.1)
   - Quick (4.0.0)
   - shared (1.0)
 
 DEPENDENCIES:
-  - Cuckoo
   - "LumiereToolkit (from `git@github.com:Max-Lumiere/LumiereToolkit.git`)"
   - Nimble
   - Quick
@@ -16,7 +12,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - Cuckoo
     - Nimble
     - Quick
 
@@ -32,12 +27,11 @@ CHECKOUT OPTIONS:
     :git: "git@github.com:Max-Lumiere/LumiereToolkit.git"
 
 SPEC CHECKSUMS:
-  Cuckoo: 9124fe138270854903483c270370e6e7658fbc9b
   LumiereToolkit: 7006b76b21d780f2d85a09bc74ba1694c765dc7f
   Nimble: e7e615c0335ee4bf5b0d786685451e62746117d5
   Quick: 6473349e43b9271a8d43839d9ba1c442ed1b7ac4
   shared: 595ca9fb88595314adbe6e3a495b5df24f86577b
 
-PODFILE CHECKSUM: ce21ae1f8d3e4cd94626cc61ef5bb2069be53acc
+PODFILE CHECKSUM: 9d58134a9c4f8653f0013daeabf096d3460a8049
 
 COCOAPODS: 1.11.2

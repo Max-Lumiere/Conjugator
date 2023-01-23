@@ -13,11 +13,12 @@ extension VerbOutput {
             case unexpectedError
         }
 
+        private let tenseLocalizationService: TenseLocalizationService
         private let conjunctionsService: ConjunctionsService
         private let verb: Verb
 
-        let onConjunctions: AnyPublisher<[VerbConjunction], Never>
-        private let conjunctionsSubject = PassthroughSubject<[VerbConjunction], Never>()
+        let onItems: AnyPublisher<[Item], Never>
+        private let itemsSubject = PassthroughSubject<[Item], Never>()
 
         let onError: AnyPublisher<Swift.Error, Never>
         private let errorSubject = PassthroughSubject<Swift.Error, Never>()
@@ -25,24 +26,28 @@ extension VerbOutput {
         let onClose: AnyPublisher<Void, Never>
         private let closeSubject = PassthroughSubject<Void, Never>()
 
-        init(conjunctionsService: ConjunctionsService, verb: Verb) {
+        init(conjunctionsService: ConjunctionsService, tenseLocalizationService: TenseLocalizationService ,verb: Verb) {
             self.conjunctionsService = conjunctionsService
+            self.tenseLocalizationService = tenseLocalizationService
             self.verb = verb
 
-            onConjunctions = conjunctionsSubject.receive(on: DispatchQueue.main).eraseToAnyPublisher()
+            onItems = itemsSubject.receive(on: DispatchQueue.main).eraseToAnyPublisher()
             onError = errorSubject.receive(on: DispatchQueue.main).eraseToAnyPublisher()
             onClose = closeSubject.eraseToAnyPublisher()
         }
 
         func conjure() {
-            conjunctionsService.getConjunctionsFor(verb: verb) { [weak self] conjunctions, error in
-                if let error = error {
-                    self?.errorSubject.send(Error.conjunctionsError(error))
-                } else if let conjunctions = conjunctions {
-                    self?.conjunctionsSubject.send(conjunctions)
-                } else {
-                    self?.errorSubject.send(Error.unexpectedError)
-                }
+            conjunctionsService
+                .getConjunctionsFor(verb: verb) { [weak self, tenseLocalizationService] conjunctions, error in
+                    if let error = error {
+                        self?.errorSubject.send(Error.conjunctionsError(error))
+                    } else if let conjunctions = conjunctions {
+                        self?.itemsSubject.send(conjunctions.map {
+                            Item(forms: $0.forms, tense: tenseLocalizationService.localizationFor(tense: $0.tense))
+                        })
+                    } else {
+                        self?.errorSubject.send(Error.unexpectedError)
+                    }
             }
         }
 
