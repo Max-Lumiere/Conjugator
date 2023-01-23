@@ -14,10 +14,10 @@ final class VerbOutputViewModelTests: QuickSpec {
 
     private class ConjunctionsServiceMock: ConjunctionsService {
         var error: Error?
-        var result: KotlinArray<VerbConjunction>?
+        var result: [VerbConjunction]?
 
         func getConjunctionsFor(verb: Verb,
-                                completionHandler: @escaping (KotlinArray<VerbConjunction>?, Swift.Error?) -> Void) {
+                                completionHandler: @escaping ([VerbConjunction]?, Swift.Error?) -> Void) {
             DispatchQueue.main.async {
                 completionHandler(self.result, self.error)
             }
@@ -40,9 +40,7 @@ final class VerbOutputViewModelTests: QuickSpec {
                 it("send conjunctions") {
                     var conjunctions: [VerbConjunction]?
 
-                    conjunctionsService.result = KotlinArray<VerbConjunction>(size: 0) { _ in
-                        VerbConjunction(verb: verb, tense: .present, forms: KotlinArray(size: 0) { _ in "" })
-                    }
+                    conjunctionsService.result = []
                     sut.onConjunctions
                         .sink { conjunctions = $0 }
                         .store(in: &cancellables)

@@ -14,13 +14,13 @@ extension VerbInput {
         private var viewModel: ViewModel?
         private var cancellables = Set<AnyCancellable>()
         private var verbOutputCoordinator: BaseCoordinator<Void>?
-        private let verbOutputCoordinatorCreator: Creator<(UINavigationController, Verb), BaseCoordinator<Void>>
+        private let verbOutputCoordinatorCreator: Creator<Verb, BaseCoordinator<Void>>
         private let animated: Bool
 
         init(viewModelCreator: Creator<Void, ViewModel>,
              parentController: UINavigationController,
              animated: Bool = false,
-             verbOutputCoordinatorCreator: Creator<(UINavigationController, Verb), BaseCoordinator<Void>>) {
+             verbOutputCoordinatorCreator: Creator<Verb, BaseCoordinator<Void>>) {
             self.viewModelCreator = viewModelCreator
             self.parentController = parentController
             self.animated = animated
@@ -35,8 +35,8 @@ extension VerbInput {
             self.viewModel = viewModel
             self.controller = controller
 
-            controller.modalPresentationStyle = .fullScreen
-            parentController.present(controller, animated: animated)
+            _ = controller.view
+            parentController.setViewControllers([controller], animated: animated)
 
             bind()
 
@@ -49,7 +49,7 @@ extension VerbInput {
             viewModel.verbPublisher.sink { [weak self] verb in
                 guard let self = self else { return }
 
-                let coordinator = self.verbOutputCoordinatorCreator.create(with: (self.parentController, verb))
+                let coordinator = self.verbOutputCoordinatorCreator.create(with: verb)
 
                 self.coordinate(to: coordinator)
             }.store(in: &cancellables)

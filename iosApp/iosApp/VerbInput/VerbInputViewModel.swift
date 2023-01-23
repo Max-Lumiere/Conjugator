@@ -17,13 +17,13 @@ extension VerbInput {
         private let verbSubject = PassthroughSubject<Verb, Never>()
 
         let infinitivePublisher: AnyPublisher<String?, Never>
-        private let infinitiveSubject = CurrentValueSubject<String?, Never>(nil)
+        private let infinitiveSubject = CurrentValueSubject<String?, Never>("eiti")
 
         let presentPublisher: AnyPublisher<String?, Never>
-        private let presentSubject = CurrentValueSubject<String?, Never>(nil)
+        private let presentSubject = CurrentValueSubject<String?, Never>("eina")
 
         let pastPublisher: AnyPublisher<String?, Never>
-        private let pastSubject = CurrentValueSubject<String?, Never>(nil)
+        private let pastSubject = CurrentValueSubject<String?, Never>("ėjo")
 
         let infinitiveFailurePublisher: AnyPublisher<Bool, Never>
         private let infinitiveFailureSubject = PassthroughSubject<Bool, Never>()

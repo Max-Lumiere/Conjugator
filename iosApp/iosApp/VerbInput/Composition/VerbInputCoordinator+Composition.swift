@@ -9,8 +9,8 @@ extension VerbInput.Coordinator {
     convenience init(context: AppContext, parentController: UINavigationController) {
         self.init(viewModelCreator: Creator { .init() },
                   parentController: parentController,
-                  verbOutputCoordinatorCreator: Creator { args in
-//            VerbOutput.Coordinator(
+                  verbOutputCoordinatorCreator: Creator { verb in
+            VerbOutput.Coordinator(context: context, navigationController: parentController, verb: verb)
         })
     }
 }

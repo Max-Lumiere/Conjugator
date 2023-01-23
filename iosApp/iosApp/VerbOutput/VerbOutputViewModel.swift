@@ -3,6 +3,7 @@
 
 import shared
 import Combine
+import Foundation
 
 extension VerbOutput {
 
@@ -38,7 +39,7 @@ extension VerbOutput {
                 if let error = error {
                     self?.errorSubject.send(Error.conjunctionsError(error))
                 } else if let conjunctions = conjunctions {
-                    self?.conjunctionsSubject.send(Array(conjunctions))
+                    self?.conjunctionsSubject.send(conjunctions)
                 } else {
                     self?.errorSubject.send(Error.unexpectedError)
                 }

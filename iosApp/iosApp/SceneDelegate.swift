@@ -13,7 +13,9 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private let navigationController = UINavigationController()
     private var coordinator: AnyObject?
 
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+    func scene(_ scene: UIScene,
+               willConnectTo session: UISceneSession,
+               options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         let context = AppContext()

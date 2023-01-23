@@ -66,7 +66,7 @@
                                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nhE-LO-N8Y">
                                             <rect key="frame" x="20" y="8" width="353" height="34"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
                                             <connections>
                                                 <outlet property="delegate" destination="-1" id="186-lz-bMA"/>
                                             </connections>
@@ -95,7 +95,7 @@
                                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uip-pI-ThR">
                                             <rect key="frame" x="20" y="8" width="353" height="34"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
                                             <connections>
                                                 <outlet property="delegate" destination="-1" id="uCQ-29-XMy"/>
                                             </connections>
@@ -124,7 +124,7 @@
                                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kYL-bi-R75">
                                             <rect key="frame" x="20" y="8" width="353" height="34"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" returnKeyType="go"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="go"/>
                                             <connections>
                                                 <outlet property="delegate" destination="-1" id="fRA-Jy-xHT"/>
                                             </connections>

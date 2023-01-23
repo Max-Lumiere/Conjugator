@@ -7,15 +7,33 @@ import LumiereToolkit
 
 final class VerbOutputCell: UITableViewCell, NibBased, ReusableView {
 
+    @IBOutlet weak var tenseLabel: UILabel!
+    @IBOutlet var formLabels: [UILabel]!
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        clean()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        clean()
     }
-    
+
+    func set(tense: String?) {
+        tenseLabel.text = tense
+    }
+
+    func set(forms: [String]) {
+        for i in 0..<forms.count {
+            formLabels[i].text = forms[i]
+        }
+    }
+
+    // MARK: - private
+
+    private func clean() {
+        tenseLabel.text = nil
+        formLabels.forEach { $0.text = nil }
+    }
 }
