@@ -6,21 +6,16 @@ data class VerbConjunction(val verb: Verb,
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
+        if (other == null || this::class != other::class) return false
 
-        return hashCode() == other.hashCode()
+        other as VerbConjunction
+
+        if (verb != other.verb) return false
+        if (tense != other.tense) return false
+        if (forms != other.forms) return false
+
+        return true
     }
-
-//    override fun equals(other: Any?): Boolean {
-//        if (this === other) return true
-//        if (other == null || this::class != other::class) return false
-//
-//        other as VerbConjunction
-//
-//        if (verb != other.verb) return false
-//        if (!forms.contentEquals(other.forms)) return false
-//
-//        return true
-//    }
 
     override fun hashCode(): Int {
         var result = verb.hashCode()
