@@ -18,14 +18,18 @@ final class AppContext {
     let reflexiveETypeService: VerbFormsService = ReflexiveETypeFormsService()
     let futureFormsService: VerbFormsService = FutureFormsService()
     let reflexiveFutureFormsService: VerbFormsService
+    let imperativeFormsService: VerbFormsService = ImperativeFormsService()
+    let reflexiveImperativeFormsService: VerbFormsService
 
     let presentConjugationsService: ConjugationsService
     let pastConjugationsService: ConjugationsService
     let pastContiniousConjugationsService: ConjugationsService
     let futureConjugationsService: ConjugationsService
+    let imperativeConjugationsService: ConjugationsService
 
     init() {
         reflexiveFutureFormsService = ReflexiveFutureFormsService(commonFormsService: futureFormsService)
+        reflexiveImperativeFormsService = ReflexiveImperativeFormsService(commonFormsService: imperativeFormsService)
 
         presentConjugationsService = PresentConjugationsService(aTypeService: aTypeService,
                                                                 iTypeService: iTypeService,
@@ -49,10 +53,17 @@ final class AppContext {
                                                               reflexiveFormsService: reflexiveFutureFormsService,
                                                               butiFormsService: ButiFutureVerbFormsService())
 
+        imperativeConjugationsService = ImperativeConjugationsService(
+            commonFormsService: imperativeFormsService,
+            reflexiveFormsService: reflexiveImperativeFormsService
+        )
+
         conjugationsService = CollectionConjugationsService(innerServices: [presentConjugationsService,
                                                                             pastConjugationsService,
                                                                             pastContiniousConjugationsService,
-                                                                            futureConjugationsService])
+                                                                            futureConjugationsService,
+                                                                            imperativeConjugationsService])
+
     }
 
 }
