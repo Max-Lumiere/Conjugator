@@ -16,12 +16,17 @@ final class AppContext {
     let reflexiveITypeService: VerbFormsService = ReflexiveITypeFormsService()
     let reflexiveOTypeService: VerbFormsService = ReflexiveOTypeFormsService()
     let reflexiveETypeService: VerbFormsService = ReflexiveETypeFormsService()
+    let futureFormsService: VerbFormsService = FutureFormsService()
+    let reflexiveFutureFormsService: VerbFormsService
 
     let presentConjugationsService: ConjugationsService
     let pastConjugationsService: ConjugationsService
     let pastContiniousConjugationsService: ConjugationsService
+    let futureConjugationsService: ConjugationsService
 
     init() {
+        reflexiveFutureFormsService = ReflexiveFutureFormsService(commonFormsService: futureFormsService)
+
         presentConjugationsService = PresentConjugationsService(aTypeService: aTypeService,
                                                                 iTypeService: iTypeService,
                                                                 oTypeService: oTypeService,
@@ -29,19 +34,25 @@ final class AppContext {
                                                                 reflexiveITypeService: reflexiveITypeService,
                                                                 reflexiveOTypeService: reflexiveOTypeService,
                                                                 butiService: ButiPresentVerbFormsService())
+
         pastConjugationsService = PastConjugationsService(oTypeService: oTypeService,
                                                           eTypeService: eTypeService,
                                                           reflexiveOTypeService: reflexiveOTypeService,
                                                           reflexiveETypeService: reflexiveETypeService)
+
         pastContiniousConjugationsService = PastContiniousConjugationsService(
             oTypeService: oTypeService,
             reflexiveOTypeService: reflexiveOTypeService
         )
-        conjugationsService = CollectionConjugationsService(innerServices: [
-            presentConjugationsService,
-            pastConjugationsService,
-            pastContiniousConjugationsService
-        ])
+
+        futureConjugationsService = FutureConjugationsService(commonFormsService: futureFormsService,
+                                                              reflexiveFormsService: reflexiveFutureFormsService,
+                                                              butiFormsService: ButiFutureVerbFormsService())
+
+        conjugationsService = CollectionConjugationsService(innerServices: [presentConjugationsService,
+                                                                            pastConjugationsService,
+                                                                            pastContiniousConjugationsService,
+                                                                            futureConjugationsService])
     }
 
 }
