@@ -42,7 +42,7 @@ class PastContiniousConjugationsServiceTests {
 
     @Test
     fun testGetConjugation() = runTest {
-        val verb = Verb("buti", "", "")
+        val verb = Verb("būti", "", "")
 
         sut!!.getConjugationsFor(verb)
 

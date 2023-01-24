@@ -21,7 +21,7 @@ class PastContiniousConjugationsService(
 
             oTypeService.getVerbFormsFor(form)
         } else {
-            throw Exception("Wrong infinitive form ${verb.infinitive}")
+            throw Exception("Wrong infinitive ${verb.infinitive}")
         }
 
         return listOf(VerbConjugation(verb, Tense.PastContiniuos, forms))
