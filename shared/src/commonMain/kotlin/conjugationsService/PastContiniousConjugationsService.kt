@@ -1,17 +1,17 @@
-package conjunctionsService
+package conjugationsService
 
 import entities.Tense
 import entities.Verb
-import entities.VerbConjunction
+import entities.VerbConjugation
 import verbFormsService.VerbFormsService
 
-class PastContiniousConjunctionsService(
+class PastContiniousConjugationsService(
     private val oTypeService: VerbFormsService,
     private val reflexiveOTypeService: VerbFormsService
-): ConjunctionsService {
+): ConjugationsService {
 
     @Throws(Exception::class)
-    override suspend fun getConjunctionsFor(verb: Verb): List<VerbConjunction> {
+    override suspend fun getConjugationsFor(verb: Verb): List<VerbConjugation> {
         val forms: List<String> = if (verb.infinitive.endsWith("tis")) {
             val form = verb.infinitive.dropLast(3) + "davosi"
 
@@ -24,7 +24,7 @@ class PastContiniousConjunctionsService(
             throw Exception("Wrong infinitive form ${verb.infinitive}")
         }
 
-        return listOf(VerbConjunction(verb, Tense.PastContiniuos, forms))
+        return listOf(VerbConjugation(verb, Tense.PastContiniuos, forms))
     }
 
 }

@@ -9,7 +9,7 @@ extension VerbOutput.Coordinator {
 
     convenience init(context: AppContext, navigationController: UINavigationController, verb: Verb) {
         self.init(navigationController: navigationController, viewModelCreator: Creator {
-            VerbOutput.ViewModel(conjunctionsService: context.conjunctionsService,
+            VerbOutput.ViewModel(conjugationsService: context.conjugationsService,
                                  tenseLocalizationService: context.tenseLocalizationService,
                                  verb: verb)
         })

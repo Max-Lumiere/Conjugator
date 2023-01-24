@@ -5,7 +5,7 @@ import shared
 
 final class AppContext {
 
-    let conjunctionsService: ConjunctionsService
+    let conjugationsService: ConjugationsService
     let tenseLocalizationService = LithuanianTenseLocalizationService()
 
     let aTypeService: VerbFormsService = ATypeFormsService()
@@ -17,30 +17,30 @@ final class AppContext {
     let reflexiveOTypeService: VerbFormsService = ReflexiveOTypeFormsService()
     let reflexiveETypeService: VerbFormsService = ReflexiveETypeFormsService()
 
-    let presentConjunctionsService: ConjunctionsService
-    let pastConjunctionsService: ConjunctionsService
-    let pastContiniousConjunctionsService: ConjunctionsService
+    let presentConjugationsService: ConjugationsService
+    let pastConjugationsService: ConjugationsService
+    let pastContiniousConjugationsService: ConjugationsService
 
     init() {
-        presentConjunctionsService = PresentConjunctionsService(aTypeService: aTypeService,
+        presentConjugationsService = PresentConjugationsService(aTypeService: aTypeService,
                                                                 iTypeService: iTypeService,
                                                                 oTypeService: oTypeService,
                                                                 reflexiveATypeService: reflexiveATypeService,
                                                                 reflexiveITypeService: reflexiveITypeService,
                                                                 reflexiveOTypeService: reflexiveOTypeService,
                                                                 butiService: ButiPresentVerbFormsService())
-        pastConjunctionsService = PastConjunctionsService(oTypeService: oTypeService,
+        pastConjugationsService = PastConjugationsService(oTypeService: oTypeService,
                                                           eTypeService: eTypeService,
                                                           reflexiveOTypeService: reflexiveOTypeService,
                                                           reflexiveETypeService: reflexiveETypeService)
-        pastContiniousConjunctionsService = PastContiniousConjunctionsService(
+        pastContiniousConjugationsService = PastContiniousConjugationsService(
             oTypeService: oTypeService,
             reflexiveOTypeService: reflexiveOTypeService
         )
-        conjunctionsService = CollectionConjunctionsService(innerServices: [
-            presentConjunctionsService,
-            pastConjunctionsService,
-            pastContiniousConjunctionsService
+        conjugationsService = CollectionConjugationsService(innerServices: [
+            presentConjugationsService,
+            pastConjugationsService,
+            pastContiniousConjugationsService
         ])
     }
 

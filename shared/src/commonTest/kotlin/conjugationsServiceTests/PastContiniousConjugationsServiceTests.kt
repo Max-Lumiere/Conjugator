@@ -1,6 +1,6 @@
-package conjunctionsServiceTests
+package conjugationsServiceTests
 
-import conjunctionsService.PastContiniousConjunctionsService
+import conjugationsService.PastContiniousConjugationsService
 import entities.Tense
 import entities.Verb
 import kotlinx.coroutines.test.runTest
@@ -10,7 +10,7 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
-class PastContiniousConjunctionsServiceTests {
+class PastContiniousConjugationsServiceTests {
 
     private class VerbFormsServiceMock: VerbFormsService {
         var getFormsCount = 0
@@ -22,20 +22,20 @@ class PastContiniousConjunctionsServiceTests {
 
     private var oType = VerbFormsServiceMock()
     private var reflexiveOType = VerbFormsServiceMock()
-    private var sut: PastContiniousConjunctionsService? = null
+    private var sut: PastContiniousConjugationsService? = null
 
     @BeforeTest
     fun setUp() {
         oType = VerbFormsServiceMock()
         reflexiveOType = VerbFormsServiceMock()
-        sut = PastContiniousConjunctionsService(oType, reflexiveOType)
+        sut = PastContiniousConjugationsService(oType, reflexiveOType)
     }
 
     @Test
     fun test_past_continious_conjunctions() = runTest {
         val verb = Verb("buti","","")
 
-        val result = sut!!.getConjunctionsFor(verb)
+        val result = sut!!.getConjugationsFor(verb)
 
         assertEquals(result[0].tense, Tense.PastContiniuos)
     }
@@ -44,7 +44,7 @@ class PastContiniousConjunctionsServiceTests {
     fun testGetConjugation() = runTest {
         val verb = Verb("buti", "", "")
 
-        sut!!.getConjunctionsFor(verb)
+        sut!!.getConjugationsFor(verb)
 
         assertTrue(oType.getFormsCount == 1)
         assertTrue(reflexiveOType.getFormsCount == 0)
@@ -54,7 +54,7 @@ class PastContiniousConjunctionsServiceTests {
     fun testGetConjugation_reflexive_o() = runTest {
         val verb = Verb("darytis", "", "")
 
-        sut!!.getConjunctionsFor(verb)
+        sut!!.getConjugationsFor(verb)
 
         assertTrue(oType.getFormsCount == 0)
         assertTrue(reflexiveOType.getFormsCount == 1)
@@ -66,7 +66,7 @@ class PastContiniousConjunctionsServiceTests {
         var caughtException = false
 
         try {
-            sut!!.getConjunctionsFor(verb)
+            sut!!.getConjugationsFor(verb)
         } catch(e: Exception) {
             caughtException = true
         }

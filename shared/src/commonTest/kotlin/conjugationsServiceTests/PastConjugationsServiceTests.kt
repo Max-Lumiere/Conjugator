@@ -1,6 +1,6 @@
-package conjunctionsServiceTests
+package conjugationsServiceTests
 
-import conjunctionsService.PastConjunctionsService
+import conjugationsService.PastConjugationsService
 import entities.Tense
 import entities.Verb
 import kotlinx.coroutines.test.runTest
@@ -10,7 +10,7 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
-class PastConjunctionsServiceTests {
+class PastConjugationsServiceTests {
 
     private class VerbFormsServiceMock: VerbFormsService {
         var getFormsCount = 0
@@ -24,7 +24,7 @@ class PastConjunctionsServiceTests {
     private var oType = VerbFormsServiceMock()
     private var reflexiveEType = VerbFormsServiceMock()
     private var reflexiveOType = VerbFormsServiceMock()
-    private var sut: PastConjunctionsService? = null
+    private var sut: PastConjugationsService? = null
 
     @BeforeTest
     fun setUp() {
@@ -32,7 +32,7 @@ class PastConjunctionsServiceTests {
         oType = VerbFormsServiceMock()
         reflexiveEType = VerbFormsServiceMock()
         reflexiveOType = VerbFormsServiceMock()
-        sut = PastConjunctionsService(
+        sut = PastConjugationsService(
             oType,
             eType,
             reflexiveOType,
@@ -44,7 +44,7 @@ class PastConjunctionsServiceTests {
     fun test_past_conjunctions() = runTest {
         val verb = Verb("","","buvo")
 
-        val result = sut!!.getConjunctionsFor(verb)
+        val result = sut!!.getConjugationsFor(verb)
 
         assertEquals(result[0].tense, Tense.Past)
     }
@@ -53,7 +53,7 @@ class PastConjunctionsServiceTests {
     fun testGetConjugation_o_type() = runTest {
         val verb = Verb("", "", "buvo")
 
-        sut!!.getConjunctionsFor(verb)
+        sut!!.getConjugationsFor(verb)
 
         assertTrue(eType.getFormsCount == 0)
         assertTrue(oType.getFormsCount == 1)
@@ -65,7 +65,7 @@ class PastConjunctionsServiceTests {
     fun testGetConjugation_e_type() = runTest {
         val verb = Verb("", "", "darė")
 
-        sut!!.getConjunctionsFor(verb)
+        sut!!.getConjugationsFor(verb)
 
         assertTrue(eType.getFormsCount == 1)
         assertTrue(oType.getFormsCount == 0)
@@ -77,7 +77,7 @@ class PastConjunctionsServiceTests {
     fun testGetConjugation_reflexive_e() = runTest {
         val verb = Verb("", "", "darėsi")
 
-        sut!!.getConjunctionsFor(verb)
+        sut!!.getConjugationsFor(verb)
 
         assertTrue(eType.getFormsCount == 0)
         assertTrue(oType.getFormsCount == 0)
@@ -89,7 +89,7 @@ class PastConjunctionsServiceTests {
     fun testGetConjugation_reflexive_o() = runTest {
         val verb = Verb("", "", "dainavosi")
 
-        sut!!.getConjunctionsFor(verb)
+        sut!!.getConjugationsFor(verb)
 
         assertTrue(eType.getFormsCount == 0)
         assertTrue(oType.getFormsCount == 0)
@@ -103,7 +103,7 @@ class PastConjunctionsServiceTests {
         var caughtException = false
 
         try {
-            sut!!.getConjunctionsFor(verb)
+            sut!!.getConjugationsFor(verb)
         } catch(e: Exception) {
             caughtException = true
         }
@@ -121,7 +121,7 @@ class PastConjunctionsServiceTests {
         var caughtException = false
 
         try {
-            sut!!.getConjunctionsFor(verb)
+            sut!!.getConjugationsFor(verb)
         } catch(e: Exception) {
             caughtException = true
         }
@@ -132,5 +132,5 @@ class PastConjunctionsServiceTests {
         assertTrue(reflexiveEType.getFormsCount == 0)
         assertTrue(reflexiveOType.getFormsCount == 0)
     }
-    
+
 }

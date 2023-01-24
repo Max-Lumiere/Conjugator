@@ -18,11 +18,11 @@ final class VerbOutputViewModelTests: QuickSpec {
         func localizationFor(tense: Tense) -> String { result }
     }
 
-    private class ConjunctionsServiceMock: ConjunctionsService {
+    private class ConjugationsServiceMock: ConjugationsService {
         var error: Error?
         var result: [VerbConjunction]?
 
-        func getConjunctionsFor(verb: Verb,
+        func getConjugationsFor(verb: Verb,
                                 completionHandler: @escaping ([VerbConjunction]?, Swift.Error?) -> Void) {
             DispatchQueue.main.async {
                 completionHandler(self.result, self.error)
@@ -34,14 +34,14 @@ final class VerbOutputViewModelTests: QuickSpec {
         describe("Verb output view model") {
             var cancellables = Set<AnyCancellable>()
             var sut: VerbOutput.ViewModel!
-            var conjunctionsService: ConjunctionsServiceMock!
+            var conjugationsService: ConjugationsServiceMock!
             var tenseLocalizationService: TenseLocalizationServiceMock!
             let verb = Verb(infinitive: "", present: "", past: "")
 
             beforeEach {
-                conjunctionsService = ConjunctionsServiceMock()
+                conjugationsService = ConjugationsServiceMock()
                 tenseLocalizationService = TenseLocalizationServiceMock()
-                sut = VerbOutput.ViewModel(conjunctionsService: conjunctionsService,
+                sut = VerbOutput.ViewModel(conjugationsService: conjugationsService,
                                            tenseLocalizationService: tenseLocalizationService,
                                            verb: verb)
             }
@@ -61,13 +61,13 @@ final class VerbOutputViewModelTests: QuickSpec {
             }
 
             context("when conjunction works fine") {
-                it("sends localized conjunctions") {
+                it("sends localized conjugations") {
                     var items: [VerbOutput.Item]?
                     let forms = Array(repeatElement("qwerty", count: 6))
                     let tense = "zxcvb"
 
                     tenseLocalizationService.result = tense
-                    conjunctionsService.result = [VerbConjunction(verb: verb,
+                    conjugationsService.result = [VerbConjunction(verb: verb,
                                                                   tense: .present,
                                                                   forms: forms)]
                     sut.onItems
@@ -84,7 +84,7 @@ final class VerbOutputViewModelTests: QuickSpec {
                 it("sends error") {
                     var error: Swift.Error?
 
-                    conjunctionsService.error = Error.error
+                    conjugationsService.error = Error.error
                     sut.onError
                         .sink { error = $0 }
                         .store(in: &cancellables)

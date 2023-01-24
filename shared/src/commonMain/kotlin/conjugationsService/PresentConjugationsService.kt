@@ -1,11 +1,11 @@
-package conjunctionsService
+package conjugationsService
 
 import entities.Tense
 import entities.Verb
-import entities.VerbConjunction
+import entities.VerbConjugation
 import verbFormsService.VerbFormsService
 
-class PresentConjunctionsService(
+class PresentConjugationsService(
     private val aTypeService: VerbFormsService,
     private val iTypeService: VerbFormsService,
     private val oTypeService: VerbFormsService,
@@ -13,10 +13,10 @@ class PresentConjunctionsService(
     private val reflexiveITypeService: VerbFormsService,
     private val reflexiveOTypeService: VerbFormsService,
     private val butiService: VerbFormsService
-    ): ConjunctionsService {
+    ): ConjugationsService {
 
     @Throws(Exception::class)
-    override suspend fun getConjunctionsFor(verb: Verb): List<VerbConjunction> {
+    override suspend fun getConjugationsFor(verb: Verb): List<VerbConjugation> {
         val forms: List<String>
 
         if (verb.present == "yra") {
@@ -41,7 +41,7 @@ class PresentConjunctionsService(
             }
         }
 
-        return listOf(VerbConjunction(verb, Tense.Present, forms))
+        return listOf(VerbConjugation(verb, Tense.Present, forms))
     }
 
 }

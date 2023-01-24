@@ -1,6 +1,6 @@
-package conjunctionsServiceTests
+package conjugationsServiceTests
 
-import conjunctionsService.PresentConjunctionsService
+import conjugationsService.PresentConjugationsService
 import entities.Tense
 import entities.Verb
 import kotlinx.coroutines.test.runTest
@@ -10,7 +10,7 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
-class PresentConjunctionsServiceTests {
+class PresentConjugationsServiceTests {
     private class VerbFormsServiceMock: VerbFormsService {
         var getFormsCount = 0
         override fun getVerbFormsFor(form: String): List<String> {
@@ -26,7 +26,7 @@ class PresentConjunctionsServiceTests {
     private var reflexiveIType = VerbFormsServiceMock()
     private var reflexiveOType = VerbFormsServiceMock()
     private var buti = VerbFormsServiceMock()
-    private var sut: PresentConjunctionsService? = null
+    private var sut: PresentConjugationsService? = null
 
     @BeforeTest
     fun setUp() {
@@ -37,7 +37,7 @@ class PresentConjunctionsServiceTests {
         reflexiveIType = VerbFormsServiceMock()
         reflexiveOType = VerbFormsServiceMock()
         buti = VerbFormsServiceMock()
-        sut = PresentConjunctionsService(
+        sut = PresentConjugationsService(
             aType,
             iType,
             oType,
@@ -52,7 +52,7 @@ class PresentConjunctionsServiceTests {
     fun test_present_conjunctions() = runTest {
         val verb = Verb("","yra","")
 
-        val result = sut!!.getConjunctionsFor(verb)
+        val result = sut!!.getConjugationsFor(verb)
 
         assertEquals(result[0].tense, Tense.Present)
     }
@@ -61,7 +61,7 @@ class PresentConjunctionsServiceTests {
     fun testGetConjugation_first_type() = runTest {
         val verb = Verb("", "verkia", "")
 
-        sut!!.getConjunctionsFor(verb)
+        sut!!.getConjugationsFor(verb)
 
         assertTrue(aType.getFormsCount == 1)
         assertTrue(iType.getFormsCount == 0)
@@ -76,7 +76,7 @@ class PresentConjunctionsServiceTests {
     fun testGetConjugation_second_type() = runTest {
         val verb = Verb("", "tyli", "")
 
-        sut!!.getConjunctionsFor(verb)
+        sut!!.getConjugationsFor(verb)
 
         assertTrue(aType.getFormsCount == 0)
         assertTrue(iType.getFormsCount == 1)
@@ -91,7 +91,7 @@ class PresentConjunctionsServiceTests {
     fun testGetConjugation_third_type() = runTest {
         val verb = Verb("", "moko", "")
 
-        sut!!.getConjunctionsFor(verb)
+        sut!!.getConjugationsFor(verb)
 
         assertTrue(aType.getFormsCount == 0)
         assertTrue(iType.getFormsCount == 0)
@@ -106,7 +106,7 @@ class PresentConjunctionsServiceTests {
     fun testGetConjugation_buti() = runTest {
         val verb = Verb("", "yra", "")
 
-        sut!!.getConjunctionsFor(verb)
+        sut!!.getConjugationsFor(verb)
 
         assertTrue(aType.getFormsCount == 0)
         assertTrue(iType.getFormsCount == 0)
@@ -121,7 +121,7 @@ class PresentConjunctionsServiceTests {
     fun testGetConjugation_reflexive_a() = runTest {
         val verb = Verb("", "nešasi", "")
 
-        sut!!.getConjunctionsFor(verb)
+        sut!!.getConjugationsFor(verb)
 
         assertTrue(aType.getFormsCount == 0)
         assertTrue(iType.getFormsCount == 0)
@@ -136,7 +136,7 @@ class PresentConjunctionsServiceTests {
     fun testGetConjugation_reflexive_i() = runTest {
         val verb = Verb("", "tikisi", "")
 
-        sut!!.getConjunctionsFor(verb)
+        sut!!.getConjugationsFor(verb)
 
         assertTrue(aType.getFormsCount == 0)
         assertTrue(iType.getFormsCount == 0)
@@ -151,7 +151,7 @@ class PresentConjunctionsServiceTests {
     fun testGetConjugation_reflexive_o() = runTest {
         val verb = Verb("", "rašosi", "")
 
-        sut!!.getConjunctionsFor(verb)
+        sut!!.getConjugationsFor(verb)
 
         assertTrue(aType.getFormsCount == 0)
         assertTrue(iType.getFormsCount == 0)
@@ -168,7 +168,7 @@ class PresentConjunctionsServiceTests {
         var caughtException = false
 
         try {
-            sut!!.getConjunctionsFor(verb)
+            sut!!.getConjugationsFor(verb)
         } catch(e: Exception) {
             caughtException = true
         }
@@ -189,7 +189,7 @@ class PresentConjunctionsServiceTests {
         var caughtException = false
 
         try {
-            sut!!.getConjunctionsFor(verb)
+            sut!!.getConjugationsFor(verb)
         } catch(e: Exception) {
             caughtException = true
         }

@@ -1,6 +1,6 @@
 package entities
 
-data class VerbConjunction(val verb: Verb,
+data class VerbConjugation(val verb: Verb,
                            val tense: Tense,
                            val forms: List<String>) {
 
@@ -8,7 +8,7 @@ data class VerbConjunction(val verb: Verb,
         if (this === other) return true
         if (other == null || this::class != other::class) return false
 
-        other as VerbConjunction
+        other as VerbConjugation
 
         if (verb != other.verb) return false
         if (tense != other.tense) return false

@@ -9,12 +9,12 @@ extension VerbOutput {
 
     final class ViewModel {
         private enum Error: Swift.Error {
-            case conjunctionsError(Swift.Error)
+            case conjugationsError(Swift.Error)
             case unexpectedError
         }
 
         private let tenseLocalizationService: TenseLocalizationService
-        private let conjunctionsService: ConjunctionsService
+        private let conjugationsService: ConjugationsService
         private let verb: Verb
 
         let onItems: AnyPublisher<[Item], Never>
@@ -26,8 +26,8 @@ extension VerbOutput {
         let onClose: AnyPublisher<Void, Never>
         private let closeSubject = PassthroughSubject<Void, Never>()
 
-        init(conjunctionsService: ConjunctionsService, tenseLocalizationService: TenseLocalizationService ,verb: Verb) {
-            self.conjunctionsService = conjunctionsService
+        init(conjugationsService: ConjugationsService, tenseLocalizationService: TenseLocalizationService ,verb: Verb) {
+            self.conjugationsService = conjugationsService
             self.tenseLocalizationService = tenseLocalizationService
             self.verb = verb
 
@@ -37,12 +37,12 @@ extension VerbOutput {
         }
 
         func conjure() {
-            conjunctionsService
-                .getConjunctionsFor(verb: verb) { [weak self, tenseLocalizationService] conjunctions, error in
+            conjugationsService
+                .getConjugationsFor(verb: verb) { [weak self, tenseLocalizationService] conjugations, error in
                     if let error = error {
-                        self?.errorSubject.send(Error.conjunctionsError(error))
-                    } else if let conjunctions = conjunctions {
-                        self?.itemsSubject.send(conjunctions.map {
+                        self?.errorSubject.send(Error.conjugationsError(error))
+                    } else if let conjugations = conjugations {
+                        self?.itemsSubject.send(conjugations.map {
                             Item(forms: $0.forms, tense: tenseLocalizationService.localizationFor(tense: $0.tense))
                         })
                     } else {

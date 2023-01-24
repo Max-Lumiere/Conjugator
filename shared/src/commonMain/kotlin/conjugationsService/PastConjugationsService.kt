@@ -1,19 +1,19 @@
-package conjunctionsService
+package conjugationsService
 
 import entities.Tense
 import entities.Verb
-import entities.VerbConjunction
+import entities.VerbConjugation
 import verbFormsService.VerbFormsService
 
-class PastConjunctionsService(
+class PastConjugationsService(
     private val oTypeService: VerbFormsService,
     private val eTypeService: VerbFormsService,
     private val reflexiveOTypeService: VerbFormsService,
     private val reflexiveETypeService: VerbFormsService
-): ConjunctionsService {
+): ConjugationsService {
 
     @Throws(Exception::class)
-    override suspend fun getConjunctionsFor(verb: Verb): List<VerbConjunction> {
+    override suspend fun getConjugationsFor(verb: Verb): List<VerbConjugation> {
         val forms: List<String>
 
         if (verb.past.endsWith("si")) {
@@ -34,7 +34,7 @@ class PastConjunctionsService(
             }
         }
 
-        return listOf(VerbConjunction(verb, Tense.Past, forms))
+        return listOf(VerbConjugation(verb, Tense.Past, forms))
     }
 
 }
