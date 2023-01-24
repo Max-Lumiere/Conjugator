@@ -20,7 +20,7 @@ class PresentConjunctionsService(
         val forms: List<String>
 
         if (verb.present == "yra") {
-            forms =  butiService.getVerbFormsFor(verb.present)
+            forms = butiService.getVerbFormsFor(verb.present)
         } else if (verb.present.endsWith("si")) {
             forms = when (verb.present.dropLast(2).last()) {
                 'a' -> reflexiveATypeService.getVerbFormsFor(verb.present)
