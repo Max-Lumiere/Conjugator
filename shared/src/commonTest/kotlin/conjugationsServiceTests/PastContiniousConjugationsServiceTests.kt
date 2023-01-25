@@ -10,7 +10,7 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
-class PastContiniousConjugationsServiceTests {
+class PastContiniousConjugationsServiceTests: ConjugationsServiceTests() {
 
     private class VerbFormsServiceMock: VerbFormsService {
         var getFormsCount = 0
@@ -22,7 +22,6 @@ class PastContiniousConjugationsServiceTests {
 
     private var oType = VerbFormsServiceMock()
     private var reflexiveOType = VerbFormsServiceMock()
-    private var sut: PastContiniousConjugationsService? = null
 
     @BeforeTest
     fun setUp() {

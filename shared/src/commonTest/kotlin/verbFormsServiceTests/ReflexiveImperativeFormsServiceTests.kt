@@ -6,20 +6,8 @@ import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-class ReflexiveImperativeFormsServiceTests {
-
-    private class VerbFormsServiceMock: VerbFormsService {
-        var getFormsCount = 0
-        var result: List<String> = emptyList()
-
-        override fun getVerbFormsFor(form: String): List<String> {
-            getFormsCount += 1
-            return result
-        }
-    }
-
+class ReflexiveImperativeFormsServiceTests: VerbFormsServiceTests() {
     private var commonService = VerbFormsServiceMock()
-    private var sut: ReflexiveImperativeFormsService? = null
 
     @BeforeTest
     fun setUp() {

@@ -5,8 +5,7 @@ import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertContentEquals
 
-class ButiFutureVerbFormsServiceTest {
-    private var sut: ButiFutureVerbFormsService? = null
+class ButiFutureVerbFormsServiceTest: VerbFormsServiceTests() {
 
     @BeforeTest
     fun setUp() {

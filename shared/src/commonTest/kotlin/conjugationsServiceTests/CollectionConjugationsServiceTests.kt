@@ -10,8 +10,8 @@ import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertContentEquals
 
-class CollectionConjugationsServiceTests {
-    private var sut: CollectionConjugationsService? = null
+class CollectionConjugationsServiceTests: ConjugationsServiceTests() {
+
     private var mock1 = ConjugationsServiceMock()
     private var mock2 = ConjugationsServiceMock()
     private var mock3 = ConjugationsServiceMock()

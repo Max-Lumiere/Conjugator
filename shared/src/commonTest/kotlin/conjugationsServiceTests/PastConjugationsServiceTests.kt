@@ -10,21 +10,12 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
-class PastConjugationsServiceTests {
-
-    private class VerbFormsServiceMock: VerbFormsService {
-        var getFormsCount = 0
-        override fun getVerbFormsFor(form: String): List<String> {
-            getFormsCount += 1
-            return emptyList()
-        }
-    }
+class PastConjugationsServiceTests: ConjugationsServiceTests() {
 
     private var eType = VerbFormsServiceMock()
     private var oType = VerbFormsServiceMock()
     private var reflexiveEType = VerbFormsServiceMock()
     private var reflexiveOType = VerbFormsServiceMock()
-    private var sut: PastConjugationsService? = null
 
     @BeforeTest
     fun setUp() {

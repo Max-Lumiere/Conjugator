@@ -5,8 +5,7 @@ import entities.Verb
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-class ITypeFormsServiceTests {
-    private var sut: ITypeFormsService? = null
+class ITypeFormsServiceTests: VerbFormsServiceTests() {
 
     private fun prepare() {
         sut = ITypeFormsService()

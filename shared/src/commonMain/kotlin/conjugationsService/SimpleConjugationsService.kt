@@ -5,9 +5,10 @@ import entities.Verb
 import entities.VerbConjugation
 import verbFormsService.VerbFormsService
 
-class ImperativeConjugationsService(
+class SimpleConjugationsService(
+    private val tense: Tense,
     private val commonFormsService: VerbFormsService,
-    private val reflexiveFormsService: VerbFormsService,
+    private val reflexiveFormsService: VerbFormsService
 ): ConjugationsService {
 
     @Throws(Exception::class)
@@ -22,7 +23,7 @@ class ImperativeConjugationsService(
             throw Exception("Wrong infinitive ${verb.infinitive}")
         }
 
-        return listOf(VerbConjugation(verb, Tense.Imperative, forms))
+        return listOf(VerbConjugation(verb, tense, forms))
     }
 
 }

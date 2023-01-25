@@ -5,9 +5,7 @@ import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-class ReflexiveOTypeFormsServiceTests {
-
-    private var sut: ReflexiveOTypeFormsService? = null
+class ReflexiveOTypeFormsServiceTests: VerbFormsServiceTests() {
 
     @BeforeTest
     fun setUp() {

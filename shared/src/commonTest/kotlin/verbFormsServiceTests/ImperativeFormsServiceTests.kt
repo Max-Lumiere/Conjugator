@@ -5,9 +5,7 @@ import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-class ImperativeFormsServiceTests {
-
-    private var sut: ImperativeFormsService? = null
+class ImperativeFormsServiceTests: VerbFormsServiceTests() {
 
     @BeforeTest
     fun setUp() {

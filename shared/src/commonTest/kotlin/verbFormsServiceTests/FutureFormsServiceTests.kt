@@ -5,9 +5,7 @@ import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-class FutureFormsServiceTests {
-
-    private var sut: FutureFormsService? = null
+class FutureFormsServiceTests: VerbFormsServiceTests() {
 
     @BeforeTest
     fun setUp() {

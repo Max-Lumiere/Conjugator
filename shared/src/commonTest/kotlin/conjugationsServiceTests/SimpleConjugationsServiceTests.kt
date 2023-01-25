@@ -1,6 +1,6 @@
 package conjugationsServiceTests
 
-import conjugationsService.ImperativeConjugationsService
+import conjugationsService.SimpleConjugationsService
 import entities.Tense
 import entities.Verb
 import kotlinx.coroutines.test.runTest
@@ -10,24 +10,16 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
-class ImperativeConjugationsServiceTests {
-    private class VerbFormsServiceMock: VerbFormsService {
-        var getFormsCount = 0
-        override fun getVerbFormsFor(form: String): List<String> {
-            getFormsCount += 1
-            return emptyList()
-        }
-    }
+class SimpleConjugationsServiceTests: ConjugationsServiceTests() {
 
     private var commonType = VerbFormsServiceMock()
     private var reflexiveType = VerbFormsServiceMock()
-    private var sut: ImperativeConjugationsService? = null
 
     @BeforeTest
     fun setUp() {
         commonType = VerbFormsServiceMock()
         reflexiveType = VerbFormsServiceMock()
-        sut = ImperativeConjugationsService(commonType, reflexiveType)
+        sut = SimpleConjugationsService(Tense.Imperative, commonType, reflexiveType)
     }
 
     @Test
