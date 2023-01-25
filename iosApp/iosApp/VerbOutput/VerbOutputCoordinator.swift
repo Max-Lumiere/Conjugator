@@ -25,6 +25,7 @@ extension VerbOutput {
             self.viewModel = viewModel
             self.controller = controller
 
+            navigationController.setUpSwipeBackSupport().store(in: &cancellables)
             navigationController.pushViewController(controller, animated: true)
             bind()
             return viewModel.onClose
@@ -35,6 +36,10 @@ extension VerbOutput {
 
             controller.onViewDidLoad
                 .sink { [weak viewModel] in viewModel?.conjure() }
+                .store(in: &cancellables)
+
+            controller.onBack
+                .sink { [weak self] in self?.navigationController.popViewController(animated: true) }
                 .store(in: &cancellables)
 
             controller.onClose

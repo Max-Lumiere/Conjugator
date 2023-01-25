@@ -7,7 +7,6 @@ import LumiereToolkit
 import Combine
 import Quick
 import Nimble
-import Cuckoo
 
 final class VerbOutputCellTests: QuickSpec {
 

@@ -20,10 +20,10 @@ final class VerbOutputViewModelTests: QuickSpec {
 
     private class ConjugationsServiceMock: ConjugationsService {
         var error: Error?
-        var result: [VerbConjunction]?
+        var result: [VerbConjugation]?
 
         func getConjugationsFor(verb: Verb,
-                                completionHandler: @escaping ([VerbConjunction]?, Swift.Error?) -> Void) {
+                                completionHandler: @escaping ([VerbConjugation]?, Swift.Error?) -> Void) {
             DispatchQueue.main.async {
                 completionHandler(self.result, self.error)
             }
@@ -67,7 +67,7 @@ final class VerbOutputViewModelTests: QuickSpec {
                     let tense = "zxcvb"
 
                     tenseLocalizationService.result = tense
-                    conjugationsService.result = [VerbConjunction(verb: verb,
+                    conjugationsService.result = [VerbConjugation(verb: verb,
                                                                   tense: .present,
                                                                   forms: forms)]
                     sut.onItems

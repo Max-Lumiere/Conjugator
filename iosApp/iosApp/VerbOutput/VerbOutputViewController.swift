@@ -4,12 +4,28 @@
 import UIKit
 import LumiereToolkit
 import shared
+import Combine
 
-final class VerbOutputViewController: ReactiveViewController, UITableViewDelegate, UITableViewDataSource {
+private let backImage = UIImage(systemName: "arrow.backward")?.withRenderingMode(.alwaysTemplate)
+
+final class VerbOutputViewController: ReactiveViewController,
+                                      UITableViewDelegate,
+                                      UITableViewDataSource,
+                                      UIGestureRecognizerDelegate {
     @IBOutlet weak var tableView: UITableView!
     private var items: [VerbOutput.Item] = []
 
     private static let estimatedRowHeight = VerbOutputCell.instantiateFromNib().frame.height
+
+    let onBack: AnyPublisher<Void, Never>
+    private let backSubject = PassthroughSubject<Void, Never>()
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        onBack = backSubject.eraseToAnyPublisher()
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+
+    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +34,10 @@ final class VerbOutputViewController: ReactiveViewController, UITableViewDelegat
         tableView.estimatedRowHeight = Self.estimatedRowHeight
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(VerbOutputCell.self)
+
+        navigationItem.setLeftBarButton(.init(image: backImage, style: .done, target: self, action: #selector(back)),
+                                        animated: false)
+        navigationItem.leftBarButtonItem?.tintColor = .systemMint
     }
 
     func set(items: [VerbOutput.Item]) {
@@ -38,4 +58,11 @@ final class VerbOutputViewController: ReactiveViewController, UITableViewDelegat
         cell.set(forms: items[indexPath.row].forms)
         return cell
     }
+
+    // MARK: - actions
+
+    @objc func back() {
+        backSubject.send(())
+    }
+
 }
