@@ -4,7 +4,7 @@ class ReflexiveConditionalFormsService(
     private val commonFormsService: VerbFormsService
 ): VerbFormsService {
     override fun getVerbFormsFor(form: String): List<String> {
-        val forms = commonFormsService.getVerbFormsFor(form).toMutableList()
+        val forms = commonFormsService.getVerbFormsFor(form.dropLast(1)).toMutableList()
 
         forms[0] += "si"
         forms[1] += "eisi"

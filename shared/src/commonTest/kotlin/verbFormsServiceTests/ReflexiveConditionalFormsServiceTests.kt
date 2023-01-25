@@ -13,10 +13,6 @@ class ReflexiveConditionalFormsServiceTests: VerbFormsServiceTests() {
     fun setUp() {
         verbFormsMock = VerbFormsServiceMock()
         sut = ReflexiveConditionalFormsService(verbFormsMock)
-    }
-
-    @Test
-    fun test_conjugation() {
         verbFormsMock.result = listOf(
             "mokyčiau",
             "mokytum",
@@ -25,6 +21,10 @@ class ReflexiveConditionalFormsServiceTests: VerbFormsServiceTests() {
             "mokytume",
             "mokytų"
         )
+    }
+
+    @Test
+    fun test_conjugation() {
         assertEquals(listOf(
             "mokyčiausi",
             "mokytumeisi",
@@ -33,6 +33,13 @@ class ReflexiveConditionalFormsServiceTests: VerbFormsServiceTests() {
             "mokytumėtės",
             "mokytųsi"
         ), sut!!.getVerbFormsFor("mokytis"))
+        assertEquals(1, verbFormsMock.getFormsCount)
+    }
+
+    @Test
+    fun test_passed_parameter() {
+        sut!!.getVerbFormsFor("mokytis")
+        assertEquals("mokyti", verbFormsMock.lastFormPassed)
         assertEquals(1, verbFormsMock.getFormsCount)
     }
 }

@@ -13,10 +13,6 @@ class ReflexiveImperativeFormsServiceTests: VerbFormsServiceTests() {
     fun setUp() {
         commonService = VerbFormsServiceMock()
         sut = ReflexiveImperativeFormsService(commonService)
-    }
-
-    @Test
-    fun test_common_conjugation() {
         commonService.result = listOf(
             "–",
             "tvarkyk",
@@ -25,6 +21,10 @@ class ReflexiveImperativeFormsServiceTests: VerbFormsServiceTests() {
             "tvarkykite",
             "–"
         )
+    }
+
+    @Test
+    fun test_common_conjugation() {
         assertEquals(sut!!.getVerbFormsFor("tvarkytis"), listOf(
             "–",
             "tvarkykis",
@@ -33,6 +33,13 @@ class ReflexiveImperativeFormsServiceTests: VerbFormsServiceTests() {
             "tvarkykitės",
             "–"
         ))
+        assertEquals(1, commonService.getFormsCount)
+    }
+
+    @Test
+    fun test_passed_parameter() {
+        sut!!.getVerbFormsFor("tvarkytis")
+        assertEquals("tvarkyti", commonService.lastFormPassed)
         assertEquals(1, commonService.getFormsCount)
     }
 }
