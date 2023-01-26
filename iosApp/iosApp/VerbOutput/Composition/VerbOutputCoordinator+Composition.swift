@@ -23,11 +23,18 @@ import LumiereToolkit
 extension VerbOutput.Coordinator {
 
     convenience init(context: AppContext, navigationController: UINavigationController, verb: Verb) {
-        self.init(navigationController: navigationController, viewModelCreator: Creator {
-            VerbOutput.ViewModel(conjugationsService: context.conjugationsService,
-                                 tenseLocalizationService: context.tenseLocalizationService,
-                                 verb: verb)
-        })
+        self.init(
+            navigationController: navigationController,
+            viewModelCreator: Creator {
+                VerbOutput.ViewModel(conjugationsService: context.conjugationsService,
+                                     tenseLocalizationService: context.tenseLocalizationService,
+                                     verb: verb)
+            },
+            alertCoordinatorCreator: Creator { args in
+                Alert.SystemCoordinator(presentingController: args.1,
+                                        error: args.0,
+                                        message: "You might have mistyped some verb form")
+            })
     }
 
 }

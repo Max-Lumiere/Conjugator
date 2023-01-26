@@ -28,9 +28,15 @@ extension VerbOutput {
         private var controller: VerbOutputViewController?
         private var cancellables = Set<AnyCancellable>()
 
-        init(navigationController: UINavigationController, viewModelCreator: Creator<Void, ViewModel>) {
+        private var alertCoordinator: BaseCoordinator<Void>?
+        private let alertCoordinatorCreator: Creator<(Error, UIViewController), BaseCoordinator<Void>>
+
+        init(navigationController: UINavigationController,
+             viewModelCreator: Creator<Void, ViewModel>,
+             alertCoordinatorCreator: Creator<(Error, UIViewController), BaseCoordinator<Void>>) {
             self.navigationController = navigationController
             self.viewModelCreator = viewModelCreator
+            self.alertCoordinatorCreator = alertCoordinatorCreator
         }
 
         override func start() -> AnyPublisher<Void, Never> {
@@ -64,6 +70,15 @@ extension VerbOutput {
             viewModel.onItems
                 .sink { [weak controller] in controller?.set(items: $0) }
                 .store(in: &cancellables)
+
+            viewModel.onError.sink { [weak self] error in
+                guard let self = self, let controller = self.controller else { return }
+                let alert = self.alertCoordinatorCreator.create(with: (error, controller))
+
+                self.coordinate(to: alert)
+                    .sink { [weak self] in self?.navigationController.popViewController(animated: true) }
+                    .store(in: &self.cancellables)
+            }.store(in: &cancellables)
         }
     }
 

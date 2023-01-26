@@ -11,6 +11,8 @@
 		300FF591297EB33B005DB0A9 /* VerbOutputCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300FF590297EB33B005DB0A9 /* VerbOutputCellTests.swift */; };
 		300FF593297EC0EA005DB0A9 /* VerbOutputItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300FF592297EC0EA005DB0A9 /* VerbOutputItem.swift */; };
 		300FF596297EF149005DB0A9 /* VerbOutputViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300FF594297EF128005DB0A9 /* VerbOutputViewControllerTests.swift */; };
+		3017F67A2982BAC7007EC62F /* AlertSystemCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3017F6782982BAC7007EC62F /* AlertSystemCoordinator.swift */; };
+		3017F67B2982BAC7007EC62F /* AlertNamespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3017F6792982BAC7007EC62F /* AlertNamespace.swift */; };
 		302449EA2969CB36009482B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302449E72969CB35009482B1 /* AppDelegate.swift */; };
 		302449EC2969CB36009482B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302449E92969CB36009482B1 /* SceneDelegate.swift */; };
 		302449F22969CC0F009482B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 302449F02969CC0F009482B1 /* LaunchScreen.storyboard */; };
@@ -30,8 +32,6 @@
 		30C551C829787CB300F0DC6F /* VerbOutputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30C551C629787CB300F0DC6F /* VerbOutputViewController.xib */; };
 		30C551CB29787FC500F0DC6F /* VerbOutputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C551C929787FC500F0DC6F /* VerbOutputCell.swift */; };
 		30C551CC29787FC500F0DC6F /* VerbOutputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30C551CA29787FC500F0DC6F /* VerbOutputCell.xib */; };
-		30C551D0297882C100F0DC6F /* Array+KotlinArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C551CF297882C100F0DC6F /* Array+KotlinArray.swift */; };
-		30C551D3297883B200F0DC6F /* Array+KotlinArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C551D1297883A900F0DC6F /* Array+KotlinArrayTests.swift */; };
 		30C551D5297888B500F0DC6F /* VerbOutputViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C551D4297888B500F0DC6F /* VerbOutputViewModelTests.swift */; };
 		30E3A161296C1DEE00E91149 /* VerbInputViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E3A160296C1DEE00E91149 /* VerbInputViewModelTests.swift */; };
 		30FDD6C0297960570032C6D2 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FDD6BF297960570032C6D2 /* AppCoordinator.swift */; };
@@ -58,6 +58,8 @@
 		300FF590297EB33B005DB0A9 /* VerbOutputCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbOutputCellTests.swift; sourceTree = "<group>"; };
 		300FF592297EC0EA005DB0A9 /* VerbOutputItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbOutputItem.swift; sourceTree = "<group>"; };
 		300FF594297EF128005DB0A9 /* VerbOutputViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbOutputViewControllerTests.swift; sourceTree = "<group>"; };
+		3017F6782982BAC7007EC62F /* AlertSystemCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertSystemCoordinator.swift; sourceTree = "<group>"; };
+		3017F6792982BAC7007EC62F /* AlertNamespace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertNamespace.swift; sourceTree = "<group>"; };
 		302449E72969CB35009482B1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		302449E92969CB36009482B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		302449F12969CC0F009482B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -77,8 +79,6 @@
 		30C551C629787CB300F0DC6F /* VerbOutputViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerbOutputViewController.xib; sourceTree = "<group>"; };
 		30C551C929787FC500F0DC6F /* VerbOutputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbOutputCell.swift; sourceTree = "<group>"; };
 		30C551CA29787FC500F0DC6F /* VerbOutputCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerbOutputCell.xib; sourceTree = "<group>"; };
-		30C551CF297882C100F0DC6F /* Array+KotlinArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+KotlinArray.swift"; sourceTree = "<group>"; };
-		30C551D1297883A900F0DC6F /* Array+KotlinArrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+KotlinArrayTests.swift"; sourceTree = "<group>"; };
 		30C551D4297888B500F0DC6F /* VerbOutputViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbOutputViewModelTests.swift; sourceTree = "<group>"; };
 		30E3A157296C1DC400E91149 /* iosAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iosAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30E3A160296C1DEE00E91149 /* VerbInputViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbInputViewModelTests.swift; sourceTree = "<group>"; };
@@ -113,6 +113,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3017F6772982BAC7007EC62F /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				3017F6782982BAC7007EC62F /* AlertSystemCoordinator.swift */,
+				3017F6792982BAC7007EC62F /* AlertNamespace.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
 		302449F32969CD7E009482B1 /* VerbInput */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,15 +195,6 @@
 			path = VerbOutputCell;
 			sourceTree = "<group>";
 		};
-		30C551CE297882B000F0DC6F /* KMPBoilerplate */ = {
-			isa = PBXGroup;
-			children = (
-				30C551CF297882C100F0DC6F /* Array+KotlinArray.swift */,
-				30C551D1297883A900F0DC6F /* Array+KotlinArrayTests.swift */,
-			);
-			path = KMPBoilerplate;
-			sourceTree = "<group>";
-		};
 		30E3A158296C1DC400E91149 /* iosAppTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,7 +226,7 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
-				30C551CE297882B000F0DC6F /* KMPBoilerplate */,
+				3017F6772982BAC7007EC62F /* Alert */,
 				30244A002969CEDC009482B1 /* ToolkitCandidate */,
 				302449F32969CD7E009482B1 /* VerbInput */,
 				30C551BB29787A1800F0DC6F /* VerbOutput */,
@@ -417,7 +417,6 @@
 			files = (
 				300FF596297EF149005DB0A9 /* VerbOutputViewControllerTests.swift in Sources */,
 				300FF591297EB33B005DB0A9 /* VerbOutputCellTests.swift in Sources */,
-				30C551D3297883B200F0DC6F /* Array+KotlinArrayTests.swift in Sources */,
 				30E3A161296C1DEE00E91149 /* VerbInputViewModelTests.swift in Sources */,
 				30C551D5297888B500F0DC6F /* VerbOutputViewModelTests.swift in Sources */,
 				305E2D4C296F307D0034D295 /* UITextFieldMock.swift in Sources */,
@@ -429,7 +428,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30C551D0297882C100F0DC6F /* Array+KotlinArray.swift in Sources */,
 				302449F92969CDC2009482B1 /* VerbInputCoordinator.swift in Sources */,
 				302449FF2969CE3A009482B1 /* AppContext.swift in Sources */,
 				30FDD6C42979C9220032C6D2 /* VerbOutputCoordinator+Composition.swift in Sources */,
@@ -437,9 +435,11 @@
 				302449F72969CDB8009482B1 /* VerbInputViewModel.swift in Sources */,
 				300FF593297EC0EA005DB0A9 /* VerbOutputItem.swift in Sources */,
 				30C551BE29787A3900F0DC6F /* VerbOutputNamespace.swift in Sources */,
+				3017F67A2982BAC7007EC62F /* AlertSystemCoordinator.swift in Sources */,
 				30C551C429787C9400F0DC6F /* VerbOutputCoordinator.swift in Sources */,
 				302449F52969CD94009482B1 /* VerbInputNamespace.swift in Sources */,
 				302449EA2969CB36009482B1 /* AppDelegate.swift in Sources */,
+				3017F67B2982BAC7007EC62F /* AlertNamespace.swift in Sources */,
 				30C551C729787CB300F0DC6F /* VerbOutputViewController.swift in Sources */,
 				30C551CB29787FC500F0DC6F /* VerbOutputCell.swift in Sources */,
 				302449EC2969CB36009482B1 /* SceneDelegate.swift in Sources */,
