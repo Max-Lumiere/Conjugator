@@ -78,11 +78,11 @@ final class AppContext {
                                                               reflexiveFormsService: reflexiveFutureFormsService,
                                                               butiFormsService: ButiFutureVerbFormsService())
 
-        imperativeConjugationsService = SimpleConjugationsService(
+        imperativeConjugationsService = ImperativeConjugationsServiceDecorator(inner: SimpleConjugationsService(
             tense: .imperative,
             commonFormsService: imperativeFormsService,
             reflexiveFormsService: reflexiveImperativeFormsService
-        )
+        ))
 
         conditionalConjugationsService = SimpleConjugationsService(
             tense: .conditional,

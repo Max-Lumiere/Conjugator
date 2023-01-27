@@ -14,29 +14,15 @@
  * If not, see <https://www.gnu.org/licenses/>.
  */
 
-package verbFormsServiceTests
+package conjugationsService
 
-import verbFormsService.ConditionalFormsService
-import kotlin.test.BeforeTest
-import kotlin.test.Test
-import kotlin.test.assertEquals
+import entities.Verb
+import entities.VerbConjugation
 
-class ConditionalFormsServiceTests: VerbFormsServiceTests() {
+open class ConjugationsServiceDecorator(private val inner: ConjugationsService): ConjugationsService {
 
-    @BeforeTest
-    fun setUp() {
-        sut = ConditionalFormsService()
-    }
-
-    @Test
-    fun test_conjugation() {
-        assertEquals(listOf(
-            "kalbėčiau",
-            "kalbėtum",
-            "kalbėtų",
-            "kalbėtume / kalbėtumėme",
-            "kalbėtute / kalbėtumėte",
-            "kalbėtų"
-        ), sut!!.getVerbFormsFor("kalbėti"))
+    @Throws(Exception::class)
+    override suspend fun getConjugationsFor(verb: Verb): List<VerbConjugation> {
+        return inner.getConjugationsFor(verb)
     }
 }

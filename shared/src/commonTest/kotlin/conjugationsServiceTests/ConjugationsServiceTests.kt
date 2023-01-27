@@ -17,9 +17,21 @@
 package conjugationsServiceTests
 
 import conjugationsService.ConjugationsService
+import entities.Verb
+import entities.VerbConjugation
 import verbFormsService.VerbFormsService
 
 open class ConjugationsServiceTests {
+
+    class ConjugationsServiceMock: ConjugationsService {
+        var result: List<VerbConjugation> = emptyList()
+        var getConjugationsCount = 0
+
+        override suspend fun getConjugationsFor(verb: Verb): List<VerbConjugation> {
+            getConjugationsCount += 1
+            return result
+        }
+    }
 
     class VerbFormsServiceMock: VerbFormsService {
         var getFormsCount = 0
