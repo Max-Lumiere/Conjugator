@@ -33,8 +33,8 @@ class ReflexiveConditionalFormsServiceTests: VerbFormsServiceTests() {
             "mokyčiau",
             "mokytum",
             "mokytų",
-            "mokytume",
-            "mokytume",
+            "mokytume / mokytumėme",
+            "mokytute / mokytumėtė",
             "mokytų"
         )
     }
@@ -51,6 +51,28 @@ class ReflexiveConditionalFormsServiceTests: VerbFormsServiceTests() {
         ), sut!!.getVerbFormsFor("mokytis"))
         assertEquals(1, verbFormsMock.getFormsCount)
     }
+
+    @Test
+    fun test_simple_conjugation() {
+        verbFormsMock.result = listOf(
+            "mokyčiau",
+            "mokytum",
+            "mokytų",
+            "mokytumėme",
+            "mokytumėtė",
+            "mokytų"
+        )
+        assertEquals(listOf(
+            "mokyčiausi",
+            "mokytumeisi",
+            "mokytųsi",
+            "mokytumėmės",
+            "mokytumėtės",
+            "mokytųsi"
+        ), sut!!.getVerbFormsFor("mokytis"))
+        assertEquals(1, verbFormsMock.getFormsCount)
+    }
+
 
     @Test
     fun test_passed_parameter() {

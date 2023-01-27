@@ -25,10 +25,18 @@ class ReflexiveConditionalFormsService(
         forms[0] += "si"
         forms[1] += "eisi"
         forms[2] += "si"
-        forms[3] = forms[3].dropLast(1) + "ėmės"
-        forms[4] = forms[4].dropLast(1) + "ėtės"
+        forms[3] = transformComplexForm(forms[3])
+        forms[4] = transformComplexForm(forms[4])
         forms[5] += "si"
 
         return forms
+    }
+
+    private fun transformComplexForm(form: String): String {
+        return form
+            .replace(" ","")
+            .split('/')
+            .map {  it.dropLast(1) + "ės" }
+            .last()
     }
 }
