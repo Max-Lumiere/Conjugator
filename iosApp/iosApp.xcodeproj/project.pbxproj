@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -137,13 +137,6 @@
 			path = VerbInput;
 			sourceTree = "<group>";
 		};
-		30244A002969CEDC009482B1 /* ToolkitCandidate */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ToolkitCandidate;
-			sourceTree = "<group>";
-		};
 		30244A3A2969F9D1009482B1 /* Composition */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,7 +220,6 @@
 			isa = PBXGroup;
 			children = (
 				3017F6772982BAC7007EC62F /* Alert */,
-				30244A002969CEDC009482B1 /* ToolkitCandidate */,
 				302449F32969CD7E009482B1 /* VerbInput */,
 				30C551BB29787A1800F0DC6F /* VerbOutput */,
 				302449E72969CB35009482B1 /* AppDelegate.swift */,
