@@ -19,8 +19,12 @@
 import shared
 
 final class AppContext: Context {
+    private let stringsProvider = StringsProvider()
+
+    let analytics: Analytics
 
     override init() {
+        analytics = FirebaseAnalytics(string: stringsProvider.getRedString())
         super.init()
     }
 

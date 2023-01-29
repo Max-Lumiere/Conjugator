@@ -14,21 +14,18 @@
 // If not, see <https://www.gnu.org/licenses/>.
 //
 //
-//  Created by Maksim Sviatlou on 7.01.23.
+// Created by Maksim Sviatlou on 29.01.23.
 
-import UIKit
-import LumiereToolkit
+import shared
 
-extension VerbInput.Coordinator {
+struct ConjugateEvent: Event {
+    let name = "conjugate"
+    let info: [String : Any]
 
-    convenience init(context: AppContext, parentController: UINavigationController) {
-        self.init(
-            viewModelCreator: Creator { .init() },
-            parentController: parentController,
-            verbOutputCoordinatorCreator: Creator { verb in
-                VerbOutput.Coordinator(context: context, navigationController: parentController, verb: verb)
-            },
-            analytics: context.analytics
-        )
+    init(verb: Verb) {
+        info = ["infinitive": verb.infinitive,
+                "present": verb.present,
+                "past": verb.past]
     }
+
 }

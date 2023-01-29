@@ -31,15 +31,18 @@ extension VerbInput {
         private var verbOutputCoordinator: BaseCoordinator<Void>?
         private let verbOutputCoordinatorCreator: Creator<Verb, BaseCoordinator<Void>>
         private let animated: Bool
+        private let analytics: Analytics
 
         init(viewModelCreator: Creator<Void, ViewModel>,
              parentController: UINavigationController,
              animated: Bool = false,
-             verbOutputCoordinatorCreator: Creator<Verb, BaseCoordinator<Void>>) {
+             verbOutputCoordinatorCreator: Creator<Verb, BaseCoordinator<Void>>,
+             analytics: Analytics) {
             self.viewModelCreator = viewModelCreator
             self.parentController = parentController
             self.animated = animated
             self.verbOutputCoordinatorCreator = verbOutputCoordinatorCreator
+            self.analytics = analytics
             super.init()
         }
 
@@ -64,6 +67,7 @@ extension VerbInput {
             viewModel.verbPublisher.sink { [weak self] verb in
                 guard let self = self else { return }
 
+                self.analytics.track(ConjugateEvent(verb: verb))
                 let coordinator = self.verbOutputCoordinatorCreator.create(with: verb)
 
                 self.coordinate(to: coordinator)

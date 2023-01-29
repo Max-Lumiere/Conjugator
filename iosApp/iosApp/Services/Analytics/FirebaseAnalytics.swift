@@ -14,21 +14,29 @@
 // If not, see <https://www.gnu.org/licenses/>.
 //
 //
-//  Created by Maksim Sviatlou on 7.01.23.
+// Created by Maksim Sviatlou on 29.01.23.
 
-import UIKit
-import LumiereToolkit
 
-extension VerbInput.Coordinator {
+import Foundation
+import Firebase
 
-    convenience init(context: AppContext, parentController: UINavigationController) {
-        self.init(
-            viewModelCreator: Creator { .init() },
-            parentController: parentController,
-            verbOutputCoordinatorCreator: Creator { verb in
-                VerbOutput.Coordinator(context: context, navigationController: parentController, verb: verb)
-            },
-            analytics: context.analytics
-        )
+final class FirebaseAnalytics: Analytics {
+
+    init(string: String) {
+        if let options = FirebaseOptions.defaultOptions() {
+
+            options.apiKey = string
+            FirebaseApp.configure(options: options)
+        } else {
+            FirebaseApp.configure()
+        }
+    }
+
+    func track(_ event: Event) {
+        Firebase.Analytics.logEvent(event.name, parameters: event.info)
+    }
+
+    func setUserProperty(value: String?, name: String) {
+        Firebase.Analytics.setUserProperty(value, forName: name)
     }
 }
