@@ -11,6 +11,7 @@ def available_pods
 
   #pod 'LocalPod', :path => '../LocalPod', :inhibit_warnings => false
   pod 'Firebase/AnalyticsWithoutAdIdSupport'
+  pod 'FirebaseCrashlytics'
   pod 'LumiereToolkit', :git => 'git@github.com:Max-Lumiere/LumiereToolkit.git'
 end
 
