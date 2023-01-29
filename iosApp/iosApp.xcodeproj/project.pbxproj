@@ -34,6 +34,8 @@
 		30C551CC29787FC500F0DC6F /* VerbOutputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30C551CA29787FC500F0DC6F /* VerbOutputCell.xib */; };
 		30C551D5297888B500F0DC6F /* VerbOutputViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C551D4297888B500F0DC6F /* VerbOutputViewModelTests.swift */; };
 		30CBCA5E29869A440080EB45 /* ConjugateEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CBCA5D29869A440080EB45 /* ConjugateEvent.swift */; };
+		30CBCA632986A22E0080EB45 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CBCA622986A22E0080EB45 /* AppConfiguration.swift */; };
+		30CBCA682986CF660080EB45 /* AnalyticsStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CBCA672986CF660080EB45 /* AnalyticsStub.swift */; };
 		30D024CF2985C1B20032DBB0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30D024CE2985C1B20032DBB0 /* GoogleService-Info.plist */; };
 		30D024D32985F0410032DBB0 /* Strings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30D024D22985F0410032DBB0 /* Strings.strings */; };
 		30D024D72985F15B0032DBB0 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D024D62985F15B0032DBB0 /* Analytics.swift */; };
@@ -88,6 +90,8 @@
 		30C551CA29787FC500F0DC6F /* VerbOutputCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerbOutputCell.xib; sourceTree = "<group>"; };
 		30C551D4297888B500F0DC6F /* VerbOutputViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbOutputViewModelTests.swift; sourceTree = "<group>"; };
 		30CBCA5D29869A440080EB45 /* ConjugateEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConjugateEvent.swift; sourceTree = "<group>"; };
+		30CBCA622986A22E0080EB45 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		30CBCA672986CF660080EB45 /* AnalyticsStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsStub.swift; sourceTree = "<group>"; };
 		30D024CE2985C1B20032DBB0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		30D024D22985F0410032DBB0 /* Strings.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Strings.strings; sourceTree = "<group>"; };
 		30D024D62985F15B0032DBB0 /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
@@ -139,7 +143,6 @@
 		302449F32969CD7E009482B1 /* VerbInput */ = {
 			isa = PBXGroup;
 			children = (
-				30244A3A2969F9D1009482B1 /* Composition */,
 				302449F42969CD94009482B1 /* VerbInputNamespace.swift */,
 				302449F82969CDC2009482B1 /* VerbInputCoordinator.swift */,
 				302449F62969CDB8009482B1 /* VerbInputViewModel.swift */,
@@ -149,14 +152,6 @@
 				302449FB2969CDE5009482B1 /* VerbInputViewController.xib */,
 			);
 			path = VerbInput;
-			sourceTree = "<group>";
-		};
-		30244A3A2969F9D1009482B1 /* Composition */ = {
-			isa = PBXGroup;
-			children = (
-				30244A3B2969F9DF009482B1 /* VerbInputCoordinator+Composition.swift */,
-			);
-			path = Composition;
 			sourceTree = "<group>";
 		};
 		305E2D4A296F30680034D295 /* Mocks */ = {
@@ -170,7 +165,6 @@
 		30C551BB29787A1800F0DC6F /* VerbOutput */ = {
 			isa = PBXGroup;
 			children = (
-				30C551BC29787A2700F0DC6F /* Composition */,
 				30C551BD29787A3900F0DC6F /* VerbOutputNamespace.swift */,
 				300FF592297EC0EA005DB0A9 /* VerbOutputItem.swift */,
 				30C551C329787C9400F0DC6F /* VerbOutputCoordinator.swift */,
@@ -182,14 +176,6 @@
 				30C551CD29787FCD00F0DC6F /* VerbOutputCell */,
 			);
 			path = VerbOutput;
-			sourceTree = "<group>";
-		};
-		30C551BC29787A2700F0DC6F /* Composition */ = {
-			isa = PBXGroup;
-			children = (
-				30FDD6C32979C9220032C6D2 /* VerbOutputCoordinator+Composition.swift */,
-			);
-			path = Composition;
 			sourceTree = "<group>";
 		};
 		30C551CD29787FCD00F0DC6F /* VerbOutputCell */ = {
@@ -210,6 +196,32 @@
 			path = Events;
 			sourceTree = "<group>";
 		};
+		30CBCA5F2986A0E30080EB45 /* Composition */ = {
+			isa = PBXGroup;
+			children = (
+				30FDD6C129798A320032C6D2 /* AppCoordinator+Composition.swift */,
+				30CBCA612986A1220080EB45 /* VervOutput */,
+				30CBCA602986A1020080EB45 /* VerbInput */,
+			);
+			path = Composition;
+			sourceTree = "<group>";
+		};
+		30CBCA602986A1020080EB45 /* VerbInput */ = {
+			isa = PBXGroup;
+			children = (
+				30244A3B2969F9DF009482B1 /* VerbInputCoordinator+Composition.swift */,
+			);
+			path = VerbInput;
+			sourceTree = "<group>";
+		};
+		30CBCA612986A1220080EB45 /* VervOutput */ = {
+			isa = PBXGroup;
+			children = (
+				30FDD6C32979C9220032C6D2 /* VerbOutputCoordinator+Composition.swift */,
+			);
+			path = VervOutput;
+			sourceTree = "<group>";
+		};
 		30D024D42985F12D0032DBB0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				30D024D62985F15B0032DBB0 /* Analytics.swift */,
+				30CBCA672986CF660080EB45 /* AnalyticsStub.swift */,
 				30D024DA2985F1FE0032DBB0 /* FirebaseAnalytics.swift */,
 				30D024D82985F19E0032DBB0 /* Event.swift */,
 			);
@@ -269,16 +282,17 @@
 			isa = PBXGroup;
 			children = (
 				30D024D42985F12D0032DBB0 /* Services */,
-				3017F6772982BAC7007EC62F /* Alert */,
-				302449F32969CD7E009482B1 /* VerbInput */,
-				30C551BB29787A1800F0DC6F /* VerbOutput */,
 				30CBCA5C29869A320080EB45 /* Events */,
+				30C551BB29787A1800F0DC6F /* VerbOutput */,
+				302449F32969CD7E009482B1 /* VerbInput */,
+				30CBCA5F2986A0E30080EB45 /* Composition */,
 				302449E72969CB35009482B1 /* AppDelegate.swift */,
+				30CBCA622986A22E0080EB45 /* AppConfiguration.swift */,
 				302449E92969CB36009482B1 /* SceneDelegate.swift */,
 				302449FE2969CE3A009482B1 /* AppContext.swift */,
 				30FDD6BF297960570032C6D2 /* AppCoordinator.swift */,
-				30FDD6C129798A320032C6D2 /* AppCoordinator+Composition.swift */,
 				302449F02969CC0F009482B1 /* LaunchScreen.storyboard */,
+				3017F6772982BAC7007EC62F /* Alert */,
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
 				7555FF8C242A565B00829871 /* Info.plist */,
 				30D024CE2985C1B20032DBB0 /* GoogleService-Info.plist */,
@@ -489,7 +503,9 @@
 				30C551C429787C9400F0DC6F /* VerbOutputCoordinator.swift in Sources */,
 				302449F52969CD94009482B1 /* VerbInputNamespace.swift in Sources */,
 				30D024D92985F19E0032DBB0 /* Event.swift in Sources */,
+				30CBCA632986A22E0080EB45 /* AppConfiguration.swift in Sources */,
 				302449EA2969CB36009482B1 /* AppDelegate.swift in Sources */,
+				30CBCA682986CF660080EB45 /* AnalyticsStub.swift in Sources */,
 				3017F67B2982BAC7007EC62F /* AlertNamespace.swift in Sources */,
 				30C551C729787CB300F0DC6F /* VerbOutputViewController.swift in Sources */,
 				30C551CB29787FC500F0DC6F /* VerbOutputCell.swift in Sources */,
@@ -701,6 +717,38 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-fmodule-map-file=\"${PODS_CONFIGURATION_BUILD_DIR}/LumiereToolkit/LumiereToolkit.modulemap\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseCore\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseCoreDiagnostics\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseInstallations\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/GoogleDataTransport\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/GoogleUtilities\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/PromisesObjC\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/nanopb\"",
+					"-iframework",
+					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
+					"-iframework",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/FirebaseAnalytics/WithoutAdIdSupport\"",
+					"-iframework",
+					"\"${PODS_ROOT}/GoogleAppMeasurement/Frameworks\"",
+					"-iframework",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/GoogleAppMeasurement/WithoutAdIdSupport\"",
+					"-iframework",
+					"\"${PODS_ROOT}/../../shared/build/cocoapods/framework\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.maksimsviatlou.conjugator;
 				PRODUCT_NAME = "$(TARGET_NAME)";

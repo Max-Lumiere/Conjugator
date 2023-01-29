@@ -20,11 +20,16 @@ import shared
 
 final class AppContext: Context {
     private let stringsProvider = StringsProvider()
+    private let config = AppConfiguration()
 
     let analytics: Analytics
 
     override init() {
-        analytics = FirebaseAnalytics(string: stringsProvider.getRedString())
+        if config.analyticsIsEnabled {
+            analytics = FirebaseAnalytics(string: stringsProvider.getRedString())
+        } else {
+            analytics = AnalyticsStub()
+        }
         super.init()
     }
 

@@ -17,8 +17,8 @@
 // Created by Maksim Sviatlou on 29.01.23.
     
 
-protocol Analytics: AnyObject {
+final class AnalyticsStub: Analytics {
 
-    func track(_ event: Event)
-    func setUserProperty(value: String?, name: String)
+    func track(_ event: Event) { }
+    func setUserProperty(value: String?, name: String) { }
 }

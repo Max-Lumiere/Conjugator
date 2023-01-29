@@ -15,10 +15,13 @@
 //
 //
 // Created by Maksim Sviatlou on 29.01.23.
-    
 
-protocol Analytics: AnyObject {
 
-    func track(_ event: Event)
-    func setUserProperty(value: String?, name: String)
+final class AppConfiguration {
+
+    #if DEBUG
+    let analyticsIsEnabled: Bool = false
+    #else
+    let analyticsIsEnabled: Bool = true
+    #endif
 }
