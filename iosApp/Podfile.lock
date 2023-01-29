@@ -106,7 +106,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   LumiereToolkit:
-    :commit: f6c9f5691111706a672844b633ca013b4b982a1c
+    :commit: 0c33e0e5686537c7141946bc552577df34aff6f7
     :git: "git@github.com:Max-Lumiere/LumiereToolkit.git"
 
 SPEC CHECKSUMS:

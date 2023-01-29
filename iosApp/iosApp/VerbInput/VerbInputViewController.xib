@@ -30,7 +30,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8o1-co-upY">
-                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <rect key="frame" x="0.0" y="59" width="393" height="793"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="okm-ds-Q4b">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="586"/>
@@ -189,7 +189,7 @@
             <constraints>
                 <constraint firstItem="8o1-co-upY" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Gk4-VU-DwV"/>
                 <constraint firstItem="8o1-co-upY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="L5p-T2-uSn"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="8o1-co-upY" secondAttribute="bottom" id="U5B-DG-zAS" customClass="KeyboardConstraint" customModule="LumiereToolkit"/>
+                <constraint firstAttribute="bottom" secondItem="8o1-co-upY" secondAttribute="bottom" id="fJX-ZJ-wtP" customClass="KeyboardConstraint" customModule="LumiereToolkit"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="8o1-co-upY" secondAttribute="top" id="mEX-Bn-LwN"/>
             </constraints>
             <point key="canvasLocation" x="380.91603053435114" y="24.647887323943664"/>
