@@ -17,41 +17,41 @@
 import conjugationsService.*
 import entities.Tense
 import localization.*
+import stringsProvider.StringsProvider
 import verbFormsService.*
 
 open class Context {
 
-    open val conjugationsService: ConjugationsService
-    open val tenseLocalizationService: TenseLocalizationService
-            = LithuanianTenseLocalizationService()
+    val conjugationsService: ConjugationsService
+    val tenseLocalizationService: TenseLocalizationService = LithuanianTenseLocalizationService()
 
-    open val aTypeService: VerbFormsService = ATypeFormsService()
-    open val reflexiveATypeService: VerbFormsService = ReflexiveATypeFormsService()
+    val aTypeService: VerbFormsService = ATypeFormsService()
+    val reflexiveATypeService: VerbFormsService = ReflexiveATypeFormsService()
 
-    open val iTypeService: VerbFormsService = ITypeFormsService()
-    open val reflexiveITypeService: VerbFormsService = ReflexiveITypeFormsService()
+    val iTypeService: VerbFormsService = ITypeFormsService()
+    val reflexiveITypeService: VerbFormsService = ReflexiveITypeFormsService()
 
-    open val oTypeService: VerbFormsService = OTypeFormsService()
-    open val reflexiveOTypeService: VerbFormsService = ReflexiveOTypeFormsService()
+    val oTypeService: VerbFormsService = OTypeFormsService()
+    val reflexiveOTypeService: VerbFormsService = ReflexiveOTypeFormsService()
 
-    open val eTypeService: VerbFormsService = ETypeFormsService()
-    open val reflexiveETypeService: VerbFormsService = ReflexiveETypeFormsService()
+    val eTypeService: VerbFormsService = ETypeFormsService()
+    val reflexiveETypeService: VerbFormsService = ReflexiveETypeFormsService()
 
-    open val futureFormsService: VerbFormsService = FutureFormsService()
-    open val reflexiveFutureFormsService: VerbFormsService
+    val futureFormsService: VerbFormsService = FutureFormsService()
+    val reflexiveFutureFormsService: VerbFormsService
 
-    open val imperativeFormsService: VerbFormsService = ImperativeFormsService()
-    open val reflexiveImperativeFormsService: VerbFormsService
+    val imperativeFormsService: VerbFormsService = ImperativeFormsService()
+    val reflexiveImperativeFormsService: VerbFormsService
 
-    open val conditionalFormsService: VerbFormsService = ConditionalFormsService()
-    open val reflexiveConditionalFormsService: VerbFormsService
+    val conditionalFormsService: VerbFormsService = ConditionalFormsService()
+    val reflexiveConditionalFormsService: VerbFormsService
 
-    open val presentConjugationsService: ConjugationsService
-    open val pastConjugationsService: ConjugationsService
-    open val pastContiniousConjugationsService: ConjugationsService
-    open val futureConjugationsService: ConjugationsService
-    open val imperativeConjugationsService: ConjugationsService
-    open val conditionalConjugationsService: ConjugationsService
+    val presentConjugationsService: ConjugationsService
+    val pastConjugationsService: ConjugationsService
+    val pastContiniousConjugationsService: ConjugationsService
+    val futureConjugationsService: ConjugationsService
+    val imperativeConjugationsService: ConjugationsService
+    val conditionalConjugationsService: ConjugationsService
 
     init {
         reflexiveFutureFormsService = ReflexiveFutureFormsService(
