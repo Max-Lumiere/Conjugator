@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557BA273AAA24004C7B11 /* Assets.xcassets */; };
+		208165AA3A6416E440D11D19 /* libPods-Conjugator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 200876186702843F8C28E8B0 /* libPods-Conjugator.a */; };
 		300FF591297EB33B005DB0A9 /* VerbOutputCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300FF590297EB33B005DB0A9 /* VerbOutputCellTests.swift */; };
 		300FF593297EC0EA005DB0A9 /* VerbOutputItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300FF592297EC0EA005DB0A9 /* VerbOutputItem.swift */; };
 		300FF596297EF149005DB0A9 /* VerbOutputViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300FF594297EF128005DB0A9 /* VerbOutputViewControllerTests.swift */; };
@@ -47,8 +48,7 @@
 		30FDD6C0297960570032C6D2 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FDD6BF297960570032C6D2 /* AppCoordinator.swift */; };
 		30FDD6C229798A320032C6D2 /* AppCoordinator+Composition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FDD6C129798A320032C6D2 /* AppCoordinator+Composition.swift */; };
 		30FDD6C42979C9220032C6D2 /* VerbOutputCoordinator+Composition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FDD6C32979C9220032C6D2 /* VerbOutputCoordinator+Composition.swift */; };
-		6452D2A009FEB7B6818CA030 /* libPods-iosApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC95A70ED41533A5BAF668F6 /* libPods-iosApp.a */; };
-		E57A3D58B6AD40244F6AC12D /* libPods-iosAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9FEE897FFFC0E5D6C3F37EE /* libPods-iosAppTests.a */; };
+		5574D06A8D1DCEADC345CE33 /* libPods-ConjugatorTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0F0E7CBC6DBDDE4C7F91DC /* libPods-ConjugatorTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +64,9 @@
 /* Begin PBXFileReference section */
 		058557BA273AAA24004C7B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E14EE8F74F4DECE79C87A79 /* Pods-iosAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosAppTests.debug.xcconfig"; path = "Target Support Files/Pods-iosAppTests/Pods-iosAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		181FF72EA1CF382F18A4D2E0 /* Pods-ConjugatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConjugatorTests.release.xcconfig"; path = "Target Support Files/Pods-ConjugatorTests/Pods-ConjugatorTests.release.xcconfig"; sourceTree = "<group>"; };
 		1A1131FCDEA38092947DBA95 /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
+		200876186702843F8C28E8B0 /* libPods-Conjugator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Conjugator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		300FF590297EB33B005DB0A9 /* VerbOutputCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbOutputCellTests.swift; sourceTree = "<group>"; };
 		300FF592297EC0EA005DB0A9 /* VerbOutputItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbOutputItem.swift; sourceTree = "<group>"; };
 		300FF594297EF128005DB0A9 /* VerbOutputViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbOutputViewControllerTests.swift; sourceTree = "<group>"; };
@@ -100,17 +102,19 @@
 		30D024DA2985F1FE0032DBB0 /* FirebaseAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAnalytics.swift; sourceTree = "<group>"; };
 		30D024DD2985F2D20032DBB0 /* StringsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsProvider.swift; sourceTree = "<group>"; };
 		30D7BAD62987F20900B0950F /* ErrorEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorEvent.swift; sourceTree = "<group>"; };
-		30E3A157296C1DC400E91149 /* iosAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iosAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		30E3A157296C1DC400E91149 /* ConjugatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConjugatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30E3A160296C1DEE00E91149 /* VerbInputViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbInputViewModelTests.swift; sourceTree = "<group>"; };
 		30FDD6BF297960570032C6D2 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		30FDD6C129798A320032C6D2 /* AppCoordinator+Composition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppCoordinator+Composition.swift"; sourceTree = "<group>"; };
 		30FDD6C32979C9220032C6D2 /* VerbOutputCoordinator+Composition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VerbOutputCoordinator+Composition.swift"; sourceTree = "<group>"; };
-		7555FF7B242A565900829871 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		40132C4F6524962A76B37561 /* Pods-Conjugator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conjugator.release.xcconfig"; path = "Target Support Files/Pods-Conjugator/Pods-Conjugator.release.xcconfig"; sourceTree = "<group>"; };
+		6638715715521A1464597B9C /* Pods-ConjugatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConjugatorTests.debug.xcconfig"; path = "Target Support Files/Pods-ConjugatorTests/Pods-ConjugatorTests.debug.xcconfig"; sourceTree = "<group>"; };
+		69DDFBF6815D880D90E0D0E2 /* Pods-Conjugator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conjugator.debug.xcconfig"; path = "Target Support Files/Pods-Conjugator/Pods-Conjugator.debug.xcconfig"; sourceTree = "<group>"; };
+		7555FF7B242A565900829871 /* Conjugator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conjugator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A055BC1D591A74F8D33BD93 /* Pods-iosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.debug.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.debug.xcconfig"; sourceTree = "<group>"; };
 		824D37F9855007AE96DFB4BE /* Pods-iosAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosAppTests.release.xcconfig"; path = "Target Support Files/Pods-iosAppTests/Pods-iosAppTests.release.xcconfig"; sourceTree = "<group>"; };
-		BC95A70ED41533A5BAF668F6 /* libPods-iosApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iosApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D9FEE897FFFC0E5D6C3F37EE /* libPods-iosAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iosAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA0F0E7CBC6DBDDE4C7F91DC /* libPods-ConjugatorTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ConjugatorTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E57A3D58B6AD40244F6AC12D /* libPods-iosAppTests.a in Frameworks */,
+				5574D06A8D1DCEADC345CE33 /* libPods-ConjugatorTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,7 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6452D2A009FEB7B6818CA030 /* libPods-iosApp.a in Frameworks */,
+				208165AA3A6416E440D11D19 /* libPods-Conjugator.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,8 +279,8 @@
 		7555FF7C242A565900829871 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7555FF7B242A565900829871 /* iosApp.app */,
-				30E3A157296C1DC400E91149 /* iosAppTests.xctest */,
+				7555FF7B242A565900829871 /* Conjugator.app */,
+				30E3A157296C1DC400E91149 /* ConjugatorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -311,6 +315,10 @@
 				1A1131FCDEA38092947DBA95 /* Pods-iosApp.release.xcconfig */,
 				0E14EE8F74F4DECE79C87A79 /* Pods-iosAppTests.debug.xcconfig */,
 				824D37F9855007AE96DFB4BE /* Pods-iosAppTests.release.xcconfig */,
+				69DDFBF6815D880D90E0D0E2 /* Pods-Conjugator.debug.xcconfig */,
+				40132C4F6524962A76B37561 /* Pods-Conjugator.release.xcconfig */,
+				6638715715521A1464597B9C /* Pods-ConjugatorTests.debug.xcconfig */,
+				181FF72EA1CF382F18A4D2E0 /* Pods-ConjugatorTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -318,8 +326,8 @@
 		E8479B2ED0697519D0C2F1E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BC95A70ED41533A5BAF668F6 /* libPods-iosApp.a */,
-				D9FEE897FFFC0E5D6C3F37EE /* libPods-iosAppTests.a */,
+				200876186702843F8C28E8B0 /* libPods-Conjugator.a */,
+				AA0F0E7CBC6DBDDE4C7F91DC /* libPods-ConjugatorTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -327,9 +335,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		30E3A156296C1DC400E91149 /* iosAppTests */ = {
+		30E3A156296C1DC400E91149 /* ConjugatorTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 30E3A15F296C1DC400E91149 /* Build configuration list for PBXNativeTarget "iosAppTests" */;
+			buildConfigurationList = 30E3A15F296C1DC400E91149 /* Build configuration list for PBXNativeTarget "ConjugatorTests" */;
 			buildPhases = (
 				31FAC27E153AF992587C6DA5 /* [CP] Check Pods Manifest.lock */,
 				30E3A153296C1DC400E91149 /* Sources */,
@@ -341,14 +349,14 @@
 			dependencies = (
 				30E3A15C296C1DC400E91149 /* PBXTargetDependency */,
 			);
-			name = iosAppTests;
+			name = ConjugatorTests;
 			productName = iosAppTests;
-			productReference = 30E3A157296C1DC400E91149 /* iosAppTests.xctest */;
+			productReference = 30E3A157296C1DC400E91149 /* ConjugatorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		7555FF7A242A565900829871 /* iosApp */ = {
+		7555FF7A242A565900829871 /* Conjugator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7555FFA5242A565B00829871 /* Build configuration list for PBXNativeTarget "iosApp" */;
+			buildConfigurationList = 7555FFA5242A565B00829871 /* Build configuration list for PBXNativeTarget "Conjugator" */;
 			buildPhases = (
 				5C557FDE9304A846F9310C8F /* [CP] Check Pods Manifest.lock */,
 				7555FF77242A565900829871 /* Sources */,
@@ -360,9 +368,9 @@
 			);
 			dependencies = (
 			);
-			name = iosApp;
+			name = Conjugator;
 			productName = iosApp;
-			productReference = 7555FF7B242A565900829871 /* iosApp.app */;
+			productReference = 7555FF7B242A565900829871 /* Conjugator.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -385,7 +393,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7555FF76242A565900829871 /* Build configuration list for PBXProject "iosApp" */;
+			buildConfigurationList = 7555FF76242A565900829871 /* Build configuration list for PBXProject "Conjugator" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -398,8 +406,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7555FF7A242A565900829871 /* iosApp */,
-				30E3A156296C1DC400E91149 /* iosAppTests */,
+				7555FF7A242A565900829871 /* Conjugator */,
+				30E3A156296C1DC400E91149 /* ConjugatorTests */,
 			);
 		};
 /* End PBXProject section */
@@ -466,7 +474,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-iosAppTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ConjugatorTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -489,7 +497,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-iosApp-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Conjugator-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -551,7 +559,7 @@
 /* Begin PBXTargetDependency section */
 		30E3A15C296C1DC400E91149 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7555FF7A242A565900829871 /* iosApp */;
+			target = 7555FF7A242A565900829871 /* Conjugator */;
 			targetProxy = 30E3A15B296C1DC400E91149 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -570,7 +578,7 @@
 /* Begin XCBuildConfiguration section */
 		30E3A15D296C1DC400E91149 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E14EE8F74F4DECE79C87A79 /* Pods-iosAppTests.debug.xcconfig */;
+			baseConfigurationReference = 6638715715521A1464597B9C /* Pods-ConjugatorTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -586,13 +594,13 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iosApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/iosApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Conjugator.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Conjugator";
 			};
 			name = Debug;
 		};
 		30E3A15E296C1DC400E91149 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 824D37F9855007AE96DFB4BE /* Pods-iosAppTests.release.xcconfig */;
+			baseConfigurationReference = 181FF72EA1CF382F18A4D2E0 /* Pods-ConjugatorTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -607,7 +615,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iosApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/iosApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Conjugator.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Conjugator";
 			};
 			name = Release;
 		};
@@ -729,12 +737,11 @@
 		};
 		7555FFA6242A565B00829871 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A055BC1D591A74F8D33BD93 /* Pods-iosApp.debug.xcconfig */;
+			baseConfigurationReference = 69DDFBF6815D880D90E0D0E2 /* Pods-Conjugator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = L5J3TMH8YF;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iosApp/Info.plist;
@@ -787,7 +794,7 @@
 		};
 		7555FFA7242A565B00829871 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1A1131FCDEA38092947DBA95 /* Pods-iosApp.release.xcconfig */;
+			baseConfigurationReference = 40132C4F6524962A76B37561 /* Pods-Conjugator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -812,7 +819,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		30E3A15F296C1DC400E91149 /* Build configuration list for PBXNativeTarget "iosAppTests" */ = {
+		30E3A15F296C1DC400E91149 /* Build configuration list for PBXNativeTarget "ConjugatorTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				30E3A15D296C1DC400E91149 /* Debug */,
@@ -821,7 +828,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7555FF76242A565900829871 /* Build configuration list for PBXProject "iosApp" */ = {
+		7555FF76242A565900829871 /* Build configuration list for PBXProject "Conjugator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7555FFA3242A565B00829871 /* Debug */,
@@ -830,7 +837,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7555FFA5242A565B00829871 /* Build configuration list for PBXNativeTarget "iosApp" */ = {
+		7555FFA5242A565B00829871 /* Build configuration list for PBXNativeTarget "Conjugator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7555FFA6242A565B00829871 /* Debug */,

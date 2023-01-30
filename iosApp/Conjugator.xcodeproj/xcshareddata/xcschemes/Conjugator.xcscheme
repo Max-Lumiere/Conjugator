@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7555FF7A242A565900829871"
-               BuildableName = "iosApp.app"
-               BlueprintName = "iosApp"
-               ReferencedContainer = "container:iosApp.xcodeproj">
+               BuildableName = "Conjugator.app"
+               BlueprintName = "Conjugator"
+               ReferencedContainer = "container:Conjugator.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7555FF7A242A565900829871"
-            BuildableName = "iosApp.app"
-            BlueprintName = "iosApp"
-            ReferencedContainer = "container:iosApp.xcodeproj">
+            BuildableName = "Conjugator.app"
+            BlueprintName = "Conjugator"
+            ReferencedContainer = "container:Conjugator.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
@@ -45,9 +45,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "30E3A156296C1DC400E91149"
-               BuildableName = "iosAppTests.xctest"
-               BlueprintName = "iosAppTests"
-               ReferencedContainer = "container:iosApp.xcodeproj">
+               BuildableName = "ConjugatorTests.xctest"
+               BlueprintName = "ConjugatorTests"
+               ReferencedContainer = "container:Conjugator.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -67,9 +67,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7555FF7A242A565900829871"
-            BuildableName = "iosApp.app"
-            BlueprintName = "iosApp"
-            ReferencedContainer = "container:iosApp.xcodeproj">
+            BuildableName = "Conjugator.app"
+            BlueprintName = "Conjugator"
+            ReferencedContainer = "container:Conjugator.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
@@ -98,9 +98,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7555FF7A242A565900829871"
-            BuildableName = "iosApp.app"
-            BlueprintName = "iosApp"
-            ReferencedContainer = "container:iosApp.xcodeproj">
+            BuildableName = "Conjugator.app"
+            BlueprintName = "Conjugator"
+            ReferencedContainer = "container:Conjugator.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

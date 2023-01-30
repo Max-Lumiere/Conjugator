@@ -15,13 +15,13 @@ def available_pods
   pod 'LumiereToolkit', :git => 'git@github.com:Max-Lumiere/LumiereToolkit.git'
 end
 
-target 'iosApp' do
+target 'Conjugator' do
   available_pods
 
   pod 'shared', :path => '../shared'
 end
 
-target 'iosAppTests' do
+target 'ConjugatorTests' do
   available_pods
 
   pod 'Quick'

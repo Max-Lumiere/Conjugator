@@ -16,7 +16,7 @@
 //
 //  Created by Maksim Sviatlou on 18.01.23.
     
-@testable import iosApp
+@testable import Conjugator
 import shared
 import Quick
 import Nimble
