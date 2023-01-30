@@ -28,14 +28,17 @@ extension Alert {
         private let title: String?
         private let message: String?
         private let actions: [UIAlertAction]?
+        private let analytics: Analytics
 
         init(presentingController: UIViewController,
              error: Error,
+             analytics: Analytics,
              title: String? = nil,
              message: String? = nil,
              actions: [UIAlertAction]? = nil) {
             self.presentingController = presentingController
             self.error = error
+            self.analytics = analytics
             self.title = title
             self.message = message
             self.actions = actions
@@ -50,6 +53,8 @@ extension Alert {
             let closeAction = UIAlertAction(title: UIKitLocalized.ok, style: .destructive) { _ in
                 closeSubject.send(())
             }
+
+            analytics.track(ErrorEvent(error: error, source: presentingController))
 
             actions?.forEach { action in controller.addAction(action) }
             controller.addAction(closeAction)

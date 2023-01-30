@@ -42,6 +42,7 @@
 		30D024D92985F19E0032DBB0 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D024D82985F19E0032DBB0 /* Event.swift */; };
 		30D024DB2985F1FE0032DBB0 /* FirebaseAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D024DA2985F1FE0032DBB0 /* FirebaseAnalytics.swift */; };
 		30D024DE2985F2D20032DBB0 /* StringsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D024DD2985F2D20032DBB0 /* StringsProvider.swift */; };
+		30D7BAD72987F20900B0950F /* ErrorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D7BAD62987F20900B0950F /* ErrorEvent.swift */; };
 		30E3A161296C1DEE00E91149 /* VerbInputViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E3A160296C1DEE00E91149 /* VerbInputViewModelTests.swift */; };
 		30FDD6C0297960570032C6D2 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FDD6BF297960570032C6D2 /* AppCoordinator.swift */; };
 		30FDD6C229798A320032C6D2 /* AppCoordinator+Composition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FDD6C129798A320032C6D2 /* AppCoordinator+Composition.swift */; };
@@ -98,6 +99,7 @@
 		30D024D82985F19E0032DBB0 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		30D024DA2985F1FE0032DBB0 /* FirebaseAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAnalytics.swift; sourceTree = "<group>"; };
 		30D024DD2985F2D20032DBB0 /* StringsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsProvider.swift; sourceTree = "<group>"; };
+		30D7BAD62987F20900B0950F /* ErrorEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorEvent.swift; sourceTree = "<group>"; };
 		30E3A157296C1DC400E91149 /* iosAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iosAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30E3A160296C1DEE00E91149 /* VerbInputViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbInputViewModelTests.swift; sourceTree = "<group>"; };
 		30FDD6BF297960570032C6D2 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				30CBCA5D29869A440080EB45 /* ConjugateEvent.swift */,
+				30D7BAD62987F20900B0950F /* ErrorEvent.swift */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -538,6 +541,7 @@
 				30FDD6C229798A320032C6D2 /* AppCoordinator+Composition.swift in Sources */,
 				30D024DE2985F2D20032DBB0 /* StringsProvider.swift in Sources */,
 				30D024DB2985F1FE0032DBB0 /* FirebaseAnalytics.swift in Sources */,
+				30D7BAD72987F20900B0950F /* ErrorEvent.swift in Sources */,
 				30244A3C2969F9DF009482B1 /* VerbInputCoordinator+Composition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -730,6 +734,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = L5J3TMH8YF;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iosApp/Info.plist;

@@ -33,8 +33,10 @@ extension VerbOutput.Coordinator {
             alertCoordinatorCreator: Creator { args in
                 Alert.SystemCoordinator(presentingController: args.1,
                                         error: args.0,
+                                        analytics: context.analytics,
                                         message: "You might have mistyped some verb form")
-            })
+            }
+        )
     }
 
 }
