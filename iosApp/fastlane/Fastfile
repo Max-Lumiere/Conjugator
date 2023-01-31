@@ -1,0 +1,65 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+
+  before_all do |lane|
+    setup_ci if is_ci
+    cocoapods
+  end
+
+
+  # api_key = app_store_connect_api_key(
+  #     key_id: "J3ZW77V85Q",
+  #     issuer_id: "ca1599e2-681a-474f-b732-ba78b75e1cfb",
+  #     key_filepath: "./fastlane/AuthKey_J3ZW77V85Q.p8",
+  #     # duration: 1200, # optional (maximum 1200)
+  #     # in_house: false # optional but may be required if using match/sigh
+  # )
+
+  desc "Push a new beta build to TestFlight"
+  lane :beta do
+    previous_build_number = latest_testflight_build_number
+    current_build_number = previous_build_number + 1
+    increment_build_number(
+      build_number: current_build_number,
+      skip_info_plist: true
+    )
+    build_app(scheme: "Conjugator")
+    api_key = get_api_key
+    upload_to_testflight(api_key: api_key)
+  end
+
+  desc "Initialize Appstore api key"
+  lane :get_api_key do
+    if is_ci
+      puts "a"
+      app_store_connect_api_key(
+          key_id: "J3ZW77V85Q",
+          issuer_id: "ca1599e2-681a-474f-b732-ba78b75e1cfb",
+          key_filepath: "./fastlane/AuthKey_J3ZW77V85Q.p8"
+      )
+    else
+      puts "b"
+      app_store_connect_api_key(
+          key_id: "J3ZW77V85Q",
+          issuer_id: "ca1599e2-681a-474f-b732-ba78b75e1cfb",
+          key_filepath: "./fastlane/AuthKey_J3ZW77V85Q.p8"
+      )
+    end
+  end
+end
