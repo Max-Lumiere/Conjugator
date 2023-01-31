@@ -1,16 +1,18 @@
 # This workflow will build a Swift project
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-swift
 
-name: Swift
+name: Deploy to TestFlight
 
 on:
   push:
     branches: [ "release" ]
 
-jobs:
-  build:
+  workflow_dispatch:
 
-    runs-on: macos-latest
+jobs:
+  deploy:
+    name: Deploying to TestFlight
+    runs-on: macos-12
 
     steps:
     - uses: actions/checkout@v3
@@ -20,7 +22,32 @@ jobs:
       with:
         version: '14.2'
 
+    - name: Setup SSH Agent
+      uses: webfactory/ssh-agent@v0.7.0
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    - name: Setup JDK
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'temurin'
+        java-version: '11'
+        cache: 'gradle'
+
+    - name: Setup Gradle
+      uses: gradle/gradle-build-action@v2
+
+    - name: Install dependencies
+      run: |
+        cd ./iosApp
+        bundle install
+
     - name: Upload to TestFlight
+      env:
+        APP_STORE_CONNECT_API_KEY_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_KEY_ID }}
+        APP_STORE_CONNECT_API_KEY_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ISSUER_ID }}
+        APP_STORE_CONNECT_API_KEY_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY_KEY }}
+        MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
       run: |
         cd ./iosApp
         bundle exec fastlane beta

@@ -83,7 +83,7 @@ DEPENDENCIES:
   - shared (from `../shared`)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
@@ -126,6 +126,6 @@ SPEC CHECKSUMS:
   Quick: 6473349e43b9271a8d43839d9ba1c442ed1b7ac4
   shared: 595ca9fb88595314adbe6e3a495b5df24f86577b
 
-PODFILE CHECKSUM: 5d7db11505e1934a5859ac8f3fe5fef92fdb5d45
+PODFILE CHECKSUM: 63b303ca448d437fa01a93c171361d68d02f1f42
 
 COCOAPODS: 1.11.3

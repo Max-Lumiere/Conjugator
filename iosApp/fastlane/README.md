@@ -15,6 +15,14 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 ## iOS
 
+### ios build
+
+```sh
+[bundle exec] fastlane ios build
+```
+
+Create ipa
+
 ### ios beta
 
 ```sh
@@ -23,13 +31,29 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 Push a new beta build to TestFlight
 
-### ios get_api_key
+### ios assemble_shared
 
 ```sh
-[bundle exec] fastlane ios get_api_key
+[bundle exec] fastlane ios assemble_shared
 ```
 
-Initialize Appstore api key
+Assemble shared
+
+### ios sync_certificates
+
+```sh
+[bundle exec] fastlane ios sync_certificates
+```
+
+Sync certificates
+
+### ios make_strings
+
+```sh
+[bundle exec] fastlane ios make_strings
+```
+
+Makes Strings file
 
 ----
 

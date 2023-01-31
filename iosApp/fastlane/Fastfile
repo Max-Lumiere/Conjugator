@@ -18,48 +18,82 @@ default_platform(:ios)
 platform :ios do
 
   before_all do |lane|
-    setup_ci if is_ci
-    cocoapods
+    if is_ci
+      setup_ci
+    end
   end
 
+  desc "Create ipa"
+  lane :build do
 
-  # api_key = app_store_connect_api_key(
-  #     key_id: "J3ZW77V85Q",
-  #     issuer_id: "ca1599e2-681a-474f-b732-ba78b75e1cfb",
-  #     key_filepath: "./fastlane/AuthKey_J3ZW77V85Q.p8",
-  #     # duration: 1200, # optional (maximum 1200)
-  #     # in_house: false # optional but may be required if using match/sigh
-  # )
+    if !is_ci
+      ensure_git_status_clean(show_uncommitted_changes: true, show_diff: true)
+    end
+
+    assemble_shared
+    cocoapods(try_repo_update_on_error: true)
+
+    app_store_connect_api_key(is_key_content_base64: true)
+
+    previous_build_number = latest_testflight_build_number
+    current_build_number = previous_build_number + 1
+
+    increment_build_number(build_number: current_build_number)
+
+    sync_certificates
+
+    if is_ci
+      make_strings
+    end
+
+    gym
+
+    if !is_ci
+      reset_git_repo
+    end
+  end
 
   desc "Push a new beta build to TestFlight"
   lane :beta do
-    previous_build_number = latest_testflight_build_number
-    current_build_number = previous_build_number + 1
-    increment_build_number(
-      build_number: current_build_number,
-      skip_info_plist: true
-    )
-    build_app(scheme: "Conjugator")
-    api_key = get_api_key
-    upload_to_testflight(api_key: api_key)
+    # build_shared
+    # cocoapods(try_repo_update_on_error: true)
+    # api_key = app_store_connect_api_key(is_key_content_base64: true)
+    # previous_build_number = latest_testflight_build_number(api_key: api_key)
+    # current_build_number = previous_build_number + 1
+    # increment_build_number(
+    #   build_number: current_build_number,
+    #   skip_info_plist: true
+    # )
+    # build_app(scheme: "Conjugator")
+    build
+    pilot
   end
 
-  desc "Initialize Appstore api key"
-  lane :get_api_key do
-    if is_ci
-      puts "a"
-      app_store_connect_api_key(
-          key_id: "J3ZW77V85Q",
-          issuer_id: "ca1599e2-681a-474f-b732-ba78b75e1cfb",
-          key_filepath: "./fastlane/AuthKey_J3ZW77V85Q.p8"
-      )
-    else
-      puts "b"
-      app_store_connect_api_key(
-          key_id: "J3ZW77V85Q",
-          issuer_id: "ca1599e2-681a-474f-b732-ba78b75e1cfb",
-          key_filepath: "./fastlane/AuthKey_J3ZW77V85Q.p8"
-      )
-    end
+  desc "Assemble shared"
+  lane :assemble_shared do
+    gradle(
+      project_dir: "../",
+      task: "clean"
+    )
+
+    gradle(
+      project_dir: "../",
+      task: "shared:generateDummyFramework"
+    )
   end
+
+  desc "Sync certificates"
+  lane :sync_certificates do
+    #read-only disables match from overriding the existing certificates.
+    match({readonly: true, type: "appstore"})
+  end
+
+  desc "Makes Strings file"
+  lane :make_strings do
+    str1=ENV['RED_STRING_1']
+    str2=ENV['RED_STRING_2']
+
+    sh "../scripts/make_strings.sh \"#{str1}\" \"#{str2}\""
+  end
+
 end

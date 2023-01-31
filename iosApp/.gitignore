@@ -118,3 +118,5 @@ iOSInjectionProject/
 
 iosApp/Strings.strings
 fastlane/*.p8
+fastlane/.env
+fastlane/builds/*

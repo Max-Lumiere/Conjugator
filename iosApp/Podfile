@@ -1,5 +1,3 @@
-source 'https://github.com/CocoaPods/Specs.git'
-source 'git@github.com:Max-Lumiere/Specs.git'
 
 ios_version = '15.0'
 platform :ios, ios_version
