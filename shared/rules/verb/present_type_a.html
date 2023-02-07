@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta charset="utf-8" />
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rules</title>
+        <style>
+            body,
+            html {
+                overflow: hidden;
+                height: 100%;
+                width: 100%;
+                font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+                color: #0d0d0d;
+            }
+            .main-container {
+                display: flex;
+                justify-content: center;
+            }
+            .werbs-form {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            .werbs-form > span {
+                margin-right: 25px;
+            }
+            
+            .forms {
+                display: flex;
+                margin-top: 10px;
+            }
+            .forms > div {
+                width: 200px;
+            }
+            .forms > div:first-child {
+                margin-left: 5vw;
+            }
+            .forms > div > div > span:first-child {
+                color: #8f8e93;
+                width: 65px;
+                display: inline-block;
+            }
+            
+            .container {
+                margin-bottom: 40px;
+            }
+            .highlight-text {
+                color: #307bf7;
+            }
+
+            [class*="digit"] {
+                margin-right: 15px;
+            }
+
+            .digit-1::before {
+                content: "1";
+            }
+            .digit-2::before {
+                content: "2";
+            }
+            .digit-3::before {
+                content: "3";
+            }
+
+            [class*="digit"]::before {               
+                background: #307bf7;
+                border-radius: 50%;
+                width: 30px;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #fff;
+            }
+            
+            .step {
+                display: flex;
+                font-style: italic;
+                color: #8a8a8c;
+            }
+            .text-crossed {
+                text-decoration: line-through;
+            }
+            .text-bold {
+                font-weight: bold;
+            }
+            .pronoun {
+                width: 55px;
+                display: inline-block;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main-container">
+            <div style="width: 100%">
+                <div class="werbs-form">
+                    <span>gyventi</span>
+                    <span class="highlight-text">gyvena</span>
+                    <span>gyveno</span>
+                </div>
+                <div class="container">
+                    <div class="step">
+                        <div class="digit-1"></div>
+                        <div>
+                            <div><span class="pronoun">jis, ji</span><span class="highlight-text">gyvena</span></div>
+                            <div><span class="pronoun">jie, jos</span><span class="highlight-text">gyvena</span></div>
+                        </div>
+                    </div>
+                    <div class="forms">
+                       
+                        <div>
+                            <div>
+                                <span>aš</span>
+                            </div>
+                            <div>
+                                <span>tu</span>
+                            </div>
+                            <div>
+                                <span>jis, ji</span>  
+                                <span class="highlight-text">gyvena</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <span>mės</span>
+                            </div>
+                            <div>
+                                <span>jūs</span>
+                            </div>
+                            <div>
+                                <span>jie, jos</span>
+                                <span class="highlight-text">gyvena</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="step">
+                        <div class="digit-2"></div>
+                        <div>
+                            <div><span class="pronoun">mės</span><span class="highlight-text">gyvena</span>+<span class="highlight-text text-bold">me</span></div>
+                            <div><span class="pronoun">jūs</span><span class="highlight-text">gyvena</span>+<span class="highlight-text text-bold">te</span></div>
+                        </div>
+                    </div>
+                    <div class="forms">
+                        <div>
+                            <div>
+                                <span>aš</span>
+                            </div>
+                            <div>
+                                <span>tu</span>
+                            </div>
+                            <div>
+                                <span>jis, ji</span>  
+                                <span>gyvena</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <span>mės</span>
+                                <span class="highlight-text">gyvena<span class="text-bold">me</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span>jūs</span>
+                                <span class="highlight-text">gyvena<span class="text-bold">te</span></span>
+                            </div>
+                            <div>
+                                <span>jie, jos</span>
+                                <span>gyvena</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="step">
+                        <div class="digit-3"></div>
+                        <div>
+                            <div><span class="pronoun">aš</span><span class="highlight-text">gyven<span class="text-crossed">a</span></span>+<span class="highlight-text text-bold">u</span></div>
+                            <div><span class="pronoun">tu</span><span class="highlight-text">gyven<span class="text-crossed">a</span></span>+<span class="highlight-text text-bold">i</span></div>
+                        </div>
+                    </div>
+                    <div class="forms">
+                        <div>
+                            <div>
+                                <span>aš</span>
+                                <span class="highlight-text">gyven<span class="text-bold">u</span></span>
+                            </div>
+                            <div>
+                                <span>tu</span>
+                                <span class="highlight-text">gyven<span class="text-bold">i</span></span>
+                            </div>
+                            <div>
+                                <span>jis, ji</span>  
+                                <span>gyvena</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <span>mės</span>
+                                <span>gyvename</span>
+                            </div>
+                            <div>
+                                <span>jūs</span>
+                                <span>gyvenate</span>
+                            </div>
+                            <div>
+                                <span>jie, jos</span>
+                                <span>gyvena</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
