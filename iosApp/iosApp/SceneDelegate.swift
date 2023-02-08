@@ -22,10 +22,10 @@ import shared
 
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
-    private var context: AppContext?
+    private lazy var context = AppContext()
+    private lazy var tabController = UITabBarController()
+    private lazy var navigationController = UINavigationController()
     private var cancellables = Set<AnyCancellable>()
-    private let tabController = UITabBarController()
-    private let navigationController = UINavigationController()
     private var coordinator: AnyObject?
 
     func scene(_ scene: UIScene,
@@ -33,7 +33,6 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-        let context = AppContext()
         let coordinator = VerbInput.Coordinator(context: context, parentController: navigationController)
 
         tabController.setViewControllers([navigationController], animated: false)
@@ -41,7 +40,6 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         self.coordinator = coordinator
         self.window = window
-        self.context = context
         window.makeKeyAndVisible()
 
         coordinator

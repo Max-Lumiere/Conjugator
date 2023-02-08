@@ -23,6 +23,7 @@ import Firebase
 final class FirebaseAnalytics: Analytics {
 
     init(string: String) {
+        guard FirebaseApp.app() == nil else { return }
         if let options = FirebaseOptions.defaultOptions() {
 
             options.apiKey = string
