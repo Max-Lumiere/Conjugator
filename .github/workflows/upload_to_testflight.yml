@@ -47,6 +47,8 @@ jobs:
         APP_STORE_CONNECT_API_KEY_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ISSUER_ID }}
         APP_STORE_CONNECT_API_KEY_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY_KEY }}
         MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+        RED_STRING_1: ${{ secrets.RED_STRING_1 }}
+        RED_STRING_2: ${{ secrets.RED_STRING_2 }}
       run: |
         cd ./iosApp
         bundle exec fastlane beta
