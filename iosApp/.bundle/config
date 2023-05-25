@@ -1,0 +1,3 @@
+---
+BUNDLE_WITH: "production"
+BUNDLE_PATH: "vendor/bundle"
