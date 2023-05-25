@@ -39,7 +39,7 @@ jobs:
     - name: Install dependencies
       run: |
         cd ./iosApp
-        bundle install
+        bundle install --path vendor/bundle
 
     - name: Upload to TestFlight
       env:
