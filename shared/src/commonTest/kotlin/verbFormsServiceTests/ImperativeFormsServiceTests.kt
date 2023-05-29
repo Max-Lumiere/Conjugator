@@ -29,6 +29,18 @@ class ImperativeFormsServiceTests: VerbFormsServiceTests() {
     }
 
     @Test
+    fun test_juoktis() { // unreal verb for reflexive cases only
+        assertEquals(sut!!.getVerbFormsFor("juokti"), listOf(
+            "–",
+            "juok",
+            "–",
+            "juokime",
+            "juokite",
+            "–"
+        ))
+    }
+
+    @Test
     fun test_common_conjugation() {
         assertEquals(sut!!.getVerbFormsFor("tylėti"), listOf(
             "–",
