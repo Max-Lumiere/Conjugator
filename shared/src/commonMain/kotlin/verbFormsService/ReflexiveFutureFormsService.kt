@@ -21,7 +21,7 @@ class ReflexiveFutureFormsService(
     ): VerbFormsService {
 
     override fun getVerbFormsFor(form: String): List<String> {
-        val forms = commonFormsService.getVerbFormsFor(form).toMutableList()
+        val forms = commonFormsService.getVerbFormsFor(form.dropLast(1)).toMutableList()
 
         forms[0] += "osi"
         forms[1] += "esi"

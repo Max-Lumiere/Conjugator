@@ -28,6 +28,16 @@ class FutureFormsServiceTests: VerbFormsServiceTests() {
         sut = FutureFormsService()
     }
 
+    fun test_juoktis() { // unreal verb, test for reflexive corner case
+        assertEquals(sut!!.getVerbFormsFor("juokti"), listOf(
+            "juoksiu",
+            "juoksi",
+            "juoks",
+            "juoksime",
+            "juoksite",
+            "juoks"
+        ))
+    }
     @Test
     fun test_common_conjugation() {
         assertEquals(sut!!.getVerbFormsFor("tylėti"), listOf(

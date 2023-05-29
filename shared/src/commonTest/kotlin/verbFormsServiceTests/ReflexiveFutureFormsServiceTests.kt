@@ -34,6 +34,37 @@ class ReflexiveFutureFormsServiceTests: VerbFormsServiceTests() {
     }
 
     @Test
+    fun test_dependecyInput() {
+        commonService.result = listOf("", "", "", "", "", "")
+        sut!!.getVerbFormsFor("juoktis")
+
+        println(commonService.lastFormPassed)
+        assertEquals(commonService.lastFormPassed, "juokti")
+    }
+
+    @Test
+    fun test_juoktis() {
+        commonService.result = listOf(
+            "juoksiu",
+            "juoksi",
+            "juoks",
+            "juoksime",
+            "juoksite",
+            "juoks"
+        )
+
+        assertContentEquals(sut!!.getVerbFormsFor(""), listOf(
+            "juoksiuosi",
+            "juoksiesi",
+            "juoksis",
+            "juoksimės",
+            "juoksitės",
+            "juoksis"
+        ))
+        assertEquals(1, commonService.getFormsCount)
+    }
+
+    @Test
     fun test_conjugation() {
         commonService.result = listOf(
             "prausiu",
