@@ -47,4 +47,14 @@ class ReflexiveETypeFormsServiceTests: VerbFormsServiceTests() {
             listOf("šviečiausi", "švieteisi", "švietėsi", "švietėmės", "švietėtės", "švietėsi")
         )
     }
+
+    @Test
+    fun test_desi() {
+        val form = "maudėsi"
+
+        assertEquals(
+            sut!!.getVerbFormsFor(form),
+            listOf("maudžiausi", "maudeisi", "maudėsi", "maudėmės", "maudėtės", "maudėsi")
+        )
+    }
 }

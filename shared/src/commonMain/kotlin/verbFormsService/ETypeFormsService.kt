@@ -21,7 +21,9 @@ class ETypeFormsService: VerbFormsService {
     override fun getVerbFormsFor(form: String): List<String> {
         val forms = MutableList(6) { "" }
 
-        if (form.dropLast(1).last() == 't') {
+        if (form.dropLast(1).last() == 'd') {
+            forms[0] = form.dropLast(1) + "žiau"
+        } else if (form.dropLast(1).last() == 't') {
             forms[0] = form.dropLast(2) + "čiau"
         } else {
             forms[0] = form.dropLast(1) + "iau"

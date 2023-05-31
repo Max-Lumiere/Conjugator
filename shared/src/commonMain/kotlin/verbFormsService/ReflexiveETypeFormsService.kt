@@ -21,7 +21,10 @@ class ReflexiveETypeFormsService: VerbFormsService {
     override fun getVerbFormsFor(form: String): List<String> {
         val forms = MutableList(6) { "" }
 
-        if (form.dropLast(3).last() == 't') {
+        print(form.dropLast(3).last())
+        if (form.dropLast(3).last() == 'd') {
+            forms[0] = form.dropLast(3) + "žiausi"
+        } else if (form.dropLast(3).last() == 't') {
             forms[0] = form.dropLast(4) + "čiausi"
         } else {
             forms[0] = form.dropLast(3) + "iausi"

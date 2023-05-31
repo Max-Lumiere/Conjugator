@@ -34,7 +34,7 @@ class ETypeFormsServiceTests: VerbFormsServiceTests() {
 
         assertEquals(
             sut!!.getVerbFormsFor(form),
-            listOf("griaudiau", "griaudei", "griaudė", "griaudėme", "griaudėte", "griaudė")
+            listOf("griaudžiau", "griaudei", "griaudė", "griaudėme", "griaudėte", "griaudė")
         )
     }
 
