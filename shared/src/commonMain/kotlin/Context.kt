@@ -23,7 +23,7 @@ import verbFormsService.*
 open class Context {
 
     val conjugationsService: ConjugationsService
-    val tenseLocalizationService: TenseLocalizationService = LithuanianTenseLocalizationService()
+    val tenseLocalizationService: TenseLocalizationService = EnglishTenseLocalizationService()
 
     val aTypeService: VerbFormsService = ATypeFormsService()
     val reflexiveATypeService: VerbFormsService = ReflexiveATypeFormsService()

@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VerbInputViewController" customModule="iosApp" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VerbInputViewController" customModule="Conjugator" customModuleProvider="target">
             <connections>
                 <outlet property="conjureButton" destination="7Wn-QP-XOs" id="keW-xs-FrP"/>
                 <outlet property="infinitiveLabel" destination="Yug-D0-k8A" id="Rdy-mb-Dwb"/>
@@ -51,7 +51,7 @@
                                         <constraint firstAttribute="height" constant="200" id="HPy-TU-l4T"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bendratis" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yug-D0-k8A">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Infinitive" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yug-D0-k8A">
                                     <rect key="frame" x="0.0" y="250" width="393" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="dBA-Vx-1wM"/>
@@ -80,7 +80,7 @@
                                         <constraint firstAttribute="bottom" secondItem="nhE-LO-N8Y" secondAttribute="bottom" constant="30" id="w3A-GJ-naW"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Esamasis laikas (dabar)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrJ-0c-f4K">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2nd main form" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrJ-0c-f4K">
                                     <rect key="frame" x="0.0" y="342" width="393" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="zRu-yP-m2Y"/>
@@ -109,7 +109,7 @@
                                         <constraint firstItem="Uip-pI-ThR" firstAttribute="top" secondItem="ZAx-Kd-0ae" secondAttribute="top" constant="8" id="j8n-Qx-I9k"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Būtasis kartinis laikas (vakar)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9PU-Uc-O7V">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3rd main form " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9PU-Uc-O7V">
                                     <rect key="frame" x="0.0" y="434" width="393" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="qs0-6h-FHU"/>
