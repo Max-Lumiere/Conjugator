@@ -11,12 +11,12 @@ def available_pods
   pod 'Firebase/AnalyticsWithoutAdIdSupport'
   pod 'FirebaseCrashlytics'
   pod 'LumiereToolkit', :git => 'git@github.com:Max-Lumiere/LumiereToolkit.git'
+  pod 'shared', :path => '../shared'
 end
 
 target 'Conjugator' do
   available_pods
 
-  pod 'shared', :path => '../shared'
 end
 
 target 'ConjugatorTests' do

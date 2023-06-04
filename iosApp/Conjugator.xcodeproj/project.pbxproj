@@ -343,6 +343,7 @@
 				30E3A153296C1DC400E91149 /* Sources */,
 				30E3A154296C1DC400E91149 /* Frameworks */,
 				30E3A155296C1DC400E91149 /* Resources */,
+				01A8DC9AB47E276F2615F046 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -438,6 +439,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		01A8DC9AB47E276F2615F046 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ConjugatorTests/Pods-ConjugatorTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		30CBCA692986D95C0080EB45 /* Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
