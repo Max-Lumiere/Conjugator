@@ -52,11 +52,19 @@ class FutureConjugationsServiceTests: ConjugationsServiceTests() {
 
     @Test
     fun test_buti_conjugation() = runTest {
-        val verb = Verb("būti", "", "")
+        var verb = Verb("būti", "", "")
 
         sut!!.getConjugationsFor(verb)
 
         assertTrue(buti.getFormsCount == 1)
+        assertTrue(reflexiveType.getFormsCount == 0)
+        assertTrue(commonType.getFormsCount == 0)
+
+        verb = Verb("buti", "", "")
+
+        sut!!.getConjugationsFor(verb)
+
+        assertTrue(buti.getFormsCount == 2)
         assertTrue(reflexiveType.getFormsCount == 0)
         assertTrue(commonType.getFormsCount == 0)
     }

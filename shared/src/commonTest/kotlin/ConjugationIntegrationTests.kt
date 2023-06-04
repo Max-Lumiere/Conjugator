@@ -53,11 +53,11 @@ class ConjugationIntegrationTests {
 
     @Test
     fun testGenerate() = runTest {
-        // bai̇g̃ti,bai̇g̃ia,bai̇g̃ė
+        // bučiúotis, bučiúojasi, bučiãvosi
         val verb = Verb(
-            infinitive = "baigti",
-            present = "baigia",
-            past = "baigė"
+            infinitive = "būti",
+            present = "yra",
+            past = "buvo"
         )
         val conjugation = sut!!.conjugationsService.getConjugationsFor(verb)
         val str = Json.encodeToString(serializer(), conjugation)

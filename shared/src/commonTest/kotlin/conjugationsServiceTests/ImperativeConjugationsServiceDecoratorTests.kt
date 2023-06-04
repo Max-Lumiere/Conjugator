@@ -16,6 +16,7 @@
 
 package conjugationsServiceTests
 
+import conjugationsService.ConjugationsService
 import conjugationsService.ImperativeConjugationsServiceDecorator
 import entities.Tense
 import entities.Verb
@@ -28,11 +29,33 @@ import kotlin.test.assertTrue
 
 class ImperativeConjugationsServiceDecoratorTests: ConjugationsServiceTests() {
     var inner: ConjugationsServiceMock = ConjugationsServiceMock()
+    var buti: VerbFormsServiceMock = VerbFormsServiceMock()
 
     @BeforeTest
     fun setUp() {
         inner = ConjugationsServiceMock()
-        sut = ImperativeConjugationsServiceDecorator(inner = inner)
+        buti = VerbFormsServiceMock()
+        sut = ImperativeConjugationsServiceDecorator(inner = inner, butiFormsService = buti)
+    }
+
+    @Test
+    fun test_buti() = runTest {
+        var verb = Verb("būti", "būna", "buvo")
+
+        inner.result = listOf(VerbConjugation(
+            verb = verb,
+            tense = Tense.Imperative,
+            forms = listOf("", "", "", "", "", "")
+        ))
+        sut!!.getConjugationsFor(verb)
+
+        assertEquals(1, buti.getFormsCount)
+
+        verb = Verb("buti", "būna", "buvo")
+
+        sut!!.getConjugationsFor(verb)
+
+        assertEquals(2, buti.getFormsCount)
     }
 
     @Test

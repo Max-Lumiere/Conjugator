@@ -112,7 +112,7 @@ class PresentConjugationsServiceTests: ConjugationsServiceTests() {
 
     @Test
     fun testGetConjugation_buti() = runTest {
-        val verb = Verb("", "yra", "")
+        var verb = Verb("būti", "", "")
 
         sut!!.getConjugationsFor(verb)
 
@@ -123,6 +123,18 @@ class PresentConjugationsServiceTests: ConjugationsServiceTests() {
         assertTrue(reflexiveIType.getFormsCount == 0)
         assertTrue(reflexiveOType.getFormsCount == 0)
         assertTrue(buti.getFormsCount == 1)
+
+        verb = Verb("buti", "", "")
+
+        sut!!.getConjugationsFor(verb)
+
+        assertTrue(aType.getFormsCount == 0)
+        assertTrue(iType.getFormsCount == 0)
+        assertTrue(oType.getFormsCount == 0)
+        assertTrue(reflexiveAType.getFormsCount == 0)
+        assertTrue(reflexiveIType.getFormsCount == 0)
+        assertTrue(reflexiveOType.getFormsCount == 0)
+        assertTrue(buti.getFormsCount == 2)
     }
 
     @Test

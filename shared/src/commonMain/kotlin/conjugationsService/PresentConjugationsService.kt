@@ -35,7 +35,7 @@ class PresentConjugationsService(
     override suspend fun getConjugationsFor(verb: Verb): List<VerbConjugation> {
         val forms: List<String>
 
-        if (verb.present == "yra") {
+        if (verb.infinitive == "būti" || verb.infinitive == "buti") {
             forms = butiService.getVerbFormsFor(verb.present)
         } else if (verb.present.endsWith("si")) {
             forms = when (verb.present.dropLast(2).last()) {

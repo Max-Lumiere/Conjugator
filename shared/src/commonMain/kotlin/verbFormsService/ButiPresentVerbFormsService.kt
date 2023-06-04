@@ -22,12 +22,12 @@ class ButiPresentVerbFormsService: VerbFormsService {
     override fun getVerbFormsFor(form: String): List<String> {
         val forms = MutableList(6) { "" }
 
-        forms[0] = "esu"
-        forms[1] = "esi"
-        forms[2] = "yra"
-        forms[3] = "esame"
-        forms[4] = "esate"
-        forms[5] = "yra"
+        forms[0] = "esu / būnu"
+        forms[1] = "esi / būni"
+        forms[2] = "yra / būna"
+        forms[3] = "esame / būname"
+        forms[4] = "esate / būnate"
+        forms[5] = "yra / būna"
 
         return forms
     }

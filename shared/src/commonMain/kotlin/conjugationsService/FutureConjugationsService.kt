@@ -29,7 +29,7 @@ class FutureConjugationsService(
 
     @Throws(Exception::class)
     override suspend fun getConjugationsFor(verb: Verb): List<VerbConjugation> {
-        val forms = if (verb.infinitive == "būti") {
+        val forms = if (verb.infinitive == "būti" || verb.infinitive == "buti") {
             butiFormsService.getVerbFormsFor(verb.infinitive)
         } else if (verb.infinitive.endsWith("tis")) {
             reflexiveFormsService.getVerbFormsFor(verb.infinitive)

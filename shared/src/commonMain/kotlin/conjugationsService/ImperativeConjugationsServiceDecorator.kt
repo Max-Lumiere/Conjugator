@@ -19,9 +19,11 @@ package conjugationsService
 import entities.Tense
 import entities.Verb
 import entities.VerbConjugation
+import verbFormsService.VerbFormsService
 
 class ImperativeConjugationsServiceDecorator(
-    inner: ConjugationsService
+    inner: ConjugationsService,
+    private val butiFormsService: VerbFormsService
 ) : ConjugationsServiceDecorator(inner) {
 
     override suspend fun getConjugationsFor(verb: Verb): List<VerbConjugation> {
@@ -29,18 +31,23 @@ class ImperativeConjugationsServiceDecorator(
         val index = conjugations.indexOfFirst { it.tense == Tense.Imperative }
 
         if (index != -1) {
-            val forms = conjugations[index].forms.toMutableList()
+            var forms = conjugations[index].forms.toMutableList()
 
-            val teguForm = if (verb.infinitive.endsWith("tis")) {
-                "tegu " + verb.present + " / tesi" + verb.present.dropLast(2)
-            } else if (verb.infinitive.endsWith("ti")) {
-                "tegu " + verb.present
+            if (verb.infinitive == "būti" || verb.infinitive == "buti") {
+                forms = butiFormsService.getVerbFormsFor("").toMutableList()
             } else {
-                throw Exception("Wrong infinitive ${verb.infinitive}")
+                val teguForm = if (verb.infinitive.endsWith("tis")) {
+                    "tegu " + verb.present + " / tesi" + verb.present.dropLast(2)
+                } else if (verb.infinitive.endsWith("ti")) {
+                    "tegu " + verb.present
+                } else {
+                    throw Exception("Wrong infinitive ${verb.infinitive}")
+                }
+
+                forms[2] = teguForm
+                forms[5] = teguForm
             }
 
-            forms[2] = teguForm
-            forms[5] = teguForm
             conjugations[index] = VerbConjugation(
                 verb = verb,
                 tense = Tense.Imperative,

@@ -92,7 +92,8 @@ open class Context {
                 tense = Tense.Imperative,
                 commonFormsService = imperativeFormsService,
                 reflexiveFormsService = reflexiveImperativeFormsService
-            )
+            ),
+            butiFormsService = ButiImperativeVerbFormsService()
         )
         conditionalConjugationsService = SimpleConjugationsService(
             tense = Tense.Conditional,
