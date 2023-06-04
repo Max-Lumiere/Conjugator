@@ -45,8 +45,8 @@ class ReflexiveConditionalFormsServiceTests: VerbFormsServiceTests() {
             "mokyčiausi",
             "mokytumeisi",
             "mokytųsi",
-            "mokytumėmės",
-            "mokytumėtės",
+            "mokytumės / mokytumėmės",
+            "mokytutės / mokytumėtės",
             "mokytųsi"
         ), sut!!.getVerbFormsFor("mokytis"))
         assertEquals(1, verbFormsMock.getFormsCount)
@@ -79,5 +79,25 @@ class ReflexiveConditionalFormsServiceTests: VerbFormsServiceTests() {
         sut!!.getVerbFormsFor("mokytis")
         assertEquals("mokyti", verbFormsMock.lastFormPassed)
         assertEquals(1, verbFormsMock.getFormsCount)
+    }
+
+    @Test
+    fun test_autis() {
+        verbFormsMock.result = listOf(
+            "aučiau",
+            "autum",
+            "autų",
+            "autume / autumėme",
+            "autute / autumėte",
+            "autų"
+        )
+        assertEquals(listOf(
+                "aučiausi",
+                "autumeisi",
+                "autųsi",
+                "autumės / autumėmės",
+                "aututės / autumėtės",
+                "autųsi"
+        ), sut!!.getVerbFormsFor("autis"))
     }
 }

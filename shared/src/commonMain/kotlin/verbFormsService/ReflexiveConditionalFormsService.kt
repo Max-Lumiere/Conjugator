@@ -37,6 +37,6 @@ class ReflexiveConditionalFormsService(
             .replace(" ","")
             .split('/')
             .map {  it.dropLast(1) + "ės" }
-            .last()
+            .joinToString(" / ")
     }
 }

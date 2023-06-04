@@ -39,4 +39,16 @@ class ConditionalFormsServiceTests: VerbFormsServiceTests() {
             "kalbėtų"
         ), sut!!.getVerbFormsFor("kalbėti"))
     }
+
+    @Test
+    fun test_autis() {
+        assertEquals(listOf(
+            "aučiau",
+            "autum",
+            "autų",
+            "autume / autumėme",
+            "autute / autumėte",
+            "autų"
+        ), sut!!.getVerbFormsFor("auti"))
+    }
 }
