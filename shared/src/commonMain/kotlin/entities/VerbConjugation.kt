@@ -16,6 +16,9 @@
 
 package entities
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class VerbConjugation(val verb: Verb,
                            val tense: Tense,
                            val forms: List<String>) {

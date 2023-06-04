@@ -16,6 +16,9 @@
 
 package entities
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class Verb(val infinitive: String, val present: String, val past: String) {
 
     override fun equals(other: Any?): Boolean {

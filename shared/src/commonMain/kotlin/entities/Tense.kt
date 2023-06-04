@@ -16,6 +16,9 @@
 
 package entities
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 enum class Tense {
     Present, Past, PastContiniuos, Conditional, Future, Imperative
 }
