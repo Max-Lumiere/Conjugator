@@ -14,9 +14,11 @@
  * If not, see <https://www.gnu.org/licenses/>.
  */
 
+import entities.Verb
 import entities.VerbConjugation
 import kotlinx.coroutines.test.runTest
 import kotlinx.serialization.json.Json
+import kotlinx.serialization.serializer
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -47,5 +49,20 @@ class ConjugationIntegrationTests {
                 assertEquals(conjugation, calculated)
             }
         }
+    }
+
+    @Test
+    fun testGenerate() = runTest {
+        // bai̇g̃ti,bai̇g̃ia,bai̇g̃ė
+        val verb = Verb(
+            infinitive = "baigti",
+            present = "baigia",
+            past = "baigė"
+        )
+        val conjugation = sut!!.conjugationsService.getConjugationsFor(verb)
+        val str = Json.encodeToString(serializer(), conjugation)
+
+        println("=======")
+        println(str)
     }
 }
