@@ -21,6 +21,8 @@ class ImperativeFormsService: VerbFormsService {
         val forms = MutableList(6) { "–" }
         val base: String = if (form.endsWith("kti")) {
             form.dropLast(2)
+        } else if (form.endsWith("gti")) {
+            form.dropLast(3) + "k"
         } else {
             form.dropLast(2) + "k"
         }
