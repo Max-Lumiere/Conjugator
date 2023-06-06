@@ -43,4 +43,19 @@ class ReflexiveATypeFormsServiceTests: VerbFormsServiceTests() {
             listOf("veikiuosi", "veikiesi", "veikiasi", "veikiamės", "veikiatės", "veikiasi")
         )
     }
+
+    @Test
+    fun test_dzia() {
+        assertEquals(
+            sut!!.getVerbFormsFor("draudžiasi"),
+            listOf(
+                "draudžiuosi",
+                "draudiesi",
+                "draudžiasi",
+                "draudžiamės",
+                "draudžiatės",
+                "draudžiasi"
+            )
+        )
+    }
 }

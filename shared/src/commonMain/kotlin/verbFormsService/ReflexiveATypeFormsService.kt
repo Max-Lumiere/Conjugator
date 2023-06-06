@@ -24,7 +24,9 @@ class ReflexiveATypeFormsService: VerbFormsService {
 
         forms[0] = form.dropLast(3) + "uosi"
 
-        if (form[form.length - 4] == 'i') {
+        if (form.endsWith("žiasi")) {
+            forms[1] = form.dropLast(5) + "iesi"
+        } else if (form.endsWith("iasi")) {
             forms[1] = form.dropLast(3) + "esi"
         } else {
             forms[1] = form.dropLast(3) + "iesi"
