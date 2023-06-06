@@ -18,19 +18,19 @@ package verbFormsServiceTests
 
 import verbFormsService.ATypeFormsService
 import entities.Verb
+import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
 class ATypeFormsServiceTests: VerbFormsServiceTests() {
 
-    private fun prepare() {
+    @BeforeTest
+    fun prepare() {
         sut = ATypeFormsService()
     }
 
     @Test
     fun testGetConjugation_a() {
-        prepare()
-
         val verb = Verb("duoti", "duoda", "davė")
         val forms = sut!!.getVerbFormsFor(verb.present)
 
@@ -44,8 +44,6 @@ class ATypeFormsServiceTests: VerbFormsServiceTests() {
 
     @Test
     fun testGetConjugation_ia() {
-        prepare()
-
         val verb = Verb("veikti", "veikia", "veikė")
         val forms = sut!!.getVerbFormsFor(verb.present)
 
@@ -55,5 +53,21 @@ class ATypeFormsServiceTests: VerbFormsServiceTests() {
         assertEquals(forms[3], "veikiame")
         assertEquals(forms[4], "veikiate")
         assertEquals(forms[5], "veikia")
+    }
+
+    @Test
+    fun test_drausti() {
+        val verb = Verb("drausti", "draudžia", "draudė")
+
+        val forms = sut!!.getVerbFormsFor(verb.present)
+
+        assertEquals(listOf(
+            "draudžiu",
+            "draudi",
+            "draudžia",
+            "draudžiame",
+            "draudžiate",
+            "draudžia"
+        ),forms)
     }
 }

@@ -321,7 +321,7 @@ val localVerbConjugations =
          "tense":"Present",
          "forms":[
             "atleidžiu",
-            "atleidži",
+            "atleidi",
             "atleidžia",
             "atleidžiame",
             "atleidžiate",

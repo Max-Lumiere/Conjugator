@@ -24,7 +24,9 @@ class ATypeFormsService: VerbFormsService {
 
         forms[0] = form.dropLast(1) + "u"
 
-        if (form[form.length - 2] == 'i') {
+        if (form.endsWith("žia")) {
+            forms[1] = form.dropLast(3) + "i"
+        } else if (form.endsWith("ia")) {
             forms[1] = form.dropLast(1)
         } else {
             forms[1] = form.dropLast(1) + "i"
