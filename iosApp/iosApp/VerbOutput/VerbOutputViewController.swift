@@ -19,7 +19,6 @@
     
 import UIKit
 import LumiereToolkit
-import shared
 import Combine
 
 private let backImage = UIImage(systemName: "arrow.backward")?.withRenderingMode(.alwaysTemplate)
