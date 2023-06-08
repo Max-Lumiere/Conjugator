@@ -14,6 +14,7 @@
  * If not, see <https://www.gnu.org/licenses/>.
  */
 
+import entities.DTO.JSON.VerbConjugationJSON
 import entities.Verb
 import entities.VerbConjugation
 import kotlinx.coroutines.test.runTest
@@ -54,15 +55,30 @@ class ConjugationIntegrationTests {
     @Test
     fun testGenerate() = runTest {
         // bučiúotis, bučiúojasi, bučiãvosi
-        val verb = Verb(
-            infinitive = "būti",
-            present = "yra",
-            past = "buvo"
+        val strings = listOf(
+            "draustis, draudžiasi, draudėsi",
+            "duoti, duoda, davė",
+            "džiaugtis, džiaugiasi, džiaugėsi",
+            "džiauti, džiauna, džiovė"
         )
-        val conjugation = sut!!.conjugationsService.getConjugationsFor(verb)
-        val str = Json.encodeToString(serializer(), conjugation)
+        val map: MutableMap<String, List<VerbConjugationJSON>> = HashMap<String, List<VerbConjugationJSON>>().toMutableMap()
+
+        for (string in strings) {
+            val verb = verbFromString(string)
+            val conjugation = sut!!.conjugationsService.getConjugationsFor(verb)
+                .map { VerbConjugationJSON(it) }
+
+            map[verb.infinitive] = conjugation
+        }
 
         println("=======")
-        println(str)
+        println(Json.encodeToString(serializer(), map))
+    }
+
+    fun verbFromString(str: String): Verb {
+        val forms = str
+            .replace(" ","")
+            .split(",")
+        return Verb(forms[0], forms[1], forms[2])
     }
 }

@@ -16,12 +16,11 @@
 
 package entities
 
-import kotlinx.serialization.Serializable
-
-@Serializable
 data class VerbConjugation(val verb: Verb,
                            val tense: Tense,
                            val forms: List<String>) {
+
+    companion object {}
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true

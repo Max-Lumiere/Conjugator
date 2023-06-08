@@ -14,10 +14,15 @@
  * If not, see <https://www.gnu.org/licenses/>.
  */
 
-package entities
+import entities.Verb
+import kotlinx.serialization.Serializable
 
-enum class Tense {
-    Present, Past, PastContiniuos, Conditional, Future, Imperative;
+ @Serializable
+ data class VerbJSON(val infinitive: String, val present: String, val past: String) {
 
-    companion object {}
+     constructor(verb: Verb) : this(verb.infinitive, verb.present, verb.past)
+ }
+
+fun Verb.Companion.fromJSON(verbJSON: VerbJSON) : Verb {
+    return Verb(verbJSON.infinitive, verbJSON.present, verbJSON.past)
 }
